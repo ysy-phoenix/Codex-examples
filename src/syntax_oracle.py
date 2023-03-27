@@ -3,9 +3,7 @@ import sys
 
 
 class SyntaxOracle:
-    """
-    Simple test class.
-    """
+    """Simple Syntax Oracle."""
 
     def __init__(self, file, filepath):
         self.file = file
@@ -24,7 +22,7 @@ class SyntaxOracle:
                 timeout=timeout
             )
         except subprocess.TimeoutExpired:
-            return 'TIMEOUR'
+            return 'TIMEOUT'
 
         if p.returncode != 0:
             return 'ERROR'
@@ -48,6 +46,3 @@ class PySyntaxOracle(SyntaxOracle):
     def __init__(self, file, filepath):
         super().__init__(file, filepath)
         self.args = ["python", self.src]
-
-
-

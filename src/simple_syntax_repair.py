@@ -3,7 +3,8 @@ import openai
 
 from syntax_oracle import *
 
-DEBUG = True
+# GLOBAL PARAMETERS BEGIN
+DEBUG = False
 MAX_TOKENS = 1000
 FILE_PATH = "../data/pydata/"
 FILE_TYPE_TO_LANGUAGE = {
@@ -28,50 +29,58 @@ FILE_TYPE_TO_ORACLE = {
 }
 
 
+# GLOBAL PARAMETERS END
+
+
 def log_info(msg, color):
-    """
-    Log info with different color.
-    """
-    print(COLOR_TO_ESCAPE[color] + msg + "\033[0m")
+    """Log info with different color."""
+    print(COLOR_TO_ESCAPE[color], end='')
+    print(msg, end='')
+    print("\033[0m")
 
 
 def initialize_openai_api():
-    """
-    Initialize the OpenAI API from OS environment variables.
-    """
+    """Initialize the OpenAI API from OS environment variables."""
     openai.api_key = os.environ['OPENAI_API_KEY']
     if not openai.api_key:
         print("Please set the OPENAI_API_KEY environment variable.")
         sys.exit(1)
 
 
-def generate_prompt(source, filepath=None, filetype=None, isText=False):
+def generate_prompt(source, filepath=None, filetype=None, isText=False, errorInfo=None):
     """
     Generate prompt for Codex.
-    Now only with buggy program.
+    Now only with buggy program, error info is optional.
     """
-    resPrompt = '\n===================================================\n' \
-                '# Fix syntax error in the below file written in '
+    prompt = '\n===================================================\n' \
+             '# Fix errors in the below file written in '
+
     if not isText:
         filetype = source.split(".")[1]
-    resPrompt += FILE_TYPE_TO_LANGUAGE[filetype] + '.\n'
-    resPrompt += '\n[[Buggy Program]]\n' \
-                 '### Buggy Program ###\n'
+
+    prompt += FILE_TYPE_TO_LANGUAGE[filetype] + '.\n'
+    prompt += '# Some error information will also be provided.\n' if errorInfo is not None else ''
+    prompt += '\n[[Buggy Program]]\n' \
+              '### Buggy Program ###\n'
+
     if isText:
-        resPrompt += source + '\n'
+        prompt += source + '\n'
     else:
         with open(filepath + source) as f:
-            resPrompt += f.read() + '\n'
+            prompt += f.read() + '\n'
 
-    resPrompt += '\n[[Fixed Program]]\n' \
-                 '### Fixed Program ###\n'
-    return resPrompt
+    for i, e in enumerate(errorInfo):
+        prompt += f"\n[[Error Info {i + 1}]]\n"
+        prompt += f"### Error Info {i + 1} ###\n"
+        prompt += e + '\n'
+
+    prompt += '\n[[Fixed Program]]\n' \
+              '### Fixed Program ###\n'
+    return prompt
 
 
 def generate_completion(input_prompt, num_tokens=MAX_TOKENS, temperature=0.8):
-    """
-    Generate completion for Codex.
-    """
+    """Generate completion for Codex."""
     log_info("Waiting for Codex response ...\n", "green") if DEBUG else None
     response = openai.Completion.create(
         model="text-davinci-003",
@@ -87,17 +96,13 @@ def generate_completion(input_prompt, num_tokens=MAX_TOKENS, temperature=0.8):
 
 
 def write_to_file(file, filepath, program):
-    """
-    Save the fixed program to a file.
-    """
+    """Save the fixed program to a file."""
     with open(filepath + file, "w") as f:
         f.write(program)
 
 
 def iterate_to_find_solution(input_prompt, file, filepath=None, filetype=None, isText=False, max_time=3):
-    """
-    Iterate several times to find a solution.
-    """
+    """Iterate several times to find a solution."""
     if not isText:
         filename, filetype = file.split(".")
     else:
@@ -105,6 +110,7 @@ def iterate_to_find_solution(input_prompt, file, filepath=None, filetype=None, i
     fixed_file = filename + "_fixed." + filetype
     filepath += "tests/"
     syntax_oracle = FILE_TYPE_TO_ORACLE[filetype](fixed_file, filepath)
+    program = ""
 
     log_info("Codex is looking for a solution ...", "blue") if DEBUG else None
     for _ in range(max_time):
@@ -113,10 +119,7 @@ def iterate_to_find_solution(input_prompt, file, filepath=None, filetype=None, i
         write_to_file(fixed_file, filepath, program)
         if syntax_oracle.test() == 'OK':
             log_info(program, "cyan") if DEBUG else None
-            return program
+            return program, True
 
     log_info("Codex can not find a solution!", "magenta") if DEBUG else None
-    return None
-
-
-
+    return program, False
