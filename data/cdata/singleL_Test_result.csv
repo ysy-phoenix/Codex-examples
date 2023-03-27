@@ -1,0 +1,8837 @@
+id,sourceText,targetText,fixedText,isFixed,status
+21901.0,"#include<stdio.h>
+
+int check_prime(int num){//define function check_prime
+int i;
+     for(i=2;i<num;i++){
+        if(num%i==0||){
+             return 0;
+        }
+     }
+   return 1;
+}
+int main(){
+    int n1,n2,i,result;
+         scanf(""%d %d"",&n1,&n2);
+     for(i=n1;i<=n2;i++){
+        result=check_prime(i);
+         if(result==1&&i!=1){
+             printf(""%d "",i);
+         }
+     }
+	return 0;
+}","#include<stdio.h>
+
+int check_prime(int num){//define function check_prime
+int i;
+     for(i=2;i<num;i++){
+        if(num%i==0){
+             return 0;
+        }
+     }
+   return 1;
+}
+int main(){
+    int n1,n2,i,result;
+         scanf(""%d %d"",&n1,&n2);
+     for(i=n1;i<=n2;i++){
+        result=check_prime(i);
+         if(result==1&&i!=1){
+             printf(""%d "",i);
+         }
+     }
+	return 0;
+}","#include<stdio.h>
+
+int check_prime(int num){//define function check_prime
+int i;
+     for(i=2;i<num;i++){
+        if(num%i==0){
+             return 0;
+        }
+     }
+   return 1;
+}
+int main(){
+    int n1,n2,i,result;
+         scanf(""%d %d"",&n1,&n2);
+     for(i=n1;i<=n2;i++){
+        result=check_prime(i);
+         if(result==1&&i!=1){
+             printf(""%d "",i);
+         }
+     }
+	return 0;
+}",True,PASS
+19734.0,"#include<stdio.h>
+
+int main(){
+    int a,b,n=0,i, rev=0;
+    scanf(""%d"",&a);
+    b=a;
+    while (a!=0){
+        a/=10;
+        n++;
+    }
+    printf(""Reverse of %d is "",b);
+    for(i=n-1;i>=0;i--){
+        rev+=(10^i)*(b%10);
+        print(""\n%d %f\n"",i, (10^i));
+        printf(""\n%d\n"", rev);
+        b/=10;
+        
+    }
+    printf(""\n%d"",rev);
+    
+    
+    
+    
+    
+    
+    
+        return 0;
+    
+}
+    
+
+","#include<stdio.h>
+
+int main(){
+    int a,b,n=0,i, rev=0;
+    scanf(""%d"",&a);
+    b=a;
+    while (a!=0){
+        a/=10;
+        n++;
+    }
+    printf(""Reverse of %d is "",b);
+    for(i=n-1;i>=0;i--){
+        rev+=(10^i)*(b%10);
+        printf(""\n%d %f\n"",i, (10^i));
+        printf(""\n%d\n"", rev);
+        b/=10;
+        
+    }
+    printf(""\n%d"",rev);
+    
+    
+    
+    
+    
+    
+    
+        return 0;
+    
+}
+    
+
+","#include<stdio.h>
+
+int main(){
+    int a,b,n=0,i, rev=0;
+    scanf(""%d"",&a);
+    b=a;
+    while (a!=0){
+        a/=10;
+        n++;
+    }
+    printf(""Reverse of %d is "",b);
+    for(i=n-1;i>=0;i--){
+        rev+=(pow(10,i)*(b%10));
+        b/=10;
+    }
+    printf(""\n%d"",rev);
+        return 0;
+    
+}",True,PASS
+19454.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	printf(""1300"")
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	printf(""1300"");
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	printf(""1300"");
+	return 0;
+}",True,PASS
+20171.0,"#include<stdio.h>
+#include<stdlib.h>
+int N;
+int partition(int A[], int lo, int hi)
+{
+    int pivot=A[lo];
+    int l=lo, r=hi;
+    while(1)
+    {
+        while(A[r]>=pivot)
+            r--;
+        while(A[l]<=pivot)
+            l++;
+        if(l<r)
+        {
+            int temp=A[l];
+            A[l]=A[r];
+            A[r]=temp;
+            l++;
+            r--;
+        }
+        else
+        {
+            /*for(int i=0;i<N;i++) 
+                printf(""%d "", A[i]);*/
+            //printf(""\n"");
+            return r;
+        }
+    }
+}
+void quicksort(int A[],int lo, int hi)
+{
+    if(lo==hi)
+        return;
+    int p_index=partition(A,lo,hi);
+    quicksort(A,lo,p_index-1);
+    quicksort(A,p_index+1,hi);
+}
+int main()
+{
+    int n,i;
+    scanf(""%d"", &n);
+    printf(""%d\n"", n);
+    int A;
+    N=n;
+    A=(int *)malloc(n*sizeof(int));
+    for(i=0;i<n;i++) scanf(""%d "", &A[i]);
+    quicksort(A,0,n-1);
+    for(i=0;i<n;i++) printf(""%d "", A[i]);
+    //free(A);
+}","#include<stdio.h>
+#include<stdlib.h>
+int N;
+int partition(int A[], int lo, int hi)
+{
+    int pivot=A[lo];
+    int l=lo, r=hi;
+    while(1)
+    {
+        while(A[r]>=pivot)
+            r--;
+        while(A[l]<=pivot)
+            l++;
+        if(l<r)
+        {
+            int temp=A[l];
+            A[l]=A[r];
+            A[r]=temp;
+            l++;
+            r--;
+        }
+        else
+        {
+            /*for(int i=0;i<N;i++) 
+                printf(""%d "", A[i]);*/
+            //printf(""\n"");
+            return r;
+        }
+    }
+}
+void quicksort(int A[],int lo, int hi)
+{
+    if(lo==hi)
+        return;
+    int p_index=partition(A,lo,hi);
+    quicksort(A,lo,p_index-1);
+    quicksort(A,p_index+1,hi);
+}
+int main()
+{
+    int n,i;
+    scanf(""%d"", &n);
+    printf(""%d\n"", n);
+    int* A;
+    N=n;
+    A=(int *)malloc(n*sizeof(int));
+    for(i=0;i<n;i++) scanf(""%d "", &A[i]);
+    quicksort(A,0,n-1);
+    for(i=0;i<n;i++) printf(""%d "", A[i]);
+    //free(A);
+}","#include<stdio.h>
+#include<stdlib.h>
+int N;
+int partition(int A[], int lo, int hi)
+{
+    int pivot=A[lo];
+    int l=lo, r=hi;
+    while(1)
+    {
+        while(A[r]>=pivot)
+            r--;
+        while(A[l]<=pivot)
+            l++;
+        if(l<r)
+        {
+            int temp=A[l];
+            A[l]=A[r];
+            A[r]=temp;
+            l++;
+            r--;
+        }
+        else
+        {
+            /*for(int i=0;i<N;i++) 
+                printf(""%d "", A[i]);*/
+            //printf(""\n"");
+            return r;
+        }
+    }
+}
+void quicksort(int A[],int lo, int hi)
+{
+    if(lo==hi)
+        return;
+    int p_index=partition(A,lo,hi);
+    quicksort(A,lo,p_index-1);
+    quicksort(A,p_index+1,hi);
+}
+int main()
+{
+    int n,i;
+    scanf(""%d"", &n);
+    printf(""%d\n"", n);
+    int *A;
+    N=n;
+    A=(int *)malloc(n*sizeof(int));
+    for(i=0;i<n;i++) scanf(""%d "", &A[i]);
+    quicksort(A,0,n-1);
+    for(i=0;i<n;i++) printf(""%d "", A[i]);
+    free(A);
+}",True,PASS
+19746.0,"#include<stdio.h>
+int main(){
+  printf ("" \\n introduces a \""new line\"". "")
+	return 0;
+}","#include<stdio.h>
+int main(){
+  printf ("" \\n introduces a \""new line\"". "");
+	return 0;
+}","#include<stdio.h>
+int main(){
+  printf(""\\n introduces a \""new line\"".\n"");
+	return 0;
+}",True,PASS
+20005.0,"#include<stdio.h>
+
+int main(){
+    float a1,a2,b1,b2,intrx,intry;
+    scanf(""%f %f %f %f"",&a1,&b1,&a2,&b2);
+    if(a2!=0&&b2!=0){
+        if(a1/a2==b1/b2){
+        printf(""INF"");
+    }else{
+    intrx=b2-b1/(b2*a1-b1*a2);
+    intry=a2-a1/(a2*b1-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }} 
+   else if(a1=0&&b1=0) {
+       printf(""INF"");
+   }else{
+       intrx=b2-b1/(b2*a1-b1*a2);
+    intry=a2-a1/(a2*b1-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }
+   return 0;
+}","#include<stdio.h>
+
+int main(){
+    float a1,a2,b1,b2,intrx,intry;
+    scanf(""%f %f %f %f"",&a1,&b1,&a2,&b2);
+    if(a2!=0&&b2!=0){
+        if(a1/a2==b1/b2){
+        printf(""INF"");
+    }else{
+    intrx=b2-b1/(b2*a1-b1*a2);
+    intry=a2-a1/(a2*b1-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }} 
+   else if(a1==0&&b1==0) {
+       printf(""INF"");
+   }else{
+       intrx=b2-b1/(b2*a1-b1*a2);
+    intry=a2-a1/(a2*b1-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }
+   return 0;
+}","#include<stdio.h>
+
+int main(){
+    float a1,a2,b1,b2,intrx,intry;
+    scanf(""%f %f %f %f"",&a1,&b1,&a2,&b2);
+    if(a2!=0&&b2!=0){
+        if(a1/a2==b1/b2){
+        printf(""INF"");
+    }else{
+    intrx=(b2*a1-b1*a2)/(b2-b1*a2);
+    intry=(a2*b1-a1*b2)/(a2-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }} 
+   else if(a1==0&&b1==0) {
+       printf(""INF"");
+   }else{
+       intrx=(b2*a1-b1*a2)/(b2-b1*a2);
+    intry=(a2*b1-a1*b2)/(a2-a1*b2);
+    printf(""(%.3f,%.3f)"",intrx,intry);
+   }
+   return 0;
+}",True,PASS
+18920.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int n,i,j,count=0;
+scanf(""%d"",&n);
+int a[n];
+for(i=0;i<n;i++){
+    scanf(""\n%d"",&a[i]);
+}
+for(j=0;j<n;j++){
+    for(i=j;i<n;i++){
+        if(""a[i]==a[j]""){
+            count++;
+        }
+    }
+}
+printf(""%d"",count)
+
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int n,i,j,count=0;
+scanf(""%d"",&n);
+int a[n];
+for(i=0;i<n;i++){
+    scanf(""\n%d"",&a[i]);
+}
+for(j=0;j<n;j++){
+    for(i=j;i<n;i++){
+        if(""a[i]==a[j]""){
+            count++;
+        }
+    }
+}
+printf(""%d"",count);
+
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int n,i,j,count=0;
+scanf(""%d"",&n);
+int a[n];
+for(i=0;i<n;i++){
+    scanf(""\n%d"",&a[i]);
+}
+for(j=0;j<n;j++){
+    for(i=j;i<n;i++){
+        if(a[i]==a[j]){
+            count++;
+        }
+    }
+}
+printf(""%d"",count);
+
+	return 0;
+}",True,PASS
+19685.0,"#include<stdio.h>
+int main(){
+printf(""\'a\' is not the same as \""a\"""")
+	return 0;
+}","#include<stdio.h>
+int main(){
+printf(""\'a\' is not the same as \""a\"""");
+	return 0;
+}","#include<stdio.h>
+int main(){
+    printf(""\'a\' is not the same as \""a\"""");  //Note the semicolon
+    return 0;
+}",True,PASS
+21083.0,"#include <stdio.h>
+#include <stdlib.h>
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+void delete_node(struct node*tbdel){
+   struct node*tmp=tbdel;
+   tbdel=tbdel->next;
+   tbdel
+   free(tmp);
+}
+struct node* search_key(struct node*head,int key,int tot){
+    int j=0;
+    while(j<tot-key){
+        head=head->next;j++;
+    } return head;
+}
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head->next!=NULL)  {
+        if(head->data){
+        printf(""%d "",head->data);
+        head=head->next;
+    }
+    }
+    printf(""X\n"");
+    return;
+}
+
+
+int main() {
+    struct node*head=(struct node*)malloc(1*sizeof(struct node));
+    int cnt=1;int i;scanf(""%d"",&i);head->data=i;head->next=NULL;
+    while(i!=-1){
+       scanf(""%d"",&i); insert(head,i);cnt++;
+    }
+    int key;scanf(""%d"",&key);cnt=cnt-1;
+    if((key<=cnt)&&(key>=1)){
+    struct node*del=search_key(head,key,cnt);
+    delete_node(del);
+    print(head);
+    }
+    else print(head);
+	// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+void delete_node(struct node*tbdel){
+   struct node*tmp=tbdel;
+   tbdel=tbdel->next;
+   
+   free(tmp);
+}
+struct node* search_key(struct node*head,int key,int tot){
+    int j=0;
+    while(j<tot-key){
+        head=head->next;j++;
+    } return head;
+}
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head->next!=NULL)  {
+        if(head->data){
+        printf(""%d "",head->data);
+        head=head->next;
+    }
+    }
+    printf(""X\n"");
+    return;
+}
+
+
+int main() {
+    struct node*head=(struct node*)malloc(1*sizeof(struct node));
+    int cnt=1;int i;scanf(""%d"",&i);head->data=i;head->next=NULL;
+    while(i!=-1){
+       scanf(""%d"",&i); insert(head,i);cnt++;
+    }
+    int key;scanf(""%d"",&key);cnt=cnt-1;
+    if((key<=cnt)&&(key>=1)){
+    struct node*del=search_key(head,key,cnt);
+    delete_node(del);
+    print(head);
+    }
+    else print(head);
+	// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+void delete_node(struct node*tbdel){
+   struct node*tmp=tbdel;
+   tbdel=tbdel->next;
+   free(tmp);
+}
+struct node* search_key(struct node*head,int key,int tot){
+    int j=0;
+    while(j<tot-key){
+        head=head->next;j++;
+    } return head;
+}
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head->next!=NULL)  {
+        if(head->data){
+        printf(""%d "",head->data);
+        head=head->next;
+        }
+    }
+    printf(""X\n"");
+    return;
+}
+
+
+int main() {
+    struct node*head=(struct node*)malloc(1*sizeof(struct node));
+    int cnt=1;int i;scanf(""%d"",&i);head->data=i;head->next=NULL;
+    while(i!=-1){
+       scanf(""%d"",&i); head=insert(head,i); cnt++;
+    }
+    int key;scanf(""%d"",&key);cnt=cnt-1;
+    if((key<=cnt)&&(key>=1)){
+    struct node*del=search_key(head,key,cnt);
+    delete_node(del);
+    print(head);
+    }
+    else print(head);
+	return 0;
+}",True,PASS
+21465.0,"#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int vertex;
+	struct node *next;
+};
+
+struct list_entry{
+	struct node *head;
+	struct node *tail;
+};
+struct list_entry arr[34000];
+void init()
+{
+    for(int i=0; i<20;i++)
+        arr[i].head=arr[i].tail=0;
+}
+struct node * create(int a)
+{
+    struct node * block;
+    block=(struct node *)malloc(sizeof(struct node));
+    block->vertex=a;
+    return block;
+}
+void add(int a,int b)
+{
+    if(arr[a].head==arr[a].tail)
+    {
+        arr[a].head=create(b);
+        arr[a].tail=arr[a].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[a].tail;
+        arr[a].tail=create(b);
+        temp->next=arr[a].tail;
+    }
+    arr[a].tail->next=0;
+    if(arr[b].head==arr[b].tail)
+    {
+        arr[b].head=create(a);
+        arr[b].tail=arr[b].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[b].tail;
+        arr[b].tail=create(a);
+        temp->next=arr[b].tail;
+    }
+    arr[b].tail->next=0;
+}
+int main()
+{   int i;
+    init();
+    scanf(""%d"",&i);
+    for(int j=0;j<i;j++)
+    {
+        int a,b;
+        scanf(""%d %d"",&a,&b);
+        add(a,b);
+    }
+    scanf(""%d"",&i);
+    endall(i);
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int vertex;
+	struct node *next;
+};
+
+struct list_entry{
+	struct node *head;
+	struct node *tail;
+};
+struct list_entry arr[34000];
+void init()
+{
+    for(int i=0; i<20;i++)
+        arr[i].head=arr[i].tail=0;
+}
+struct node * create(int a)
+{
+    struct node * block;
+    block=(struct node *)malloc(sizeof(struct node));
+    block->vertex=a;
+    return block;
+}
+void add(int a,int b)
+{
+    if(arr[a].head==arr[a].tail)
+    {
+        arr[a].head=create(b);
+        arr[a].tail=arr[a].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[a].tail;
+        arr[a].tail=create(b);
+        temp->next=arr[a].tail;
+    }
+    arr[a].tail->next=0;
+    if(arr[b].head==arr[b].tail)
+    {
+        arr[b].head=create(a);
+        arr[b].tail=arr[b].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[b].tail;
+        arr[b].tail=create(a);
+        temp->next=arr[b].tail;
+    }
+    arr[b].tail->next=0;
+}
+int main()
+{   int i;
+    init();
+    scanf(""%d"",&i);
+    for(int j=0;j<i;j++)
+    {
+        int a,b;
+        scanf(""%d %d"",&a,&b);
+        add(a,b);
+    }
+    scanf(""%d"",&i);
+    //endall(i);
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int vertex;
+	struct node *next;
+};
+
+struct list_entry{
+	struct node *head;
+	struct node *tail;
+};
+struct list_entry arr[34000];
+void init()
+{
+    for(int i=0; i<20;i++)
+        arr[i].head=arr[i].tail=NULL;
+}
+struct node * create(int a)
+{
+    struct node * block;
+    block=(struct node *)malloc(sizeof(struct node));
+    block->vertex=a;
+    block->next = NULL;
+    return block;
+}
+void add(int a,int b)
+{
+    if(arr[a].head==NULL)
+    {
+        arr[a].head=create(b);
+        arr[a].tail=arr[a].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[a].tail;
+        arr[a].tail=create(b);
+        temp->next=arr[a].tail;
+    }
+    arr[a].tail->next=NULL;
+    if(arr[b].head==NULL)
+    {
+        arr[b].head=create(a);
+        arr[b].tail=arr[b].head;
+    }
+    else
+    {
+        struct node * temp;
+        temp=arr[b].tail;
+        arr[b].tail=create(a);
+        temp->next=arr[b].tail;
+    }
+    arr[b].tail->next=NULL;
+}
+int main()
+{   int i;
+    init();
+    scanf(""%d"",&i);
+    for(int j=0;j<i;j++)
+    {
+        int a,b;
+        scanf(""%d %d"",&a,&b);
+        add(a,b);
+    }
+    return 0;
+}",True,PASS
+21585.0,"#include <stdio.h>
+
+int n, array[20]; // n won't be more than 20
+
+int areSplitsEqual(int len, int sum_split_A, int sum_split_B)
+{   
+    if(len>n)
+    return 0;// write the base case
+    
+    int i=0,sum=0;
+     for(i=0;i<n;i++)
+    {
+        sum=sum+array[i];
+     
+    }
+    
+    sum_split_A=sum_split_A + array[len];
+    sum_split_B=array[len]
+    
+}
+
+int main()
+{  int i;
+   scanf(""%d"",&n);	// read n;
+   for(i=0;i<n;i++)
+   {
+      scanf(""%d "",&array[i]); 
+       
+   }  // read n elements into array
+
+	printf(""%s\n"", areSplitsEqual(0, 0, 0)==1?""YES"":""NO"");
+}","#include <stdio.h>
+
+int n, array[20]; // n won't be more than 20
+
+int areSplitsEqual(int len, int sum_split_A, int sum_split_B)
+{   
+    if(len>n)
+    return 0;// write the base case
+    
+    int i=0,sum=0;
+     for(i=0;i<n;i++)
+    {
+        sum=sum+array[i];
+     
+    }
+    
+    sum_split_A=sum_split_A + array[len];
+    sum_split_B=array[len];
+    
+}
+
+int main()
+{  int i;
+   scanf(""%d"",&n);	// read n;
+   for(i=0;i<n;i++)
+   {
+      scanf(""%d "",&array[i]); 
+       
+   }  // read n elements into array
+
+	printf(""%s\n"", areSplitsEqual(0, 0, 0)==1?""YES"":""NO"");
+}","#include <stdio.h>
+
+int n, array[20]; // n won't be more than 20
+
+int areSplitsEqual(int len, int sum_split_A, int sum_split_B)
+{   
+    if(len>n)  // write the base case
+        return 0;
+    
+    int i=0,sum=0;
+    for(i=0;i<n;i++)
+    {
+        sum=sum+array[i];
+    }
+    
+    sum_split_A=sum_split_A + array[len];
+    sum_split_B=sum_split_B + array[len];
+    
+    return areSplitsEqual(len+1, sum_split_A, sum_split_B) || (sum_split_A == sum_split_B);
+}
+
+int main()
+{  int i;
+   scanf(""%d"",&n);	// read n;
+   for(i=0;i<n;i++)
+   {
+      scanf(""%d "",&array[i]); 
+       
+   }  // read n elements into array
+
+	printf(""%s\n"", areSplitsEqual(0, 0, 0)==1?""YES"":""NO"");
+}",True,PASS
+18649.0,"#include <stdio.h>
+
+int n, array[10],sum=0,store[10]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}; // n won't be more than 20
+
+int match(int len,int i)
+{
+    for(int j=0;j<len;j++)
+    {
+        if(store[j]==i)
+            return 0;
+    }
+    return 1;
+}
+
+int areSplitsEqual(int len, int sum_split_A)
+{
+    
+    for(int i=0;i<n;i++)
+    {
+        if(match(len,i))
+        {
+            sum_split_A+=array[i];
+            if(2*sum_split_A==sum)
+                return 1;
+            else
+                return areSplitsEqual(len+1,sum_split_A);
+            return 0;
+        }
+    }
+}
+
+int main()
+{
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+	    scanf(""%d"",&array[i]);
+	    sum+=array[i];
+	}
+    
+	printf(""%s\n"", areSplitsEqual(0, 0, 0)==1?""YES"":""NO"");
+}","#include <stdio.h>
+
+int n, array[10],sum=0,store[10]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}; // n won't be more than 20
+
+int match(int len,int i)
+{
+    for(int j=0;j<len;j++)
+    {
+        if(store[j]==i)
+            return 0;
+    }
+    return 1;
+}
+
+int areSplitsEqual(int len, int sum_split_A)
+{
+    
+    for(int i=0;i<n;i++)
+    {
+        if(match(len,i))
+        {
+            sum_split_A+=array[i];
+            if(2*sum_split_A==sum)
+                return 1;
+            else
+                return areSplitsEqual(len+1,sum_split_A);
+            return 0;
+        }
+    }
+}
+
+int main()
+{
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+	    scanf(""%d"",&array[i]);
+	    sum+=array[i];
+	}
+    
+	printf(""%s\n"", areSplitsEqual(0, 0)==1?""YES"":""NO"");
+}","#include <stdio.h>
+
+int n, array[10],sum=0,store[10]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}; // n won't be more than 20
+
+int match(int len,int i)
+{
+    for(int j=0;j<len;j++)
+    {
+        if(store[j]==i)
+            return 0;
+    }
+    return 1;
+}
+
+int areSplitsEqual(int len, int sum_split_A, int i)
+{
+    
+    if(i>=n)
+        return 0;
+    
+    if(match(len,i))
+    {
+        sum_split_A+=array[i];
+        if(2*sum_split_A==sum)
+            return 1;
+        else
+            return areSplitsEqual(len+1,sum_split_A, i+1);
+    }
+    return areSplitsEqual(len, sum_split_A, i+1);
+}
+
+int main()
+{
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+	    scanf(""%d"",&array[i]);
+	    sum+=array[i];
+	}
+    
+	printf(""%s\n"", areSplitsEqual(0, 0, 0)==1?""YES"":""NO"");
+}",True,PASS
+22868.0,"#include <stdio.h>
+#include <stdlib.h>
+
+// List node structure and related typedefs
+// You can use your own ""singly-linked-list"" if you prefer.
+struct node {
+    int val;
+    struct node *next;
+};
+typedef struct node ListNode;
+typedef ListNode* ListPtr;
+
+// printing a list as 1->2->3->4...
+// You can use your own function, but make 
+// sure it matches the expected output format
+void printList(ListPtr head) 
+{
+    if (head==NULL)
+        printf(""Empty List\n"");
+    else{
+        while(head->next!=NULL){
+            printf(""%d->"",head->val);
+            head=head->next;
+        }
+        printf(""%d"",head->val);
+    }
+    printf(""\n"");
+}
+ListPtr insert(ListPtr head,int m)
+{   pintf(""f""); 
+    if(head==NULL)
+     {     head->val=m;
+         head->next=NULL;
+         return head;
+     }
+    while(head!=NULL)
+      {
+        head->val=m;
+        head=head->next;
+      }
+    return head;
+}
+
+
+
+
+
+
+
+
+
+ListPtr delete(ListPtr head,int m){
+   ListPtr pp=NULL;
+   if(head==NULL)
+   return head;
+   
+   
+    while(head!=NULL)        
+     {    
+        if(head->val==m)
+         {
+            pp->next=head->next;
+            free(head);
+            head=pp;
+         }pp=head;
+        head=head->next;
+     
+         
+     }
+    return head;
+    
+}
+int main() {ListPtr head=NULL;char c;
+int m;
+    //scanf(""%d"",n);
+    //for(i=1;i<=(n/2);i++)
+     {
+      scanf(""%c"",&c);
+      scanf(""%d"",&m);
+        printf(""s"");
+        if(c=='i')
+        head=insert(head,m);
+        //if(c=='d')
+        //head=delete(head,m);
+        //printList(head);
+        
+        
+    }
+    
+    
+    
+    
+    
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+// List node structure and related typedefs
+// You can use your own ""singly-linked-list"" if you prefer.
+struct node {
+    int val;
+    struct node *next;
+};
+typedef struct node ListNode;
+typedef ListNode* ListPtr;
+
+// printing a list as 1->2->3->4...
+// You can use your own function, but make 
+// sure it matches the expected output format
+void printList(ListPtr head) 
+{
+    if (head==NULL)
+        printf(""Empty List\n"");
+    else{
+        while(head->next!=NULL){
+            printf(""%d->"",head->val);
+            head=head->next;
+        }
+        printf(""%d"",head->val);
+    }
+    printf(""\n"");
+}
+ListPtr insert(ListPtr head,int m)
+{   printf(""f""); 
+    if(head==NULL)
+     {     head->val=m;
+         head->next=NULL;
+         return head;
+     }
+    while(head!=NULL)
+      {
+        head->val=m;
+        head=head->next;
+      }
+    return head;
+}
+
+
+
+
+
+
+
+
+
+ListPtr delete(ListPtr head,int m){
+   ListPtr pp=NULL;
+   if(head==NULL)
+   return head;
+   
+   
+    while(head!=NULL)        
+     {    
+        if(head->val==m)
+         {
+            pp->next=head->next;
+            free(head);
+            head=pp;
+         }pp=head;
+        head=head->next;
+     
+         
+     }
+    return head;
+    
+}
+int main() {ListPtr head=NULL;char c;
+int m;
+    //scanf(""%d"",n);
+    //for(i=1;i<=(n/2);i++)
+     {
+      scanf(""%c"",&c);
+      scanf(""%d"",&m);
+        printf(""s"");
+        if(c=='i')
+        head=insert(head,m);
+        //if(c=='d')
+        //head=delete(head,m);
+        //printList(head);
+        
+        
+    }
+    
+    
+    
+    
+    
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+// List node structure and related typedefs
+// You can use your own ""singly-linked-list"" if you prefer.
+struct node {
+    int val;
+    struct node *next;
+};
+typedef struct node ListNode;
+typedef ListNode* ListPtr;
+
+// printing a list as 1->2->3->4...
+// You can use your own function, but make 
+// sure it matches the expected output format
+void printList(ListPtr head) 
+{
+    if (head==NULL)
+        printf(""Empty List\n"");
+    else{
+        while(head->next!=NULL){
+            printf(""%d->"",head->val);
+            head=head->next;
+        }
+        printf(""%d"",head->val);
+    }
+    printf(""\n"");
+}
+ListPtr insert(ListPtr head,int m)
+{   
+    if(head==NULL)
+     {     head=(ListPtr)malloc(sizeof(ListNode));
+         head->val=m;
+         head->next=NULL;
+         return head;
+     }
+    ListPtr curr=head;
+    while(curr->next!=NULL)
+      {
+        curr=curr->next;
+      }
+    curr->next=(ListPtr)malloc(sizeof(ListNode));
+    curr->next->val=m;
+    curr->next->next=NULL;
+    return head;
+}
+
+ListPtr delete(ListPtr head, int m) {
+   ListPtr pp = NULL;
+   if (head == NULL)
+      return head;
+   
+   while (head != NULL) {
+      if (head->val == m) {
+         if (pp == NULL) {
+            ListPtr tmp = head->next;
+            free(head);
+            head = tmp;
+         } else {
+            pp->next = head->next;
+            free(head);
+            head = pp;
+         }
+      }
+      pp = head;
+      head = head->next;
+   }
+   
+   return head;
+}
+
+int main() {
+   ListPtr head = NULL;
+   char c;
+   int m;
+   
+   while(scanf(""%c"", &c) != EOF){
+      scanf(""%d"", &m);
+      if(c == 'i')
+         head = insert(head,m);
+      else if(c == 'd')
+         head = delete(head,m);
+      printList(head);
+   }
+	
+	return 0;
+}",True,PASS
+20223.0,"#include<stdio.h>
+int check_prime(int n);
+int check_prime(int n)
+{
+    if(n==prime);
+    return n;
+}
+int main(){
+    int i,n,num;
+    scanf(""%d"",&n);
+    num=0;
+    for(i=0;i<=n;i=i+2){
+       num=num+1;  
+    }
+    printf(""%d"",num);
+    return 0;
+}","#include<stdio.h>
+int check_prime(int n);
+int check_prime(int n)
+{
+    if(n+2);
+    return n;
+}
+int main(){
+    int i,n,num;
+    scanf(""%d"",&n);
+    num=0;
+    for(i=0;i<=n;i=i+2){
+       num=num+1;  
+    }
+    printf(""%d"",num);
+    return 0;
+}","#include<stdio.h>
+
+int check_prime(int n);
+int check_prime(int n)
+{
+    if(n==2)
+        return n;
+}
+
+int main(){
+    int i,n,num;
+    scanf(""%d"",&n);
+    num=0;
+    for(i=2;i<=n;i=i+2){
+       num=num+1;  
+    }
+    printf(""%d"",num);
+    return 0;
+}",True,PASS
+19224.0,"#include<stdio.h>
+
+int main(){
+	float a,b,c;
+	scanf(""%f%f"",&a,&b);
+	c = ((float)1/2)*sqrt(a^2 + b^2);
+	printf(""The area of "");
+	printf(""(%.4f,%.4f),"",a,b);
+	printf("" (%.4f,0) and "",a);
+	printf(""(0,%.4f) is "",b);
+	printf(""%.4f."",c);
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+	float a,b,c;
+	scanf(""%f%f"",&a,&b);
+	c = ((float)1/2)*sqrt(a*a + b*b);
+	printf(""The area of "");
+	printf(""(%.4f,%.4f),"",a,b);
+	printf("" (%.4f,0) and "",a);
+	printf(""(0,%.4f) is "",b);
+	printf(""%.4f."",c);
+	return 0;
+}","#include<stdio.h>
+#include<math.h>
+
+int main(){
+	float a,b,c;
+	scanf(""%f%f"",&a,&b);
+	c = ((float)1/2)*sqrt(pow(a,2) + pow(b,2));
+	printf(""The area of "");
+	printf(""(%.4f,%.4f),"",a,b);
+	printf("" (%.4f,0) and "",a);
+	printf(""(0,%.4f) is "",b);
+	printf(""%.4f."",c);
+	return 0;
+}",True,PASS
+23153.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    =printf(""10;20"");
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf(""10;20"");
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf(""10;20"");
+	return 0;
+}",True,PASS
+21202.0,"#include <stdio.h>
+#include <stdlib.h>
+int countlen(char* dollars){
+    int i=0;
+    
+    while(*(dollars+i)!='\0'){
+        i++;
+        
+        
+    }
+    return i;
+}
+int number(char*dollars,int len){
+    int k=0,i,q,p=0;
+    for(i=len-1;i>=0;i--){
+        if(*(dollars+i)==','){
+            continue;
+        }
+        else{
+            q=((int)(*(dollar+i)))-48;
+            p=p+q*10*k;
+            k++;
+        }
+    }
+    
+        
+    return p;
+}
+
+
+
+int main(){
+    float rate;
+    char* dollars;
+    scanf(""%f\n"",&rate);
+    dollars=(char*)malloc(20*sizeof(char));
+    scanf(""%s"",dollars);
+    int length=countlen(dollars);
+    int dval=number(dollars,length);
+    float rupee=rate*dval;
+    printf(""%.1f"",rupee);
+    
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int countlen(char* dollars){
+    int i=0;
+    
+    while(*(dollars+i)!='\0'){
+        i++;
+        
+        
+    }
+    return i;
+}
+int number(char*dollars,int len){
+    int k=0,i,q,p=0;
+    for(i=len-1;i>=0;i--){
+        if(*(dollars+i)==','){
+            continue;
+        }
+        else{
+            q=((int)(*(dollars+i)))-48;
+            p=p+q*10*k;
+            k++;
+        }
+    }
+    
+        
+    return p;
+}
+
+
+
+int main(){
+    float rate;
+    char* dollars;
+    scanf(""%f\n"",&rate);
+    dollars=(char*)malloc(20*sizeof(char));
+    scanf(""%s"",dollars);
+    int length=countlen(dollars);
+    int dval=number(dollars,length);
+    float rupee=rate*dval;
+    printf(""%.1f"",rupee);
+    
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int countlen(char* dollars){
+    int i=0;
+    
+    while(*(dollars+i)!='\0'){
+        i++;
+    }
+    return i;
+}
+int number(char*dollars,int len){
+    int k=0,i,q,p=0;
+    for(i=len-1;i>=0;i--){
+        if(*(dollars+i)==','){
+            continue;
+        }
+        else{
+            q=((int)(*(dollars+i)))-48;
+            p=p+q*10*k;
+            k++;
+        }
+    }
+    
+        
+    return p;
+}
+
+
+
+int main(){
+    float rate;
+    char* dollars;
+    scanf(""%f\n"",&rate);
+    dollars=(char*)malloc(20*sizeof(char));
+    scanf(""%s"",dollars);
+    int length=countlen(dollars);
+    int dval=number(dollars,length);
+    float rupee=rate*dval;
+    printf(""%.1f"",rupee);
+    
+    return 0;
+}",True,PASS
+18688.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n1,n2,a[n1],b[n2];
+	scanf(""%d"",&n1);
+	int i=0;
+	while(i<n1)
+	{
+	    scanf(""%d"",&a[i]);
+	    i+=1;
+	}
+	scanf(""%d"",&n2);
+	int j=0;
+	while(j<n2)
+	{
+	    scanf(""%d"",&b[i]);
+	    j+=1;
+	}
+	int min;
+	min=a[0];
+	int c=1;
+	while(c<n1)
+	{
+	    if(a[c]<min)
+	    {min=a[c];}
+	    c+=1;
+	}
+	int d=0;
+	while(d<n2)
+	{
+	    if(min==b[d]){printf(""NO"");break;}
+	    
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n1,n2,a[n1],b[n2];
+	scanf(""%d"",&n1);
+	int i=0;
+	while(i<n1)
+	{
+	    scanf(""%d"",&a[i]);
+	    i+=1;
+	}
+	scanf(""%d"",&n2);
+	int j=0;
+	while(j<n2)
+	{
+	    scanf(""%d"",&b[i]);
+	    j+=1;
+	}
+	int min;
+	min=a[0];
+	int c=1;
+	while(c<n1)
+	{
+	    if(a[c]<min)
+	    {min=a[c];}
+	    c+=1;
+	}
+	int d=0;
+	while(d<n2)
+	{
+	    if(min==b[d]){printf(""NO"");break;}
+	}  
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n1,n2,a[100],b[100];
+	scanf(""%d"",&n1);
+	int i=0;
+	while(i<n1)
+	{
+	    scanf(""%d"",&a[i]);
+	    i+=1;
+	}
+	scanf(""%d"",&n2);
+	int j=0;
+	while(j<n2)
+	{
+	    scanf(""%d"",&b[j]);
+	    j+=1;
+	}
+	int min;
+	min=a[0];
+	int c=1;
+	while(c<n1)
+	{
+	    if(a[c]<min)
+	    {min=a[c];}
+	    c+=1;
+	}
+	int d=0;
+	while(d<n2)
+	{
+	    if(min==b[d]){printf(""NO"");break;}
+	    d++;
+	}
+	
+	return 0;
+}",True,PASS
+19898.0,"#include <stdio.h>
+#include<string.h>
+int main() {
+    int i,t;
+	char a[100];
+	gets(a);
+	printf(""\n"");
+	int len = strlen(a);
+	for(i=0;i<=len;i++)
+	{
+	    if((a[i]>='a'&& a[i]<='z')||(a[i]>='A'&& a[i]<='Z']))
+	    t=t+1;
+	    else
+	    printf(""%c"",a[i-1]);
+	}
+	return 0;
+}","#include <stdio.h>
+#include<string.h>
+int main() {
+    int i,t;
+	char a[100];
+	gets(a);
+	printf(""\n"");
+	int len = strlen(a);
+	for(i=0;i<=len;i++)
+	{
+	    if((a[i]>='a'&& a[i]<='z')||(a[i]>='A'&& a[i]<='Z'))
+	    t=t+1;
+	    else
+	    printf(""%c"",a[i-1]);
+	}
+	return 0;
+}","#include <stdio.h>
+#include <string.h>
+
+int main() {
+	int i, t;
+	char a[100];
+	gets(a);
+	printf(""\n"");
+	int len = strlen(a);
+	for(i = 0; i < len; i++) {
+		if((a[i] >= 'a' && a[i] <= 'z') || (a[i] >= 'A' && a[i] <= 'Z')) {
+			t = t + 1;
+		}
+		else {
+			printf(""%c"", a[i]);
+		}
+	}
+	return 0;
+}",True,PASS
+23099.0,"#include<stdio.h>
+
+int main(){
+	int n,i,;
+	
+	scanf(""%d"",&n);
+	for(i=0;i<=n;i++)
+	{
+	   printf(""%d"",n);
+	   n=n-1;
+	}  
+	
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+	int n,i;
+	
+	scanf(""%d"",&n);
+	for(i=0;i<=n;i++)
+	{
+	   printf(""%d"",n);
+	   n=n-1;
+	}  
+	
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+	int n,i;
+	
+	scanf(""%d"",&n);
+	for(i=0;i<=n;i++)
+	{
+	   printf(""%d"",n);
+	   n=n-1;
+	}  
+	
+	return 0;
+}",True,PASS
+19609.0,"#include <stdio.h>
+#include <stdlib.h>
+void check_fibonnaci(int x,int fib1,int fib2){
+    static int count =1; 
+    if(count==11){
+        return;
+    }
+    else if((x==fib1)||(x==fib2)){
+        printf(""yes"");return;
+    }
+    else{
+        check_fibonnaci(x,fib1+fib2,fib1+fib2*2);
+    }
+    
+}
+int main() {
+    int t,*k,i;
+    scanf(""%d"",&t);
+    k=(int*)malloc(sizeof(int)*t);
+    for(i=0;i<t;i++){
+        scanf(""%d"",&k[i]);
+        check_fibonacci(k[i],0,1);
+    }
+	// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+void check_fibonacci(int x,int fib1,int fib2){
+    static int count =1; 
+    if(count==11){
+        return;
+    }
+    else if((x==fib1)||(x==fib2)){
+        printf(""yes"");return;
+    }
+    else{
+        check_fibonacci(x,fib1+fib2,fib1+fib2*2);
+    }
+    
+}
+int main() {
+    int t,*k,i;
+    scanf(""%d"",&t);
+    k=(int*)malloc(sizeof(int)*t);
+    for(i=0;i<t;i++){
+        scanf(""%d"",&k[i]);
+        check_fibonacci(k[i],0,1);
+    }
+	// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void check_fibonacci(int x, int fib1, int fib2) {
+    static int count = 1; 
+    if (count == 11) {
+        return;
+    }
+    else if ((x == fib1) || (x == fib2)) {
+        printf(""yes"");
+        return;
+    }
+    else {
+        check_fibonacci(x, fib1 + fib2, fib1 + fib2 * 2);
+    }
+    
+}
+
+int main() {
+    int t, *k, i;
+    scanf(""%d"", &t);
+    k = (int*)malloc(sizeof(int) * t);
+    for (i = 0; i < t; i++) {
+        scanf(""%d"", &k[i]);
+        check_fibonacci(k[i], 0, 1);
+    }
+	
+	// Added code
+	free(k);
+	
+	return 0;
+}",True,PASS
+21218.0,"#include <stdio.h>
+int checkMagic(char s[])
+{
+    if('a'<=s[0]&&s[0]<='z')
+    {
+        if('A'<=s[1]&&s[1]<='Z')
+        {
+            if('0'<=s[2] && s[2]<='9'))
+                return 1;
+        }
+    }
+    return 0;
+}
+int main() {
+    char str[30];
+    int i,j;
+    for(i=0;i<30;i++)
+        scanf(""%c"", &str[i]);
+    int len=i;
+    for(i=0;i<len;i+=3)
+    {
+        char subs[3];
+        for(j=0; j<3;j++)
+            subs[j]=str[i+j];
+        if(checkMagic(subs)==0)
+        {
+            printf(""Invalid String"");
+            return 0;
+        }
+    }
+	printf(""Valid String"");
+	return 0;
+}","#include <stdio.h>
+int checkMagic(char s[])
+{
+    if('a'<=s[0]&&s[0]<='z')
+    {
+        if('A'<=s[1]&&s[1]<='Z')
+        {
+            if('0'<=s[2] && s[2]<='9')
+                return 1;
+        }
+    }
+    return 0;
+}
+int main() {
+    char str[30];
+    int i,j;
+    for(i=0;i<30;i++)
+        scanf(""%c"", &str[i]);
+    int len=i;
+    for(i=0;i<len;i+=3)
+    {
+        char subs[3];
+        for(j=0; j<3;j++)
+            subs[j]=str[i+j];
+        if(checkMagic(subs)==0)
+        {
+            printf(""Invalid String"");
+            return 0;
+        }
+    }
+	printf(""Valid String"");
+	return 0;
+}","#include <stdio.h>
+int checkMagic(char s[])
+{
+    if('a'<=s[0]&&s[0]<='z')
+    {
+        if('A'<=s[1]&&s[1]<='Z')
+        {
+            if('0'<=s[2] && s[2]<='9')
+                return 1;
+        }
+    }
+    return 0;
+}
+int main() {
+    char str[30];
+    int i,j;
+    for(i=0;i<30;i++)
+        scanf(""%c"", &str[i]);
+    int len=i;
+    for(i=0;i<len;i+=3)
+    {
+        char subs[3];
+        for(j=0; j<3;j++)
+            subs[j]=str[i+j];
+        if(checkMagic(subs)==0)
+        {
+            printf(""Invalid String"");
+            return 0;
+        }
+    }
+	printf(""Valid String"");
+	return 0;
+}",True,PASS
+19599.0,"#include <stdio.h>
+int substr_posn(char str[],char s1[],int size_str,int size_s1)
+{
+    int j=0,k=0;
+    for(;j<size_str;j++)
+    {
+      for(;k<size_s1;k++)//size s1
+        {
+           if(s1[k]==str[j+k])
+         {
+           if(k==size-1)
+           continue;
+           return j;//returns the occ of substring in prim string
+         }
+         else
+         break;
+        } 
+    }
+}
+int main() {
+    char str[50],s1[50],s2[50];
+    scanf(""%s"",str);
+    scanf(""%s"",s1);
+    scanf(""%s"",s2);
+    int i,j,k,size_s1=0,size_s2=0,size_str=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+       size_str++;
+    }    
+    for(j=0;s2[i]!='\0';j++)
+    {
+       size_s2++;
+    }
+    
+int posn=substr_posn(str,s1,size_str,size_s1);
+if(posn==-1)
+{
+    printf(""%s"",str);
+    printf(""%d"",posn);
+}
+else
+{
+    char str1[50];
+     for(k=0;k<posn;k++)
+      str1[k]=str[k];
+     for(k=posn;k<posn+size_s2;k++)
+      str1[k]=s2[k-posn];
+     for(k=posn+size_s2;k<posn+size_s2+size_str;k++)
+      str1[k]=str[k-size_s2];
+    printf(""%s"",str1);
+}
+	return 0;
+}","#include <stdio.h>
+int substr_posn(char str[],char s1[],int size_str,int size_s1)
+{
+    int j=0,k=0;
+    for(;j<size_str;j++)
+    {
+      for(;k<size_s1;k++)//size s1
+        {
+           if(s1[k]==str[j+k])
+         {
+           if(k==size_s1-1)
+           continue;
+           return j;//returns the occ of substring in prim string
+         }
+         else
+         break;
+        } 
+    }
+}
+int main() {
+    char str[50],s1[50],s2[50];
+    scanf(""%s"",str);
+    scanf(""%s"",s1);
+    scanf(""%s"",s2);
+    int i,j,k,size_s1=0,size_s2=0,size_str=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+       size_str++;
+    }    
+    for(j=0;s2[i]!='\0';j++)
+    {
+       size_s2++;
+    }
+    
+int posn=substr_posn(str,s1,size_str,size_s1);
+if(posn==-1)
+{
+    printf(""%s"",str);
+    printf(""%d"",posn);
+}
+else
+{
+    char str1[50];
+     for(k=0;k<posn;k++)
+      str1[k]=str[k];
+     for(k=posn;k<posn+size_s2;k++)
+      str1[k]=s2[k-posn];
+     for(k=posn+size_s2;k<posn+size_s2+size_str;k++)
+      str1[k]=str[k-size_s2];
+    printf(""%s"",str1);
+}
+	return 0;
+}","#include <stdio.h>
+int substr_posn(char str[],char s1[],int size_str,int size_s1)
+{
+    int j=0,k=0;
+    for(;j<size_str;j++)
+    {
+      for(;k<size_s1;k++)//size s1
+        {
+           if(s1[k]==str[j+k])
+         {
+           if(k==size_s1-1)
+           continue;
+           return j;//returns the occ of substring in prim string
+         }
+         else
+         break;
+        } 
+    }
+}
+int main() {
+    char str[50],s1[50],s2[50];
+    scanf(""%s"",str);
+    scanf(""%s"",s1);
+    scanf(""%s"",s2);
+    int i,j,k,size_s1=0,size_s2=0,size_str=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+       size_str++;
+    }    
+    for(j=0;s2[j]!='\0';j++)
+    {
+       size_s2++;
+    }
+    
+int posn=substr_posn(str,s1,size_str,size_s1);
+if(posn==-1)
+{
+    printf(""%s"",str);
+    printf(""%d"",posn);
+}
+else
+{
+    char str1[50];
+     for(k=0;k<posn;k++)
+      str1[k]=str[k];
+     for(k=posn;k<posn+size_s2;k++)
+      str1[k]=s2[k-posn];
+     for(k=posn+size_s2;k<posn+size_s2+size_str;k++)
+      str1[k]=str[k-size_s2];
+    printf(""%s"",str1);
+}
+	return 0;
+}",True,PASS
+19466.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int a,b,c;
+    scanf(""%d %d %d"", &a, &b, &c);
+    if((a==b)&&(b==c)&&(c==a))
+        printf(""three equal"");
+    else if(((a==b)&&(a!=c))||((b==c)&&(b!=a))||((c==a)&&(c!=b))
+        printf("" pair equal"");
+    else
+        printf(""distinct"");
+    
+
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int a,b,c;
+    scanf(""%d %d %d"", &a, &b, &c);
+    if((a==b)&&(b==c)&&(c==a))
+        printf(""three equal"");
+    else if(((a==b)&&(a!=c))||((b==c)&&(b!=a))||((c==a)&&(c!=b)))
+        printf("" pair equal"");
+    else
+        printf(""distinct"");
+    
+
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int a,b,c;
+    scanf(""%d %d %d"", &a, &b, &c);
+    if((a==b)&&(b==c)&&(c==a))
+        printf(""three equal"");
+    else if(((a==b)&&(a!=c))||((b==c)&&(b!=a))||((c==a)&&(c!=b))) // add closing parentheses
+        printf("" pair equal"");
+    else
+        printf(""distinct"");
+    
+
+	return 0;
+}",True,PASS
+21575.0,"#include<stdio.h>
+
+int main()
+{
+    int a,b,c;
+    scanf(""%d %d %d"",&a,&b,&c);
+    if(((a+b)<c)||((a+c)<b)||((b+c)<a)){
+    printf(""Invalid Triangle"");
+    }else if((b*b)=(a*a)+(c*c)){
+    printf(""Right Triangle"");
+    }else if((b*b)>(a*a)+(c*c)){
+    printf(""Obtuse Triangle"");
+    }else{
+    printf(""Acute Triangle"");    
+    }
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    int a,b,c;
+    scanf(""%d %d %d"",&a,&b,&c);
+    if(((a+b)<c)||((a+c)<b)||((b+c)<a)){
+    printf(""Invalid Triangle"");
+    }else if((b*b)==(a*a)+(c*c)){
+    printf(""Right Triangle"");
+    }else if((b*b)>(a*a)+(c*c)){
+    printf(""Obtuse Triangle"");
+    }else{
+    printf(""Acute Triangle"");    
+    }
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    int a,b,c;
+    scanf(""%d %d %d"",&a,&b,&c);
+    if(((a+b)<c)||((a+c)<b)||((b+c)<a)){
+    printf(""Invalid Triangle"");
+    }else if((b*b)==(a*a)+(c*c)){
+    printf(""Right Triangle"");
+    }else if((b*b)>(a*a)+(c*c)){
+    printf(""Obtuse Triangle"");
+    }else{
+    printf(""Acute Triangle"");    
+    }
+    return 0;
+}",True,PASS
+21064.0,"#include <stdio.h>
+int min(int a,int b){
+    if(a<b){return a;}
+    else{return b;}
+}
+
+int main()
+{
+    int m,n,i,j,k,x,y,count=0,check=0,mat[10][10];
+    scanf(""%d %d"",&m,&n);
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&mat[i][j]);
+        }
+    }
+    for(k=1;k<min(m,n);k++)
+    {
+        for(i=0;i<m-k;i++)
+        {
+            for(j=0;j<n-k;j++)
+            {
+              for(x=1;x<k;x++) 
+              {
+                  for(y=0;y<=k;y++)
+                  {
+                      if(mat[i+y][j+y]!=0)
+                      {
+                          check++;
+                      }
+                      if(check==k+1)
+                      {
+                          if(a[i+x][j]==0&&a[i][j+x]==0)
+                          {
+                              count++;
+                          }
+                      }
+                  }
+              }
+            }
+        }
+    }
+    printf(""%d"",count);
+    
+    return 0;
+}","#include <stdio.h>
+int min(int a,int b){
+    if(a<b){return a;}
+    else{return b;}
+}
+
+int main()
+{
+    int m,n,i,j,k,x,y,count=0,check=0,mat[10][10];
+    scanf(""%d %d"",&m,&n);
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&mat[i][j]);
+        }
+    }
+    for(k=1;k<min(m,n);k++)
+    {
+        for(i=0;i<m-k;i++)
+        {
+            for(j=0;j<n-k;j++)
+            {
+              for(x=1;x<k;x++) 
+              {
+                  for(y=0;y<=k;y++)
+                  {
+                      if(mat[i+y][j+y]!=0)
+                      {
+                          check++;
+                      }
+                      if(check==k+1)
+                      {
+                          if(mat[i+x][j]==0&&mat[i][j+x]==0)
+                          {
+                              count++;
+                          }
+                      }
+                  }
+              }
+            }
+        }
+    }
+    printf(""%d"",count);
+    
+    return 0;
+}","#include <stdio.h>
+int min(int a,int b){
+    if(a<b){return a;}
+    else{return b;}
+}
+
+int main()
+{
+    int m,n,i,j,k,x,y,count=0,check=0,mat[10][10];
+    scanf(""%d %d"",&m,&n);
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&mat[i][j]);
+        }
+    }
+    for(k=1;k<min(m,n);k++)
+    {
+        for(i=0;i<m-k;i++)
+        {
+            for(j=0;j<n-k;j++)
+            {
+              for(x=1;x<k;x++) 
+              {
+                  for(y=0;y<=k;y++)
+                  {
+                      if(mat[i+y][j+y]!=0)
+                      {
+                          check++;
+                      }
+                      if(check==k+1)
+                      {
+                          if(mat[i+x][j]==0 && mat[i][j+x]==0)
+                          {
+                              count++;
+                          }
+                      }
+                  }
+              }
+            }
+        }
+    }
+    printf(""%d"",count);
+    
+    return 0;
+}",True,PASS
+21576.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a,n;
+	scanf(""%d"",&n);
+	while(n>0)
+	{  a=0
+	   a=a*10+n%10;
+	   n=n/10;
+	   
+	}
+	if(n-a==0)
+	{
+	    printf(""YES"");
+	}
+	else
+	{
+	    printf(""NO"");
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a,n;
+	scanf(""%d"",&n);
+	while(n>0)
+	{  a=0;
+	   a=a*10+n%10;
+	   n=n/10;
+	   
+	}
+	if(n-a==0)
+	{
+	    printf(""YES"");
+	}
+	else
+	{
+	    printf(""NO"");
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a,n;
+	scanf(""%d"",&n);
+	while(n>0)
+	{  a=0; // added semicolon
+	   a=a*10+n%10;
+	   n=n/10;
+	   
+	}
+	if(n-a==0)
+	{
+	    printf(""YES"");
+	}
+	else
+	{
+	    printf(""NO"");
+	}
+	return 0;
+}",True,PASS
+18919.0,"#include <stdio.h>
+#include <string.h>
+void reverse(char *str)
+{
+   if(*str)
+   {  
+       reverse(str+1);
+      printf(""%c"", *str);
+   }       
+}
+int read_line(char a[])
+{
+    char c,i=0;
+        c=getchar();
+        while(c!='\n')
+        {
+            a[i]=c;
+            c=getchar();
+            i++;
+        }
+        a[n-1]='\0';
+       // printf(""%c"",a[1]);
+        return 0;
+}
+int main()
+{
+    int n;
+    char a[100];
+    scanf(""%d"",&n);
+    read_line(a);
+   printf(""%c"",a);
+    reverse(a);
+    getchar();
+    return 0;
+}
+","#include <stdio.h>
+#include <string.h>
+void reverse(char *str)
+{
+   if(*str)
+   {  
+       reverse(str+1);
+      printf(""%c"", *str);
+   }       
+}
+int read_line(char a[])
+{
+    char c,i=0;
+        c=getchar();
+        while(c!='\n')
+        {
+            a[i]=c;
+            c=getchar();
+            i++;
+        }
+        a[i]='\0';
+       // printf(""%c"",a[1]);
+        return 0;
+}
+int main()
+{
+    int n;
+    char a[100];
+    scanf(""%d"",&n);
+    read_line(a);
+   printf(""%c"",a);
+    reverse(a);
+    getchar();
+    return 0;
+}
+","#include <stdio.h>
+#include <string.h>
+
+void reverse(char *str)
+{
+   if(*str)
+   {  
+       reverse(str+1);
+       printf(""%c"", *str);
+   }       
+}
+
+int read_line(char a[],int n)
+{
+    char c;
+    int i=0;
+    c=getchar();
+    while(c!='\n')
+    {
+        a[i]=c;
+        c=getchar();
+        i++;
+    }
+    a[i]='\0';
+    // printf(""%c"",a[1]);
+    return 0;
+}
+
+int main()
+{
+    int n;
+    char a[100];
+    scanf(""%d"",&n);
+    read_line(a, n);
+    printf(""%s"",a);
+    reverse(a);
+    getchar();
+    return 0;
+}",True,PASS
+22630.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a;
+	scanf(""%d"",a);
+	for(int i=0;i<a;i++)
+	{
+	    for(int j=(a/2)-i;j>=0;j--)
+	    {
+	        printf("" "");
+	    }
+	    for(int k=(a/2)-i+1;j<=(a/2)+i+1;k++)
+	    {
+	        printf(""*"");
+	    }
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a;
+	scanf(""%d"",&a);
+	for(int i=0;i<a;i++)
+	{
+	    for(int j=(a/2)-i;j>=0;j--)
+	    {
+	        printf("" "");
+	    }
+	    for(int k=(a/2)-i+1;k<=(a/2)+i+1;k++)
+	    {
+	        printf(""*"");
+	    }
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int a;
+	scanf(""%d"", &a);
+	for(int i=0;i<a;i++)
+	{
+	    for(int j=(a/2)-i;j>=0;j--)
+	    {
+	        printf("" "");
+	    }
+	    for(int k=(a/2)-i+1;k<=(a/2)+i+1;k++)
+	    {
+	        printf(""*"");
+	    }
+	    printf(""\n"");
+	}
+	return 0;
+}",True,PASS
+22236.0,"#include <stdio.h>
+
+int main() {
+    int line [100] , i , j ;
+    for (i=0 ; i<100 ; i++){
+        scanf(""%c"",&line[i]);
+      
+        }
+    
+    for (j=0 ; j<100 ; j++){
+        if (line[j] == ' '|| line[j]=='\'|| line[j]=='\t'){
+            printf (""%c"",line[j-1]);
+        }
+    }
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int line [100] , i , j ;
+    for (i=0 ; i<100 ; i++){
+        scanf(""%c"",&line[i]);
+      
+        }
+    
+    for (j=0 ; j<100 ; j++){
+        if (line[j] == ' '|| line[j]==' \ '|| line[j]=='\t'){
+            printf (""%c"",line[j-1]);
+        }
+    }
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int line[100], i, j;
+    for(i=0; i<100; i++){
+        scanf(""%c"",&line[i]);
+    }
+    
+    for(j=0; j<100; j++){
+        if(line[j] == ' ' || line[j] == '\'' || line[j] == '\t'){
+            printf(""%c"", line[j-1]);
+        }
+    }
+
+	return 0;
+}",True,PASS
+19795.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x1,x2,y1,y2,md1,md2;
+    scanf(""%d %d\n %d %d"",&x1,&x2,&y1,&y2);
+    md1=abs(x1)+abs(y1);
+    md2=abs(x2)+abs(x2);
+    if(md1>md2)
+    {
+        printf(""Point A"");
+    }
+    else if(md1<md2)
+    {
+        printf(""Point B"");
+    }
+    else
+    {
+        printf(""Point A\nPoint B"")
+    }
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x1,x2,y1,y2,md1,md2;
+    scanf(""%d %d\n %d %d"",&x1,&x2,&y1,&y2);
+    md1=abs(x1)+abs(y1);
+    md2=abs(x2)+abs(x2);
+    if(md1>md2)
+    {
+        printf(""Point A"");
+    }
+    else if(md1<md2)
+    {
+        printf(""Point B"");
+    }
+    else
+    {
+        printf(""Point A\nPoint B"");
+    }
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x1,x2,y1,y2,md1,md2;
+    scanf(""%d %d\n %d %d"",&x1,&x2,&y1,&y2);
+    md1=abs(x1)+abs(y1);
+    md2=abs(x2)+abs(x2);
+    if(md1>md2)
+    {
+        printf(""Point A"");
+    }
+    else if(md1<md2)
+    {
+        printf(""Point B"");
+    }
+    else
+    {
+        printf(""Point A\nPoint B""); // Missing semicolon
+    }
+	return 0;
+}",True,PASS
+20757.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{   char j=1;
+printf(""%c"",j;)
+	
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{   char j=1;
+printf(""%c"",j);
+	
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{   char j=1;
+printf(""%c"",j);
+	
+	return 0;
+}",True,PASS
+21204.0,"#include <stdio.h>
+
+void reverse(char *str)
+{
+   if (*str!='\0')
+   {
+       reverse(str+1);
+       printf(""%c"", *str);
+   }
+}
+int main()
+{
+    char *str;
+    int n;
+    scanf(""%d\n"",&n);
+    str = (char)malloc(n*sizeof(char));
+    reverse();
+    return 0;
+    }
+
+     
+
+    ","#include <stdio.h>
+
+void reverse(char *str)
+{
+   if (*str!='\0')
+   {
+       reverse(str+1);
+       printf(""%c"", *str);
+   }
+}
+int main()
+{
+    char *str;
+    int n;
+    scanf(""%d\n"",&n);
+    str = (char)malloc(n*sizeof(char));
+    reverse(str);
+    return 0;
+    }
+
+     
+
+    ","#include <stdio.h>
+#include <stdlib.h>
+
+void reverse(char *str)
+{
+   if (*str!='\0')
+   {
+       reverse(str+1);
+       printf(""%c"", *str);
+   }
+}
+int main()
+{
+    char *str;
+    int n;
+    scanf(""%d\n"",&n);
+    str = (char*)malloc(n*sizeof(char));
+    reverse(str);
+    return 0;
+    }",True,PASS
+22329.0,"#include <stdio.h>
+int max(int a,int b)
+{
+    if((a-b)>0)
+    return a;
+    else
+    return b;
+}
+int min(int a,int b)
+{
+if((a-b)>0)
+return b;
+else
+return a;
+}
+int main() {
+	// Fill this area with your code.
+	int m,n,t,i,j;
+	scanf(""%d%d"",&m,&n);
+	scanf(""/n"");
+	int a[m][n],sum[m][n];
+	for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+	scanf(""%d""&a[i][j]);
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       if(a[i][j]==0)
+	       {
+	           sum[i][j]=0;
+	       }
+	       if(a[i][j]==1)
+	       {
+	           sum[i][j]=1+min(sum[i-1][j],min(sum[i][j-1],sum[i-1][j-1]));
+	       }
+	    }
+	}
+	t=0;
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       t=max(t,sum[i][j]);
+	    }
+	}
+	printf(""%d"",t);
+	return 0;
+}","#include <stdio.h>
+int max(int a,int b)
+{
+    if((a-b)>0)
+    return a;
+    else
+    return b;
+}
+int min(int a,int b)
+{
+if((a-b)>0)
+return b;
+else
+return a;
+}
+int main() {
+	// Fill this area with your code.
+	int m,n,t,i,j;
+	scanf(""%d%d"",&m,&n);
+	scanf(""/n"");
+	int a[m][n],sum[m][n];
+	for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+	scanf(""%d"",&a[i][j]);
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       if(a[i][j]==0)
+	       {
+	           sum[i][j]=0;
+	       }
+	       if(a[i][j]==1)
+	       {
+	           sum[i][j]=1+min(sum[i-1][j],min(sum[i][j-1],sum[i-1][j-1]));
+	       }
+	    }
+	}
+	t=0;
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       t=max(t,sum[i][j]);
+	    }
+	}
+	printf(""%d"",t);
+	return 0;
+}","#include <stdio.h>
+int max(int a,int b)
+{
+    if((a-b)>0)
+        return a;
+    else
+        return b;
+}
+int min(int a,int b)
+{
+    if((a-b)>0)
+        return b;
+    else
+        return a;
+}
+int main() {
+	// Fill this area with your code.
+	int m,n,t,i,j;
+	scanf(""%d%d"",&m,&n);
+	scanf(""\n"");
+	int a[m][n],sum[m][n];
+	for(i=0;i<m;i++)
+	    for(j=0;j<n;j++)
+	        scanf(""%d"",&a[i][j]);
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       if(a[i][j]==0)
+	       {
+	           sum[i][j]=0;
+	       }
+	       if(a[i][j]==1)
+	       {
+	           sum[i][j]=1+min(sum[i-1][j],min(sum[i][j-1],sum[i-1][j-1]));
+	       }
+	    }
+	}
+	t=0;
+	for(i=0;i<m;i++)
+	{
+	    for(j=0;j<n;j++)
+	    {
+	       t=max(t,sum[i][j]);
+	    }
+	}
+	printf(""%d"",t);
+	return 0;
+}",True,PASS
+20540.0,"#include<stdio.h>
+
+int main(){
+    int a,i,j;
+    scanf (""%d"",&a);
+    for (i=1;i<=a;i++)
+        for (j=1;j<=a;j++)          {  printf (""%d"",a);
+
+    }printf (""\n"");}
+    
+	//Enter your code here
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+    int a,i,j;
+    scanf (""%d"",&a);
+    for (i=1;i<=a;i++)
+       { for (j=1;j<=a;j++)          {  printf (""%d"",a);
+
+    }printf (""\n"");}
+    
+	//Enter your code here
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+    int a,i,j;
+    scanf (""%d"",&a);
+    for (i=1;i<=a;i++)
+        for (j=1;j<=a;j++) {
+            printf (""%d"",a);
+        }
+    printf (""\n"");
+    return 0;
+}",True,PASS
+19018.0,"#include<stdio.h>
+
+int check_prime(int num){
+ int i;  
+   for(i=2;i<num;i++)
+     {
+     if(num%i==0)
+         return 0;
+     }
+     return num;
+ }
+//Complete the function definitions here.
+
+int main(){
+    int a,b,c;
+    scanf(""%d%d"",&a,&b);
+    if(a==1)
+    a++;
+    for(c=a;c<b;c++){
+        if(ckeck_prime(c))
+        printf(""%d"",c);
+    }
+	//Enter your code here
+	return 0;
+}","#include<stdio.h>
+
+int check_prime(int num){
+ int i;  
+   for(i=2;i<num;i++)
+     {
+     if(num%i==0)
+         return 0;
+     }
+     return num;
+ }
+//Complete the function definitions here.
+
+int main(){
+    int a,b,c;
+    scanf(""%d%d"",&a,&b);
+    if(a==1)
+    a++;
+    for(c=a;c<b;c++){
+        if(check_prime(c))
+        printf(""%d"",c);
+    }
+	//Enter your code here
+	return 0;
+}","#include<stdio.h>
+
+int check_prime(int num){
+ int i;  
+   for(i=2;i<num;i++)
+     {
+     if(num%i==0)
+         return 0;
+     }
+     return num;
+ }
+//Complete the function definitions here.
+
+int main(){
+    int a,b,c;
+    scanf(""%d%d"",&a,&b);
+    if(a==1)
+    a++;
+    for(c=a;c<b;c++){
+        if(check_prime(c))
+        printf(""%d"",c);
+    }
+	//Enter your code here
+	return 0;
+}",True,PASS
+19261.0,"#include <stdio.h>
+
+int main() {
+ int i,d,N;
+ 
+ int a[N],b[d];
+ 
+ scanf(""%d %d %d "",&d,&N,&b[d-1]);
+ 
+for (d=1;d<=20;d++)
+{
+ for(i=0;i<=d;i++)
+ {
+ 
+ if(i>=0 && i<d)
+ {
+     a[N]=b[i];
+     
+     printf(""%d"",a[N]);
+ }
+ else
+ {
+   
+     a[N]=a[i-j];
+     
+     printf(""%d"",a[N]);
+ }
+ 
+	return 0;
+
+}
+}
+}
+","#include <stdio.h>
+
+int main() {
+ int i,d,N;
+ 
+ int a[N],b[d];
+ 
+ scanf(""%d %d %d "",&d,&N,&b[d-1]);
+ 
+for (d=1;d<=20;d++)
+{
+ for(i=0;i<=d;i++)
+ {
+ 
+ if(i>=0 && i<d)
+ {
+     a[N]=b[i];
+     
+     printf(""%d"",a[N]);
+ }
+ else
+ {
+   
+     a[N]=a[i-d];
+     
+     printf(""%d"",a[N]);
+ }
+ 
+	return 0;
+
+}
+}
+}
+","#include <stdio.h>
+
+int main() {
+ int i,d,N;
+ 
+ printf(""Enter the value of N and d:"");
+ scanf(""%d %d"",&N,&d);
+ 
+ int a[N],b[d];
+ 
+ for(int i=0;i<d;i++)
+ {
+     scanf(""%d"",&b[i]);
+ }
+ 
+for (d=1;d<=20;d++)
+{
+ for(i=0;i<=d;i++)
+ {
+ 
+ if(i>=0 && i<d)
+ {
+     a[N]=b[i];
+     
+     printf(""%d"",a[N]);
+ }
+ else
+ {
+   
+     a[N]=a[i-d];
+     
+     printf(""%d"",a[N]);
+ }
+ }
+}
+	return 0;
+
+}",True,PASS
+20942.0,"#include <stdio.h>
+#includ <string.h>
+int main() {
+    char a[] = ""abc"";
+    char b[] = ""def"";
+    strcat(a,b);
+	return 0;
+}","#include <stdio.h>
+#include <string.h>
+int main() {
+    char a[] = ""abc"";
+    char b[] = ""def"";
+    strcat(a,b);
+	return 0;
+}","#include <stdio.h>
+#include <string.h>
+int main() {
+    char a[] = ""abc"";
+    char b[] = ""def"";
+    strcat(a, b);
+	return 0;
+}",True,PASS
+21249.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a=13;
+    int b;
+    b=a*100;
+    printf(""%d""b);
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a=13;
+    int b;
+    b=a*100;
+    printf(""%d"",b);
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a=13;
+    int b;
+    b=a*100;
+    printf(""%d"", b);  // Corrected syntax error by adding comma (,)
+	return 0;
+}",True,PASS
+22603.0,"#include <stdio.h>
+void str_modify(char a[],int c,char b[],int d,char e[] ){//here a is the array to be modified,c is its size,d is the size of b.
+    int i,k;
+    for(i=0;i<c;i++){
+        if(a[i]==b[0]){
+            int s=0;
+            for(k=0;k<d;k++){
+                if(a[i+k]==b[k]){
+                    s=s+0;
+                }
+                else{
+                    s=s+1;
+                }
+            }
+            if(s==0){
+                for(k=0;k<d;k++){
+                    a[i+k]=e[k];
+                }
+            }
+            else {
+                continue;
+            }
+        }
+        else{
+            continue;
+        }
+    }
+    printf(""%s"",a);
+}
+int main() {
+    int i;
+	char a[100],b[100];//here a is the string to be modified,b is the substring to be searched.
+	int c1=0,c2=0;//c1 is the size of a & c2 is the size of b
+	while(a[c1]!='\0'){
+	    c1++;
+	}
+	while(b[c2]!='\0'){
+	    c2++;
+	}
+	char e[c2];
+	for(i=0;i<c2;i++){
+	    e[i]=b[c2-1-i]
+	}
+	str_modify(a,c1,b,c2,e);
+	return 0;
+}","#include <stdio.h>
+void str_modify(char a[],int c,char b[],int d,char e[] ){//here a is the array to be modified,c is its size,d is the size of b.
+    int i,k;
+    for(i=0;i<c;i++){
+        if(a[i]==b[0]){
+            int s=0;
+            for(k=0;k<d;k++){
+                if(a[i+k]==b[k]){
+                    s=s+0;
+                }
+                else{
+                    s=s+1;
+                }
+            }
+            if(s==0){
+                for(k=0;k<d;k++){
+                    a[i+k]=e[k];
+                }
+            }
+            else {
+                continue;
+            }
+        }
+        else{
+            continue;
+        }
+    }
+    printf(""%s"",a);
+}
+int main() {
+    int i;
+	char a[100],b[100];//here a is the string to be modified,b is the substring to be searched.
+	int c1=0,c2=0;//c1 is the size of a & c2 is the size of b
+	while(a[c1]!='\0'){
+	    c1++;
+	}
+	while(b[c2]!='\0'){
+	    c2++;
+	}
+	char e[c2];
+	for(i=0;i<c2;i++){
+	    e[i]=b[c2-1-i];
+	}
+	str_modify(a,c1,b,c2,e);
+	return 0;
+}","#include <stdio.h>
+void str_modify(char a[],int c,char b[],int d,char e[] ){//here a is the array to be modified,c is its size,d is the size of b.
+    int i,k;
+    for(i=0;i<c;i++){
+        if(a[i]==b[0]){
+            int s=0;
+            for(k=0;k<d;k++){
+                if(a[i+k]==b[k]){
+                    s=s+0;
+                }
+                else{
+                    s=s+1;
+                }
+            }
+            if(s==0){
+                for(k=0;k<d;k++){
+                    a[i+k]=e[k];
+                }
+            }
+            else {
+                continue;
+            }
+        }
+        else{
+            continue;
+        }
+    }
+    printf(""%s"",a);
+}
+int main() {
+    int i;
+	char a[100],b[100];//here a is the string to be modified,b is the substring to be searched.
+	int c1=0,c2=0; //c1 is the size of a & c2 is the size of b
+	while(a[c1]!='\0'){
+	    c1++;
+	}
+	while(b[c2]!='\0'){
+	    c2++;
+	}
+	char e[c2];
+	for(i=0;i<c2;i++){
+	    e[i]=b[c2-1-i]; // Added semicolon
+	}
+	str_modify(a,c1,b,c2,e);
+	return 0;
+}",True,PASS
+19190.0,"#include <stdio.h>
+#include <string.h>
+int substring(char *s1,char *s2){//find a substring
+        int i=0,j=0,flag=0;
+        while(s1[i]!='\0')
+            {if(s1[i]==s2[j])
+                {while(s2[j]!='\0')
+                 i++;
+                 j++;
+                 if((s2[j]!='\0')&&(s2[j]!=s1[i]))
+                    {flag=0;
+                     break;
+                    } 
+                 if(s1[i]==s2[j])
+                    flag=1;
+                }            
+              i++;      
+            }        
+        return flag;            
+}
+void search(char *s1,char k,int n,char *s2){
+        int i,count=0;
+        for(i=0;s1[i]!='\0';i++)
+            {if(s1[i]==k)
+                count++;
+            }
+        int flag=strstr(s1,s2);
+        if(count<n||flag!=0)
+            printf(""YES"");
+        else
+            printf(""NO"");
+            
+               
+}
+int main() {
+	char s1[100],s2[100];
+	int c,n,i=0;//enter s1
+	c=getchar();
+	while(c!=EOF && c!='\n')
+	{s1[i]=c;
+	 i++;
+	 c=getchar();
+	}
+	s1[i]='\0';
+	
+	char t=getchar();//enter alphabet
+	
+	scanf(""%d"",&n);//enter number
+	
+	int k,j=0;//enter s2
+	k=getchar();
+	while(k!=EOF && k!='\n')
+	{s2[j]=k;
+	 j++;
+	 k=getchar();
+	}
+	s2[j]='\0';
+    int flag=stringcmp(s1,s2);
+    printf(""%d"",flag);
+    //search(s1,t,n,s1);//calling function 
+    return 0;
+    
+}","#include <stdio.h>
+#include <string.h>
+int substring(char *s1,char *s2){//find a substring
+        int i=0,j=0,flag=0;
+        while(s1[i]!='\0')
+            {if(s1[i]==s2[j])
+                {while(s2[j]!='\0')
+                 i++;
+                 j++;
+                 if((s2[j]!='\0')&&(s2[j]!=s1[i]))
+                    {flag=0;
+                     break;
+                    } 
+                 if(s1[i]==s2[j])
+                    flag=1;
+                }            
+              i++;      
+            }        
+        return flag;            
+}
+void search(char *s1,char k,int n,char *s2){
+        int i,count=0;
+        for(i=0;s1[i]!='\0';i++)
+            {if(s1[i]==k)
+                count++;
+            }
+        int flag=strstr(s1,s2);
+        if(count<n||flag!=0)
+            printf(""YES"");
+        else
+            printf(""NO"");
+            
+               
+}
+int main() {
+	char s1[100],s2[100];
+	int c,n,i=0;//enter s1
+	c=getchar();
+	while(c!=EOF && c!='\n')
+	{s1[i]=c;
+	 i++;
+	 c=getchar();
+	}
+	s1[i]='\0';
+	
+	char t=getchar();//enter alphabet
+	
+	scanf(""%d"",&n);//enter number
+	
+	int k,j=0;//enter s2
+	k=getchar();
+	while(k!=EOF && k!='\n')
+	{s2[j]=k;
+	 j++;
+	 k=getchar();
+	}
+	s2[j]='\0';
+    int flag=substring(s1,s2);
+    printf(""%d"",flag);
+    //search(s1,t,n,s1);//calling function 
+    return 0;
+    
+}","#include <stdio.h>
+#include <string.h>
+int substring(char *s1, char *s2) //find a substring
+{
+    int i = 0, j = 0, flag = 0;
+    while (s1[i] != '\0')
+    {
+        if (s1[i] == s2[j])
+        {
+            while (s2[j] != '\0')
+            {
+                i++;
+                j++;
+                if ((s2[j] != '\0') && (s2[j] != s1[i]))
+                {
+                    flag = 0;
+                    break;
+                }
+                if (s1[i] == s2[j])
+                    flag = 1;
+            }
+        }
+        i++;
+    }
+    return flag;
+}
+void search(char *s1, char k, int n, char *s2)
+{
+    int i, count = 0;
+    for (i = 0; s1[i] != '\0'; i++)
+    {
+        if (s1[i] == k)
+            count++;
+    }
+    int flag = substring(s1, s2);
+    if (count < n || flag != 0)
+        printf(""YES"");
+    else
+        printf(""NO"");
+}
+int main()
+{
+    char s1[100], s2[100];
+    int c, n, i = 0; //enter s1
+    c = getchar();
+    while (c != EOF && c != '\n')
+    {
+        s1[i] = c;
+        i++;
+        c = getchar();
+    }
+    s1[i] = '\0';
+
+    char t = getchar(); //enter alphabet
+
+    scanf(""%d"", &n); //enter number
+
+    int k, j = 0; //enter s2
+    k = getchar();
+    while (k != EOF && k != '\n')
+    {
+        s2[j] = k;
+        j++;
+        k = getchar();
+    }
+    s2[j] = '\0';
+    int flag = substring(s1, s2);
+    printf(""%d"", flag);
+    search(s1, t, n, s2); //calling function
+    return 0;
+}",True,PASS
+19506.0,"#include <stdio.h>
+int main()
+{
+    int N;
+    int a;
+    scanf(""%d"",&N);
+    int count=1;
+    int count2=1;
+    int sum=0;
+    int r=1;
+    while(r<=N)
+    {a=r;
+    while(count<a)
+    {sum=10*sum+ (N-r+1);
+    r=r-1;
+    count=count+1;}
+    r=a;
+    while(count2<=(N-a+1))
+    {sum=10*sum+N;
+    count2=count2+1;}
+    printf(""%d\n"",sum);
+    r=r+1;
+    count=1;
+    count2=1;
+    sum=0;}
+    return=0;
+}","#include <stdio.h>
+int main()
+{
+    int N;
+    int a;
+    scanf(""%d"",&N);
+    int count=1;
+    int count2=1;
+    int sum=0;
+    int r=1;
+    while(r<=N)
+    {a=r;
+    while(count<a)
+    {sum=10*sum+ (N-r+1);
+    r=r-1;
+    count=count+1;}
+    r=a;
+    while(count2<=(N-a+1))
+    {sum=10*sum+N;
+    count2=count2+1;}
+    printf(""%d\n"",sum);
+    r=r+1;
+    count=1;
+    count2=1;
+    sum=0;}
+    return 0;
+}","#include <stdio.h>
+int main()
+{
+    int N;
+    int a;
+    scanf(""%d"",&N);
+    int count=1;
+    int count2=1;
+    int sum=0;
+    int r=1;
+    while(r<=N)
+    {
+        a=r;
+        while(count<a)
+        {
+            sum=10*sum+ (N-r+1);
+            r=r-1;
+            count=count+1;
+        }
+        r=a;
+        while(count2<=(N-a+1))
+        {
+            sum=10*sum+N;
+            count2=count2+1;
+        }
+        printf(""%d\n"",sum);
+        r=r+1;
+        count=1;
+        count2=1;
+        sum=0;
+    }
+    return 0;
+}",True,PASS
+20309.0,"#include<stdio.h>
+
+int main()
+{
+  float a;
+  scanf(""%f"",&a);
+  if (a>0){
+  printf(""%.4f"",a);
+  printf("" is positive"");}
+else ifa<0);{
+  printf(""%.4f"",a);
+  printf("" is negative"");}
+ if (a=0);{
+  printf("" input is zero"",a);}
+	return 0;
+}","#include<stdio.h>
+
+int main()
+{
+  float a;
+  scanf(""%f"",&a);
+  if (a>0){
+  printf(""%.4f"",a);
+  printf("" is positive"");}
+else if(a<0);{
+  printf(""%.4f"",a);
+  printf("" is negative"");}
+ if (a=0);{
+  printf("" input is zero"",a);}
+	return 0;
+}","#include<stdio.h>
+
+int main()
+{
+  float a;
+  scanf(""%f"",&a);
+  if (a>0){
+  printf(""%.4f"",a);
+  printf("" is positive"");}
+else if (a<0){
+  printf(""%.4f"",a);
+  printf("" is negative"");}
+ if (a==0){
+  printf("" input is zero"",a);}
+	return 0;
+}",True,PASS
+21653.0,"#include <stdio.h>
+
+int main() 
+{
+/*	int i=0,m=1;
+	char c;
+	char s[100],a[100];
+	c=getchar();
+    while( (c!='\0') && (i<100) )
+    {
+    s[i]=c;
+    
+    if(c==' ')
+    {
+     m=m+1;
+     a[m]=s[i-1];
+    }
+    i++;
+    c=getchar();
+    }
+    printf(""%d"",i);
+    
+    /*int j;
+   
+   for(j=1;j<=m;j++)
+   {
+       printf(""%c"",a[j]);
+   }
+    
+    printf(""%c"",s[i]);
+    /*str[i]='\0';
+	if(str[i]==' ')
+	m=m+1;
+	a[m]=i;*/
+	char s[100];
+	int ch,count,i;
+	ch=getchar();
+	count=0;
+	while(ch!=EOF&&count<100){
+	    s[count]=ch;
+	    count++;
+	    ch=getchar();
+	}
+	for(i=0;i<100;i++){
+	    if(s[i]==' '&&s[i-1]!=' ')
+	    printf(""%c"",s[i-1])
+	}
+	printf(""%c"",s[count-1]);
+	return 0;
+}","#include <stdio.h>
+
+int main() 
+{
+/*	int i=0,m=1;
+	char c;
+	char s[100],a[100];
+	c=getchar();
+    while( (c!='\0') && (i<100) )
+    {
+    s[i]=c;
+    
+    if(c==' ')
+    {
+     m=m+1;
+     a[m]=s[i-1];
+    }
+    i++;
+    c=getchar();
+    }
+    printf(""%d"",i);
+    
+    /*int j;
+   
+   for(j=1;j<=m;j++)
+   {
+       printf(""%c"",a[j]);
+   }
+    
+    printf(""%c"",s[i]);
+    /*str[i]='\0';
+	if(str[i]==' ')
+	m=m+1;
+	a[m]=i;*/
+	char s[100];
+	int ch,count,i;
+	ch=getchar();
+	count=0;
+	while(ch!=EOF&&count<100){
+	    s[count]=ch;
+	    count++;
+	    ch=getchar();
+	}
+	for(i=0;i<100;i++){
+	    if(s[i]==' '&&s[i-1]!=' ')
+	    printf(""%c"",s[i-1]);
+	}
+	printf(""%c"",s[count-1]);
+	return 0;
+}","#include <stdio.h>
+
+int main() 
+{
+	char s[100];
+	int ch,count,i;
+	ch=getchar();
+	count=0;
+	while(ch != EOF && count < 100){
+	    s[count] = ch;
+	    count++;
+	    ch=getchar();
+	}
+	for(i=0;i<100;i++){
+	    if(s[i] == ' ' && s[i-1] != ' ')
+	    printf(""%c"", s[i-1]);
+	}
+	printf(""%c"", s[count-1]);
+	return 0;
+}",True,PASS
+20317.0,"#include <stdio.h>
+#include <stdlib.h>
+void inar(int ar[],int size)
+{
+    int i=0;
+    for(;i<size;i++)
+        scanf(""%d"",ar+i);
+}
+
+void print(int ar[],int size)
+{
+    for(int i=0;i<size-1;i++)
+        printf(""%d "",ar[i]);
+    printf(""%d"",ar[size-1]);
+}
+
+int merge(int ar[],int size,int pos)
+{
+    int inv=0;
+    int *temp=(int*)malloc(size*sizeof(int));
+    int i=pos,j=pos+size/2,m=i+size/2,n=j+size-size/2;
+    
+    for(int k=0;k<size;k++)
+    {
+        if(i==m)
+        {
+            temp[k]=ar[j];
+            j++;
+        }
+        else if(j==n)
+        {
+            temp[k]=ar[i];
+            i++;
+        }
+        else
+        {
+            if(ar[i]<ar[j])
+            {
+                temp[k]=ar[i];
+                i++;
+            }   
+            else if(ar[j]<ar[i])
+            {
+                inv+=m-i
+                temp[k]=ar[j];
+                j++;
+            }
+            else
+            {
+                temp[k]=ar[i];
+                k++;
+                temp[k]=ar[i];
+                i++;
+                j++;
+            }
+        }
+    }
+    for(int k=0;k<size;k++)
+    {
+        ar[pos+k]=temp[k];
+    }
+    return inv;
+}
+int mergesort(int ar[],int size,int pos)
+{
+    static int inv=0;
+    int m=0,n=0;
+    if(size==1)
+        return 0;
+    m=size/2;
+    mergesort(ar,m,pos);
+    mergesort(ar,size-m,pos+m);
+    inv+=merge(ar,size,pos);
+    return inv;
+}
+
+int main()
+{
+    int size;
+    int *ar;
+    scanf(""%d"",&size);
+    ar=(int*)calloc(size,sizeof(int));
+    inar(ar,size);
+    printf(""%d\n"",mergesort(ar,size,0));
+    print(ar,size);
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+void inar(int ar[],int size)
+{
+    int i=0;
+    for(;i<size;i++)
+        scanf(""%d"",ar+i);
+}
+
+void print(int ar[],int size)
+{
+    for(int i=0;i<size-1;i++)
+        printf(""%d "",ar[i]);
+    printf(""%d"",ar[size-1]);
+}
+
+int merge(int ar[],int size,int pos)
+{
+    int inv=0;
+    int *temp=(int*)malloc(size*sizeof(int));
+    int i=pos,j=pos+size/2,m=i+size/2,n=j+size-size/2;
+    
+    for(int k=0;k<size;k++)
+    {
+        if(i==m)
+        {
+            temp[k]=ar[j];
+            j++;
+        }
+        else if(j==n)
+        {
+            temp[k]=ar[i];
+            i++;
+        }
+        else
+        {
+            if(ar[i]<ar[j])
+            {
+                temp[k]=ar[i];
+                i++;
+            }   
+            else if(ar[j]<ar[i])
+            {
+                inv+=m-i;
+                temp[k]=ar[j];
+                j++;
+            }
+            else
+            {
+                temp[k]=ar[i];
+                k++;
+                temp[k]=ar[i];
+                i++;
+                j++;
+            }
+        }
+    }
+    for(int k=0;k<size;k++)
+    {
+        ar[pos+k]=temp[k];
+    }
+    return inv;
+}
+int mergesort(int ar[],int size,int pos)
+{
+    static int inv=0;
+    int m=0,n=0;
+    if(size==1)
+        return 0;
+    m=size/2;
+    mergesort(ar,m,pos);
+    mergesort(ar,size-m,pos+m);
+    inv+=merge(ar,size,pos);
+    return inv;
+}
+
+int main()
+{
+    int size;
+    int *ar;
+    scanf(""%d"",&size);
+    ar=(int*)calloc(size,sizeof(int));
+    inar(ar,size);
+    printf(""%d\n"",mergesort(ar,size,0));
+    print(ar,size);
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void inar(int ar[],int size)
+{
+    int i=0;
+    for(;i<size;i++)
+        scanf(""%d"",&ar[i]);
+}
+
+void print(int ar[],int size)
+{
+    for(int i=0;i<size-1;i++)
+        printf(""%d "",ar[i]);
+    printf(""%d"",ar[size-1]);
+}
+
+int merge(int ar[],int size,int pos)
+{
+    int inv=0;
+    int *temp=(int*)malloc(size*sizeof(int));
+    int i=pos,j=pos+size/2,m=i+size/2,n=j+size-size/2;
+    
+    for(int k=0;k<size;k++)
+    {
+        if(i==m)
+        {
+            temp[k]=ar[j];
+            j++;
+        }
+        else if(j==n)
+        {
+            temp[k]=ar[i];
+            i++;
+        }
+        else
+        {
+            if(ar[i]<ar[j])
+            {
+                temp[k]=ar[i];
+                i++;
+            }   
+            else if(ar[j]<ar[i])
+            {
+                inv += m-i;
+                temp[k]=ar[j];
+                j++;
+            }
+            else
+            {
+                temp[k]=ar[i];
+                k++;
+                temp[k]=ar[i];
+                i++;
+                j++;
+            }
+        }
+    }
+    for(int k=0;k<size;k++)
+    {
+        ar[pos+k]=temp[k];
+    }
+    return inv;
+}
+int mergesort(int ar[],int size,int pos)
+{
+    static int inv=0;
+    int m=0,n=0;
+    if(size==1)
+        return 0;
+    m=size/2;
+    mergesort(ar,m,pos);
+    mergesort(ar,size-m,pos+m);
+    inv+=merge(ar,size,pos);
+    return inv;
+}
+
+int main()
+{
+    int size;
+    int *ar;
+    scanf(""%d"",&size);
+    ar=(int*)calloc(size,sizeof(int));
+    inar(ar,size);
+    printf(""%d\n"",mergesort(ar,size,0));
+    print(ar,size);
+    return 0;
+}",True,PASS
+21026.0,"#include <stdio.h>
+
+int main() {
+    int i,j,count;
+	char s[100];
+	for(i=0;i<7;i++){
+	    scanf(""%c"",&s[i]);
+	}
+	    for(i=0,count=0;s[i]!='\n';i++){
+	        count++;
+	    }
+	    int a=count;
+	        /*printf(""%d"",count);*/
+	             
+	int n;
+	scanf(""%d"",&n);
+	              /*printf(""\n%d"",n);*/
+	for(count=a,j=0;count-j-1>=(count-n);j++){
+	    printf(""%c"",s[count-j-1]);
+	}
+	for(i=0;i<(count-n);i++){
+	    printf(""%c"",s[i]);
+	}*/
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int i,j,count;
+	char s[100];
+	for(i=0;i<7;i++){
+	    scanf(""%c"",&s[i]);
+	}
+	    for(i=0,count=0;s[i]!='\n';i++){
+	        count++;
+	    }
+	    int a=count;
+	        /*printf(""%d"",count);*/
+	             
+	int n;
+	scanf(""%d"",&n);
+	              /*printf(""\n%d"",n);*/
+	for(count=a,j=0;count-j-1>=(count-n);j++){
+	    printf(""%c"",s[count-j-1]);
+	}
+	for(i=0;i<(count-n);i++){
+	    printf(""%c"",s[i]);
+	}
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int i,j,count;
+	char s[100];
+	for(i=0;i<7;i++){
+	    scanf(""%c"",&s[i]);
+	}
+	    for(i=0,count=0;s[i]!='\n';i++){
+	        count++;
+	    }
+	    int a=count;
+	        /*printf(""%d"",count);*/
+	             
+	int n;
+	scanf(""%d"",&n);
+	              /*printf(""\n%d"",n);*/
+	for(count=a,j=0;count-j-1>=(count-n);j++){
+	    printf(""%c"",s[count-j-1]);
+	}
+	for(i=0;i<(count-n);i++){
+	    printf(""%c"",s[i]);
+	}
+	return 0;
+}",True,PASS
+23088.0,"#include <stdio.h>
+
+void rotate(char a[100],int n){
+    int c=0,i,a[0]=0;
+    for(i=0;a[i]!='\n';i++){
+        c++;
+        scanf(""%c"",&a[i]);
+        
+    }
+    scanf(""%d"",&n);
+    putchar(n);
+    for(i=c-n-2;i<c;i++)
+       putchar(a[i]);
+    for(i=0;i<c-n-2;i++)
+       putchar(a[i]);
+}
+
+int main() {
+	char str[100];
+	int n;
+	rotate(str,n);
+	return 0;
+}","#include <stdio.h>
+
+void rotate(char a[100],int n){
+    int c=0,i;
+    for(i=0;a[i]!='\n';i++){
+        c++;
+        scanf(""%c"",&a[i]);
+        
+    }
+    scanf(""%d"",&n);
+    putchar(n);
+    for(i=c-n-2;i<c;i++)
+       putchar(a[i]);
+    for(i=0;i<c-n-2;i++)
+       putchar(a[i]);
+}
+
+int main() {
+	char str[100];
+	int n;
+	rotate(str,n);
+	return 0;
+}","#include <stdio.h>
+
+void rotate(char a[100],int n){
+    int c=0,i;
+    a[0]=0;
+    for(i=0;a[i]!='\n';i++){
+        c++;
+        scanf(""%c"",&a[i]);
+        
+    }
+    scanf(""%d"",&n);
+    putchar(a[n-1]);
+    for(i=c-n-2;i<c;i++)
+       putchar(a[i]);
+    for(i=0;i<c-n-2;i++)
+       putchar(a[i]);
+}
+
+int main() {
+	char str[100];
+	int n;
+	rotate(str,n);
+	return 0;
+}",True,PASS
+22642.0,"#include <stdio.h>
+#include <stdlib.h>
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head!=NULL)  {
+        printf(""%d "",head->data);
+        head=head->next;
+    }
+    printf(""X\n"");
+    return;
+}
+
+struct node *search(struct node *head,int key){
+    struct node *curr=head;
+    while(curr && curr->data!=key)
+     curr=curr->next;
+     
+    return curr;
+}
+
+void delete(struct node *head,struct node *curr,int key)
+{
+    while(head->data!=key)
+    head=head->next;
+    
+    head->next=curr->next;
+    
+    
+}
+int main() {
+	struct node*p;
+ p=(struct node*)malloc(sizeof(struct node));
+ scanf(""%d"",&p->data);
+ while(p->data<0){
+     int a;
+     scanf(""%d"",&a);
+     insert(p,a);
+ }
+ int n;
+ scanf(""%d"",&n);
+ struct node *pnode;
+ 
+ pnode=search(p,n);
+ 
+ delete(p,pnode,n);
+ 
+ print(p);
+ printF(""X"");
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head!=NULL)  {
+        printf(""%d "",head->data);
+        head=head->next;
+    }
+    printf(""X\n"");
+    return;
+}
+
+struct node *search(struct node *head,int key){
+    struct node *curr=head;
+    while(curr && curr->data!=key)
+     curr=curr->next;
+     
+    return curr;
+}
+
+void delete(struct node *head,struct node *curr,int key)
+{
+    while(head->data!=key)
+    head=head->next;
+    
+    head->next=curr->next;
+    
+    
+}
+int main() {
+	struct node*p;
+ p=(struct node*)malloc(sizeof(struct node));
+ scanf(""%d"",&p->data);
+ while(p->data<0){
+     int a;
+     scanf(""%d"",&a);
+     insert(p,a);
+ }
+ int n;
+ scanf(""%d"",&n);
+ struct node *pnode;
+ 
+ pnode=search(p,n);
+ 
+ delete(p,pnode,n);
+ 
+ print(p);
+ printf(""X"");
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+// to store the link list
+struct node {
+    int data;
+    struct node* next;
+};
+
+// insertion in the list ""head"", at the END
+struct node* insert(struct node* head, int data)
+{
+    struct node* n=(struct node*)malloc(sizeof(struct node));
+    n->next=NULL;
+    n->data=data;
+    if(head==NULL)
+        return n;
+    struct node* tmp=head;
+    while(tmp->next!=NULL)
+        tmp=tmp->next;
+    tmp->next=n;
+    return head;
+}
+
+// print the list ""head""
+void print(struct node* head)
+{
+    while(head!=NULL)  {
+        printf(""%d "",head->data);
+        head=head->next;
+    }
+    printf(""X\n"");
+    return;
+}
+
+struct node *search(struct node *head,int key){
+    struct node *curr=head;
+    while(curr && curr->data!=key)
+     curr=curr->next;
+     
+    return curr;
+}
+
+void delete(struct node *head,struct node *curr,int key)
+{
+    while(head->data!=key)
+    head=head->next;
+    
+    head->next=curr->next;
+    
+    
+}
+int main() {
+	struct node*p;
+ p=(struct node*)malloc(sizeof(struct node));
+ scanf(""%d"",&p->data);
+ while(p->data<0){
+     int a;
+     scanf(""%d"",&a);
+     p = insert(p,a);
+ }
+ int n;
+ scanf(""%d"",&n);
+ struct node *pnode;
+ 
+ pnode=search(p,n);
+ 
+ delete(p,pnode,n);
+ 
+ print(p);
+ printf(""X"");
+	return 0;
+}",True,PASS
+22519.0,"#include <stdio.h>
+#include <stdlib.h>
+int main() {
+float m,v1,v2;
+scanf(""%f"",&m,&v1,&v2):
+float KE=((1/2)*(m)*((v2*v2)-(v1*v1)));
+printf(""%.3f\n"",KE);// Fill this area with your code.
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+int main() {
+float m,v1,v2;
+scanf(""%f"",&m,&v1,&v2);
+float KE=((1/2)*(m)*((v2*v2)-(v1*v1)));
+printf(""%.3f\n"",KE);// Fill this area with your code.
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+int main() {
+float m,v1,v2;
+scanf(""%f %f %f"",&m,&v1,&v2);
+float KE=((1/2)*(m)*((v2*v2)-(v1*v1)));
+printf(""%.3f\n"",KE); // Fill this area with your code.
+	return 0;
+}",True,PASS
+21975.0,"#include <stdio.h>
+
+int N, T, array[30]; // N won't be larger than 30
+
+int groupSum(int len_covered, int partial_sum)
+{
+
+    
+    if(partial_sum==T){  //Check if Condition is met
+        
+        return 1;
+    }
+    if(len_covered==N){return 0;} //if all valid positions of array is transvered
+  
+
+ 
+    
+        if(groupSum(len_covered+1,partial_sum)){ //Recursive call without adding current
+            return 1;
+        }
+        
+        
+    
+        if(groupSum(len_covered+1,partial_sum+array[len_covered])){?/*Recursive call with adding current*/
+            return 1;
+        }else{
+            return 0;
+        
+        }
+    
+}
+
+int main()
+{
+    int i;
+    scanf(""%d"",&N);
+
+    scanf(""%d"",&T);
+    
+    
+    for(i=0;i<N;i++){
+        scanf(""%d"",&array[i]);
+    }
+    
+    
+
+ 
+	printf(""%s\n"", groupSum(0, 0)==1?""YES"":""NO"");//Printing output
+	return 0;
+}","#include <stdio.h>
+
+int N, T, array[30]; // N won't be larger than 30
+
+int groupSum(int len_covered, int partial_sum)
+{
+
+    
+    if(partial_sum==T){  //Check if Condition is met
+        
+        return 1;
+    }
+    if(len_covered==N){return 0;} //if all valid positions of array is transvered
+  
+
+ 
+    
+        if(groupSum(len_covered+1,partial_sum)){ //Recursive call without adding current
+            return 1;
+        }
+        
+        
+    
+        if(groupSum(len_covered+1,partial_sum+array[len_covered])){/*Recursive call with adding current*/
+            return 1;
+        }else{
+            return 0;
+        
+        }
+    
+}
+
+int main()
+{
+    int i;
+    scanf(""%d"",&N);
+
+    scanf(""%d"",&T);
+    
+    
+    for(i=0;i<N;i++){
+        scanf(""%d"",&array[i]);
+    }
+    
+    
+
+ 
+	printf(""%s\n"", groupSum(0, 0)==1?""YES"":""NO"");//Printing output
+	return 0;
+}","#include <stdio.h>
+
+int N, T, array[30]; // N won't be larger than 30
+
+int groupSum(int len_covered, int partial_sum)
+{
+
+    
+    if(partial_sum==T){  //Check if Condition is met
+        
+        return 1;
+    }
+    if(len_covered==N){return 0;} //if all valid positions of array is transvered
+  
+
+ 
+    
+        if(groupSum(len_covered+1,partial_sum)){ //Recursive call without adding current
+            return 1;
+        }
+        
+        
+    
+        if(groupSum(len_covered+1,partial_sum+array[len_covered])){ //Recursive call with adding current
+            return 1;
+        }else{
+            return 0;
+        
+        }
+    
+}
+
+int main()
+{
+    int i;
+    scanf(""%d"",&N);
+
+    scanf(""%d"",&T);
+    
+    
+    for(i=0;i<N;i++){
+        scanf(""%d"",&array[i]);
+    }
+    
+    
+
+ 
+	printf(""%s\n"", groupSum(0, 0)==1?""YES"":""NO"");//Printing output
+	return 0;
+}",True,PASS
+19229.0,"#include <stdio.h>
+#include <stdlib.h>
+
+void jumbo(int n)
+{
+    if (n<5)
+    {
+    if (n==0) printf(""j"");  
+    if (n==1) printf(""u"");
+    if (n==2) printf(""m"");
+    if (n==3) printf(""b"");
+    if (n==4) printf(""o"");
+    return;
+    }
+    int i = 1 ;
+    while (n>=i) {i=5*i;}
+    i = i/5;
+    int k;
+    if (n==i)
+    {
+    for (k=0;k<i;k++) {printf(""j"");}   
+    }
+    else {jumbo(n/i-1);jumbo(n%i);}
+}
+
+int main() {
+	int n;
+	scanf(""%d"",&n);
+	if (n<=0) return;
+	jumbo(n-1);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void jumbo(int n)
+{
+    if (n<5)
+    {
+    if (n==0) printf(""j"");  
+    if (n==1) printf(""u"");
+    if (n==2) printf(""m"");
+    if (n==3) printf(""b"");
+    if (n==4) printf(""o"");
+    return;
+    }
+    int i = 1 ;
+    while (n>=i) {i=5*i;}
+    i = i/5;
+    int k;
+    if (n==i)
+    {
+    for (k=0;k<i;k++) {printf(""j"");}   
+    }
+    else {jumbo(n/i-1);jumbo(n%i);}
+}
+
+int main() {
+	int n;
+	scanf(""%d"",&n);
+	if (n<=0) return 0;
+	jumbo(n-1);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void jumbo(int n)
+{
+    if (n<5)
+    {
+        if (n==0) printf(""j"");  
+        if (n==1) printf(""u"");
+        if (n==2) printf(""m"");
+        if (n==3) printf(""b"");
+        if (n==4) printf(""o"");
+        return;
+    }
+    int i = 1;
+    while (n>=i) {i=5*i;}
+    i = i/5;
+    int k;
+    if (n==i)
+    {
+        for (k=0; k<i; k++) {printf(""j"");}   
+    }
+    else {jumbo(n/i-1); jumbo(n%i);}
+}
+
+int main() {
+	int n;
+	scanf(""%d"", &n);
+	if (n<=0) return 0;
+	jumbo(n-1);
+	return 0;
+}",True,PASS
+20091.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+     long int n,m;
+     int j,f,c,i;
+    scanf(""%ld %ld"",&n,&m);
+    for(i=1;i<=)
+    {
+        f=f*i;
+    }
+        c=0;
+        for(j=n;j<=m;j=j+1)
+        {
+            if(j==f)
+            {
+                c=c+1;
+            }
+        }
+        printf(""%d"",c);
+	// Fill this area with your code.
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+     long int n,m;
+     int j,f,c,i;
+    scanf(""%ld %ld"",&n,&m);
+    for(i=1;i<=n;i++)
+    {
+        f=f*i;
+    }
+        c=0;
+        for(j=n;j<=m;j=j+1)
+        {
+            if(j==f)
+            {
+                c=c+1;
+            }
+        }
+        printf(""%d"",c);
+	// Fill this area with your code.
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+     long int n,m;
+     int j,f=1,c,i;
+    scanf(""%ld %ld"",&n,&m);
+    for(i=1;i<=m;i++)
+    {
+        f=f*i;
+    }
+        c=0;
+        for(j=n;j<=m;j++)
+        {
+            if(j==f)
+            {
+                c=c+1;
+            }
+        }
+        printf(""%d"",c);
+	return 0;
+}",True,PASS
+21976.0,"#include <stdio.h>
+
+
+int main()
+{
+    int m,n,p;
+    scanf(""%d %d"",&m,&n);
+    int arr[m][n];
+    int i,j;
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+        scanf(""%d"",arr[m][n]);
+    
+    if((i=!j,arr[i][j]=0)&&(i=j,arr[i][j]=!0)){
+        printf(""%d"",p);
+    }
+    for(i=0;i<=m;i++){
+        for(j=0;j<=n;j++)
+        
+    
+    }
+    return 0;
+}","#include <stdio.h>
+
+
+int main()
+{
+    int m,n,p;
+    scanf(""%d %d"",&m,&n);
+    int arr[m][n];
+    int i,j;
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+        scanf(""%d"",arr[m][n]);
+    
+    if((i=!j,arr[i][j]=0)&&(i=j,arr[i][j]=!0)){
+        printf(""%d"",p);
+    }
+    for(i=0;i<=m;i++){
+        
+        
+    
+    }
+    return 0;
+}","#include <stdio.h>
+
+
+int main()
+{
+    int m,n,p;
+    scanf(""%d %d"",&m,&n);
+    int arr[m][n];
+    int i,j;
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+        scanf(""%d"",&arr[i][j]);
+    
+    if((i!=j,arr[i][j]=0)&&(i=j,arr[i][j]!=0)){
+        printf(""%d"",p);
+    }
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++)
+        
+    
+    }
+    return 0;
+}",False,FAIL
+19141.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i;
+    scanf(""%d"",&n);
+	int A[n];
+	for(i=n-1;i>0;i++)
+	{
+	    scanf(""%d"",&A[i]);
+	    scanf(""%d""&A[i-1]);
+	    if(A[i]==A[i-1])
+	    {
+	        printf(""%d"",A[i]);
+	    }
+	}
+	
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i;
+    scanf(""%d"",&n);
+	int A[n];
+	for(i=n-1;i>0;i++)
+	{
+	    scanf(""%d"",&A[i]);
+	    scanf(""%d"",&A[i-1]);
+	    if(A[i]==A[i-1])
+	    {
+	        printf(""%d"",A[i]);
+	    }
+	}
+	
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i;
+    scanf(""%d"",&n);
+	int A[n];
+	for(i=n-1;i>0;i--)
+	{
+	    scanf(""%d"",&A[i]);
+	    scanf(""%d"",&A[i-1]);
+	    if(A[i]==A[i-1])
+	    {
+	        printf(""%d"",A[i]);
+	    }
+	}
+	
+	return 0;
+}",True,PASS
+21345.0,"#include<stdio.h>
+
+int main()
+{
+    char D;
+    printf(""%n\A"");
+    scanf(""%c"",&D);
+    if((D>='A')&&(D<='Z')){
+        printf(""D is capital letter"");
+    }
+    else((D>='a')&&(D<='z')){
+        printf(""D is small  letter"");
+    }
+    
+    // Fill this area with 
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    char D;
+    printf(""%n\A"");
+    scanf(""%c"",&D);
+    if((D>='A')&&(D<='Z')){
+        printf(""D is capital letter"");
+    }
+    else if((D>='a')&&(D<='z')){
+        printf(""D is small  letter"");
+    }
+    
+    // Fill this area with 
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    char D;
+    printf(""Enter a character: "");
+    scanf(""%c"",&D);
+    if((D>='A')&&(D<='Z')){
+        printf(""D is capital letter"");
+    }
+    else if ((D>='a')&&(D<='z')){
+        printf(""D is small  letter"");
+    }
+    
+    // Fill this area with 
+    return 0;
+}",True,PASS
+18890.0,"#include <stdio.h>
+int n;
+void max(int* a[n]){
+scanf(""%d"",&n);
+int i,j;
+for(j=0;j<n;j++){
+while((j>=0)&&(j<n)){
+for(i=0;i<n;i++){
+    if(a[j]>=a[i]){
+        return j;
+    }
+        
+}
+}
+}
+}
+int main() {
+	int N,x,y;
+	scanf(""%d"",&N);
+	int i,a[N],c[N],k,sum[N],j;
+	for(j=0;j<N;j++){
+	    sum[j]=0;
+	}
+	for(i=0;i<N;i++){
+	    scanf(""%d"",&a[i]);
+	}
+	for(x=0;x<N;x++){
+	for(y=0;y<N;y++){ 
+	for(k=0;k<N;k++){
+	for(j=0;j<N;j++){    
+	while(x<y){
+	    for(i=x;i<y;i++){
+	        c[k]=a[i];
+	    }
+	    sum[j]=sum[j]+c[k];
+	}
+	}
+	}
+	}
+	}
+	return 0;
+}","#include <stdio.h>
+int n;
+int max(int* a[n]){
+scanf(""%d"",&n);
+int i,j;
+for(j=0;j<n;j++){
+while((j>=0)&&(j<n)){
+for(i=0;i<n;i++){
+    if(a[j]>=a[i]){
+        return j;
+    }
+        
+}
+}
+}
+}
+int main() {
+	int N,x,y;
+	scanf(""%d"",&N);
+	int i,a[N],c[N],k,sum[N],j;
+	for(j=0;j<N;j++){
+	    sum[j]=0;
+	}
+	for(i=0;i<N;i++){
+	    scanf(""%d"",&a[i]);
+	}
+	for(x=0;x<N;x++){
+	for(y=0;y<N;y++){ 
+	for(k=0;k<N;k++){
+	for(j=0;j<N;j++){    
+	while(x<y){
+	    for(i=x;i<y;i++){
+	        c[k]=a[i];
+	    }
+	    sum[j]=sum[j]+c[k];
+	}
+	}
+	}
+	}
+	}
+	return 0;
+}","#include <stdio.h>
+
+// function to return the index of the
+// maximum element in an array
+int max(int a[], int n)
+{
+	// set initial maximum as 0
+	int max = 0;
+
+	// iterate through the array to
+	// find the maximum element
+	for (int i = 0; i < n; i++) {
+		if (a[i] >= a[max])
+			max = i;
+	}
+
+	return max;
+}
+
+int main()
+{
+	int N, x, y;
+	scanf(""%d"", &N);
+
+	// array for storing the input
+	int a[N], c[N], sum[N];
+
+	// initialize sum to 0
+	for (int j = 0; j < N; j++)
+		sum[j] = 0;
+
+	// store the input
+	for (int i = 0; i < N; i++)
+		scanf(""%d"", &a[i]);
+
+	// iterate through the array and
+	// find the sum of each sub-array
+	for (x = 0; x < N; x++) {
+		for (y = 0; y < N; y++) {
+			for (int k = 0; k < N; k++) {
+				for (int j = 0; j < N; j++) {
+
+					// if x<y, then only
+					// calculate the sum
+					if (x < y) {
+						for (int i = x; i < y; i++)
+							c[k] = a[i];
+						sum[j] = sum[j] + c[k];
+					}
+				}
+			}
+		}
+	}
+
+	// maximum element in the sum array
+	int max_index = max(sum, N);
+	printf(""Maximum sum = %d"", sum[max_index]);
+
+	return 0;
+}",True,PASS
+22116.0,"#include <limits.h>
+#include <stdio.h>
+int main() {
+    printf(""INT_MAX=%d"",INT_MAX);|n
+    printf(""INT_MIN=%d"",INT_MIN);
+    printf(""CHAR_MAX=%d"",CHAR_MAX);
+    printf(""CHAR_MIN=%d"",CHAR_MIN);
+    
+    return 0;
+}","#include <limits.h>
+#include <stdio.h>
+int main() {
+    printf(""INT_MAX=%d"",INT_MAX);
+    printf(""INT_MIN=%d"",INT_MIN);
+    printf(""CHAR_MAX=%d"",CHAR_MAX);
+    printf(""CHAR_MIN=%d"",CHAR_MIN);
+    
+    return 0;
+}","#include <limits.h>
+#include <stdio.h>
+int main() {
+    printf(""INT_MAX=%d\n"",INT_MAX);
+    printf(""INT_MIN=%d\n"",INT_MIN);
+    printf(""CHAR_MAX=%d\n"",CHAR_MAX);
+    printf(""CHAR_MIN=%d\n"",CHAR_MIN);
+    
+    return 0;
+}",True,PASS
+21652.0,"#include <stdio.h>
+
+
+int main()
+{
+   int m,n,i,j,goodness,flag=0,r,c;
+   scanf(""%d%d"",&m,&n);
+   int mat[m][n];
+   for(j=1;j<=m;j++){
+       for(i=1;i<=n;i++){
+           scanf(""%d"",&mat[i][j]);
+       }
+   }
+   for(i=1;i<=n;i++){
+       for(j=1;j<=m;j++){
+           int l=0,k=0;
+           for(;(i+k)<n;k++){
+               goodness=0;
+               for(;(l<=k)&&((j+l)<m;l++)){
+                 if(mat[i+k][j+l]==mat[i+l][j+k])
+                 goodness++;
+                 else break;
+               }
+           }if(flag<goodness){
+               flag=goodness;
+                r=j;
+                c=i;
+           }
+       }
+   }
+   if(flag==0){
+       printf(""0 -1 -1"");
+   }else
+   printf(""%d %d %d"",flag,r,c);
+    return 0;
+}","#include <stdio.h>
+
+
+int main()
+{
+   int m,n,i,j,goodness,flag=0,r,c;
+   scanf(""%d%d"",&m,&n);
+   int mat[m][n];
+   for(j=1;j<=m;j++){
+       for(i=1;i<=n;i++){
+           scanf(""%d"",&mat[i][j]);
+       }
+   }
+   for(i=1;i<=n;i++){
+       for(j=1;j<=m;j++){
+           int l=0,k=0;
+           for(;(i+k)<n;k++){
+               goodness=0;
+               for(;(l<=k)&&((j+l)<m);l++){
+                 if(mat[i+k][j+l]==mat[i+l][j+k])
+                 goodness++;
+                 else break;
+               }
+           }if(flag<goodness){
+               flag=goodness;
+                r=j;
+                c=i;
+           }
+       }
+   }
+   if(flag==0){
+       printf(""0 -1 -1"");
+   }else
+   printf(""%d %d %d"",flag,r,c);
+    return 0;
+}","#include <stdio.h>
+
+
+int main()
+{
+   int m,n,i,j,goodness,flag=0,r,c;
+   scanf(""%d%d"",&m,&n);
+   int mat[m][n];
+   for(i=0;i<m;i++){
+       for(j=0;j<n;j++){
+           scanf(""%d"",&mat[i][j]);
+       }
+   }
+   for(i=0;i<n;i++){
+       for(j=0;j<m;j++){
+           int l=0,k=0;
+           for(;(i+k)<n;k++){
+               goodness=0;
+               for(;(l<=k)&&((j+l)<m);l++){
+                 if(mat[i+k][j+l]==mat[i+l][j+k])
+                 goodness++;
+                 else break;
+               }
+           }if(flag<goodness){
+               flag=goodness;
+                r=j;
+                c=i;
+           }
+       }
+   }
+   if(flag==0){
+       printf(""0 -1 -1"");
+   }else
+   printf(""%d %d %d"",flag,r,c);
+    return 0;
+}",True,PASS
+21027.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n,i,j,total=0;
+	scanf(""%d"",&n);
+	int ar[n],count[n];
+	for(int x=0;x<n;x++)
+	{
+	    scanf(""%d"",&ar[x]);
+	}
+	for(int y=0;y<n;y++)
+	{
+	    count[y]=0;
+	}
+	for(i=0;i<n;i++)
+	{
+	    for(j=1;j<(n-i-1);j++)
+	    {
+	        if(ar[i]>ar[j])
+	          count[i]++;
+	    }
+	    total=total+count[i];
+	}
+	printf(""%d"",total\n);
+	for(int z=0;z<n;z++)
+	{
+	    if(z!=(n-1))
+	      printf(""%d "",count[z]);
+	    if(z==(n-1))
+	      printf(""%d"",count[z]);
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n,i,j,total=0;
+	scanf(""%d"",&n);
+	int ar[n],count[n];
+	for(int x=0;x<n;x++)
+	{
+	    scanf(""%d"",&ar[x]);
+	}
+	for(int y=0;y<n;y++)
+	{
+	    count[y]=0;
+	}
+	for(i=0;i<n;i++)
+	{
+	    for(j=1;j<(n-i-1);j++)
+	    {
+	        if(ar[i]>ar[j])
+	          count[i]++;
+	    }
+	    total=total+count[i];
+	}
+	printf(""%d\n"",total);
+	for(int z=0;z<n;z++)
+	{
+	    if(z!=(n-1))
+	      printf(""%d "",count[z]);
+	    if(z==(n-1))
+	      printf(""%d"",count[z]);
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n,i,j,total=0;
+	scanf(""%d"",&n);
+	int ar[n],count[n];
+	for(int x=0;x<n;x++)
+	{
+	    scanf(""%d"",&ar[x]);
+	}
+	for(int y=0;y<n;y++)
+	{
+	    count[y]=0;
+	}
+	for(i=0;i<n;i++)
+	{
+	    for(j=1;j<(n-i-1);j++)
+	    {
+	        if(ar[i]>ar[j])
+	          count[i]++;
+	    }
+	    total=total+count[i];
+	}
+	printf(""%d\n"",total);  //added missing '\n'
+	for(int z=0;z<n;z++)
+	{
+	    if(z!=(n-1))
+	      printf(""%d "",count[z]);
+	    if(z==(n-1))
+	      printf(""%d"",count[z]);
+	}
+	return 0;
+}",True,PASS
+22347.0,"#include<stdio.h>
+int main(){
+	int r=12;
+	float pi=3.14159265;
+	float v;
+	v=1.3333333*pi*r*r*r
+	printf(""Result is %f"",v);
+	
+	return 0;
+}","#include<stdio.h>
+int main(){
+	int r=12;
+	float pi=3.14159265;
+	float v;
+	v=1.3333333*pi*r*r*r;
+	printf(""Result is %f"",v);
+	
+	return 0;
+}","#include<stdio.h>
+int main(){
+	int r=12;
+	float pi=3.14159265;
+	float v;
+	v=1.3333333*pi*r*r*r; // Added semicolon
+	printf(""Result is %f"",v);
+	
+	return 0;
+}",True,PASS
+21156.0,"#include <stdio.h>
+#include <stdlib.h>
+
+/*
+   Recursive definition of determinate using expansion by minors.
+*/
+
+void creat_mat(int**matrix,int**mat,int k,int n){
+    int i,j;
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-1;j++){
+            if (j<k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j);
+            }if(j>=k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j+1);
+            }
+            
+        }
+    }
+    
+    
+}
+
+int Determinant(int **matrix,int n)       //j==0
+{
+   
+   if (n==1){
+       return *(*(matrix));
+   }
+   int k;
+   int det=0;
+   for(k=0;k<n;k++){
+       if (k%2==0){
+           int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           
+           creat_mat(matrix,mat,k,n);
+           det+=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }else{
+               int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           creat_mat(matrix,mat,k,n);
+           det-=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }
+   }
+   return det;
+}
+
+
+int main(){
+
+	int n;
+	scanf(""%d"",&n);
+	int**matrix=(int**)malloc(n*sizeof(int*));
+	int p;
+	for(p=0;p<n;p++){
+	  *(matrix+p)=(int*)malloc(n*sizeof(int));
+	}
+	int i,j;
+	for(i=0;i<n;i++){
+	    (j=0;j<n;j++){
+	        scanf(""%d"",*(matrix+i)+j);
+	    }
+	}
+	int determinant;
+	determinant=Determinant(matrix,n);
+	printf(""%d"",determinant);
+	
+	for(p=0;p<n;p++){
+	    free((matrix+p));
+	}
+	free(*matrix);
+	
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+/*
+   Recursive definition of determinate using expansion by minors.
+*/
+
+void creat_mat(int**matrix,int**mat,int k,int n){
+    int i,j;
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-1;j++){
+            if (j<k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j);
+            }if(j>=k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j+1);
+            }
+            
+        }
+    }
+    
+    
+}
+
+int Determinant(int **matrix,int n)       //j==0
+{
+   
+   if (n==1){
+       return *(*(matrix));
+   }
+   int k;
+   int det=0;
+   for(k=0;k<n;k++){
+       if (k%2==0){
+           int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           
+           creat_mat(matrix,mat,k,n);
+           det+=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }else{
+               int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           creat_mat(matrix,mat,k,n);
+           det-=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }
+   }
+   return det;
+}
+
+
+int main(){
+
+	int n;
+	scanf(""%d"",&n);
+	int**matrix=(int**)malloc(n*sizeof(int*));
+	int p;
+	for(p=0;p<n;p++){
+	  *(matrix+p)=(int*)malloc(n*sizeof(int));
+	}
+	int i,j;
+	for(i=0;i<n;i++){
+	    for(j=0;j<n;j++){
+	        scanf(""%d"",*(matrix+i)+j);
+	    }
+	}
+	int determinant;
+	determinant=Determinant(matrix,n);
+	printf(""%d"",determinant);
+	
+	for(p=0;p<n;p++){
+	    free((matrix+p));
+	}
+	free(*matrix);
+	
+    return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+/*
+   Recursive definition of determinate using expansion by minors.
+*/
+
+void creat_mat(int**matrix,int**mat,int k,int n){
+    int i,j;
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-1;j++){
+            if (j<k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j);
+            }if(j>=k){
+                *(*(mat+i)+j)=*(*(matrix+1+i)+j+1);
+            }
+            
+        }
+    }
+    
+    
+}
+
+int Determinant(int **matrix,int n)       //j==0
+{
+   
+   if (n==1){
+       return *(*(matrix));
+   }
+   int k;
+   int det=0;
+   for(k=0;k<n;k++){
+       if (k%2==0){
+           int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           
+           creat_mat(matrix,mat,k,n);
+           det+=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }else{
+               int **mat=(int**)malloc((n-1)*sizeof(int*));
+           int p;
+           for(p=0;p<n-1;p++){
+               *(mat+p)=(int*)malloc((n-1)*sizeof(int));
+           }
+           creat_mat(matrix,mat,k,n);
+           det-=(*(*(matrix)+k))*(Determinant(mat,n-1));
+           
+           
+           for(p=0;p<n-1;p++){
+               free((mat+p));
+           }
+           free(*mat);
+       }
+   }
+   return det;
+}
+
+
+int main(){
+
+	int n;
+	scanf(""%d"",&n);
+	int**matrix=(int**)malloc(n*sizeof(int*));
+	int p;
+	for(p=0;p<n;p++){
+	  *(matrix+p)=(int*)malloc(n*sizeof(int));
+	}
+	int i,j;
+	for(i=0;i<n;i++){
+	    for(j=0;j<n;j++){
+	        scanf(""%d"",*(matrix+i)+j);
+	    }
+	}
+	int determinant;
+	determinant=Determinant(matrix,n);
+	printf(""%d"",determinant);
+	
+	for(p=0;p<n;p++){
+	    free((matrix+p));
+	}
+	free(*matrix);
+	
+    return 0;
+}",True,PASS
+21407.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int A[19];
+	char 'i';
+	int p;
+	A[p]= 'i';
+
+	
+	 
+	     if(('i'>=65&&'i'<=90)||('i'>=97&&'i'<=122))
+	
+	    printf(""Yes"");
+	
+	
+	  else  if ('i'>=33&&'i'<=47)
+		printf(""No"");
+
+   
+
+
+     
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int A[19];
+	char i;
+	int p;
+	A[p]= 'i';
+
+	
+	 
+	     if(('i'>=65&&'i'<=90)||('i'>=97&&'i'<=122))
+	
+	    printf(""Yes"");
+	
+	
+	  else  if ('i'>=33&&'i'<=47)
+		printf(""No"");
+
+   
+
+
+     
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int A[19];
+	char i;
+	int p;
+	A[p]= i;
+
+	
+	 
+	     if((i>=65&&i<=90)||(i>=97&&i<=122))
+	
+	    printf(""Yes"");
+	
+	
+	  else  if (i>=33&&i<=47)
+		printf(""No"");
+
+   
+
+
+     
+	return 0;
+}",True,PASS
+19774.0,"#include <stdio.h>
+#include <string.h>
+int chk_palin(char ar[100], int size, int start, int mid)
+{
+    if (length==mid)
+        return 1;
+    if (ar[start]==ar[size-start-1])
+        return(ar, size, start+1, mid);
+    else
+        return 0;
+    
+}
+ 
+int main()
+{
+    char s[100];
+    int n, m;
+    scanf (""%s"", s);
+    n=strlen(s);
+    m=chk_palin(s, n, 0, n/2);
+    if (m==1)
+        printf (""Yes"");
+    else
+        printf (""No"");
+    return 0;
+}","#include <stdio.h>
+#include <string.h>
+int chk_palin(char ar[100], int size, int start, int mid)
+{
+    if (start==mid)
+        return 1;
+    if (ar[start]==ar[size-start-1])
+        return(ar, size, start+1, mid);
+    else
+        return 0;
+    
+}
+ 
+int main()
+{
+    char s[100];
+    int n, m;
+    scanf (""%s"", s);
+    n=strlen(s);
+    m=chk_palin(s, n, 0, n/2);
+    if (m==1)
+        printf (""Yes"");
+    else
+        printf (""No"");
+    return 0;
+}","#include <stdio.h>
+#include <string.h>
+int chk_palin(char ar[100], int size, int start, int mid)
+{
+    if (size==mid)
+        return 1;
+    if (ar[start]==ar[size-start-1])
+        return chk_palin(ar, size, start+1, mid);
+    else
+        return 0;
+    
+}
+ 
+int main()
+{
+    char s[100];
+    int n, m;
+    scanf (""%s"", s);
+    n=strlen(s);
+    m=chk_palin(s, n, 0, n/2);
+    if (m==1)
+        printf (""Yes"");
+    else
+        printf (""No"");
+    return 0;
+}",True,PASS
+19181.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	(""5+5 14+6!"")
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	(""5+5 14+6!"");
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int x = 5 + 5;
+	int y = 14 + 6;
+	printf(""x + y = %d\n"", x + y);
+	return 0;
+}",True,PASS
+19427.0,"#include<stdio.h>
+#include<stdlib.h>
+
+void fix(int a[],int start,int end){
+    int mid;
+    mid=(start+end)/2;
+    if(mid==0){
+        printf(""-1"");
+    }
+    if(a[mid]==mid){
+        printf(""1"");
+    }
+    else if(a[mid]>(mid)){
+        fix(a,start,mid);
+    }
+    else{
+        fix(a,mid+1,end);
+    }
+}
+
+int main(){
+    int n, i;
+    scanf(""%d"",&n);
+    int *a;
+    a=(int *)malloc(n*sizeof(int));//dynamic allocation
+    
+    for(i=0;i<n;i++){//scan array
+        scanf(""%d"",&a[i]);
+    }
+
+    for(i=0;i<n;i++){
+        if(a[i]==i){
+            printf(""1"");
+        }
+        else{
+            printf(""-1"");
+        }
+    }
+
+    fix(a,n);//fixed point function
+}","#include<stdio.h>
+#include<stdlib.h>
+
+void fix(int a[],int start,int end){
+    int mid;
+    mid=(start+end)/2;
+    if(mid==0){
+        printf(""-1"");
+    }
+    if(a[mid]==mid){
+        printf(""1"");
+    }
+    else if(a[mid]>(mid)){
+        fix(a,start,mid);
+    }
+    else{
+        fix(a,mid+1,end);
+    }
+}
+
+int main(){
+    int n, i;
+    scanf(""%d"",&n);
+    int *a;
+    a=(int *)malloc(n*sizeof(int));//dynamic allocation
+    
+    for(i=0;i<n;i++){//scan array
+        scanf(""%d"",&a[i]);
+    }
+
+    for(i=0;i<n;i++){
+        if(a[i]==i){
+            printf(""1"");
+        }
+        else{
+            printf(""-1"");
+        }
+    }
+
+    fix(a,0,n);//fixed point function
+}","#include<stdio.h>
+#include<stdlib.h>
+
+void fix(int a[],int start,int end){
+    int mid;
+    mid=(start+end)/2;
+    if(mid==0){
+        printf(""-1"");
+    }
+    if(a[mid]==mid){
+        printf(""1"");
+    }
+    else if(a[mid]>(mid)){
+        fix(a,start,mid);
+    }
+    else{
+        fix(a,mid+1,end);
+    }
+}
+
+int main(){
+    int n, i;
+    scanf(""%d"",&n);
+    int *a;
+    a=(int *)malloc(n*sizeof(int));//dynamic allocation
+    
+    for(i=0;i<n;i++){//scan array
+        scanf(""%d"",&a[i]);
+    }
+
+    for(i=0;i<n;i++){
+        if(a[i]==i){
+            printf(""1"");
+        }
+        else{
+            printf(""-1"");
+        }
+    }
+
+    fix(a,0,n-1);//fixed point function
+}",True,PASS
+22455.0,"#include<stdio.h>
+
+int main()
+{
+int a,b,c,x,y,z;
+x=a*a;
+y=b*b;
+z=c*c;
+if(x+y>z&&y+z>x&&z+x>y)
+{
+    printf(""Acute Triangle"");
+    
+}
+else if (x+y<z||y+z<x||x+z<y)
+{
+    printf(""Obtuse Triangle"");
+}
+else if(x+y==z||y+z==x||z+x==y){
+    printf(""Right Triangle"");
+}
+else
+{
+    printf(""Invalid Triangle"")
+}
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+int a,b,c,x,y,z;
+x=a*a;
+y=b*b;
+z=c*c;
+if(x+y>z&&y+z>x&&z+x>y)
+{
+    printf(""Acute Triangle"");
+    
+}
+else if (x+y<z||y+z<x||x+z<y)
+{
+    printf(""Obtuse Triangle"");
+}
+else if(x+y==z||y+z==x||z+x==y){
+    printf(""Right Triangle"");
+}
+else
+{
+    printf(""Invalid Triangle"");
+}
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+int a,b,c,x,y,z;
+x=a*a;
+y=b*b;
+z=c*c;
+if(x+y>z&&y+z>x&&z+x>y)
+{
+    printf(""Acute Triangle"");
+    
+}
+else if (x+y<z||y+z<x||x+z<y)
+{
+    printf(""Obtuse Triangle"");
+}
+else if(x+y==z||y+z==x||z+x==y){
+    printf(""Right Triangle"");
+}
+else
+{
+    printf(""Invalid Triangle"");
+}
+    return 0;
+}",True,PASS
+23095.0,"#include<stdio.h>
+
+int main()
+{   int n1,n,r;
+    r=0;
+    scanf(""%d"",&n);
+    int n1=n;
+    while(n1>0)
+    {
+        r=r*10+n%10;
+        n1=n1/10;
+    }
+    printf(""Reverse of %d is %d"",n,r);
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{   int n1,n,r;
+    r=0;
+    scanf(""%d"",&n);
+    n1=n;
+    while(n1>0)
+    {
+        r=r*10+n%10;
+        n1=n1/10;
+    }
+    printf(""Reverse of %d is %d"",n,r);
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{   int n1,n,r;
+    r=0;
+    scanf(""%d"",&n);
+    n1=n;
+    while(n1>0)
+    {
+        r=r*10+n1%10;
+        n1=n1/10;
+    }
+    printf(""Reverse of %d is %d"",n,r);
+    return 0;
+}",True,PASS
+21336.0,"#include <stdio.h>
+
+int identity(int n,int m,int a[][m]) {
+    int i,j;
+    
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            if((i==j)&&(a[i][j]!=1)){
+                return 0;
+            }
+                
+            else if((i!=j)&&(a[i][j]!=0)){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main()
+{   
+    int a[3][3]={{1,0,0},{0,1,0},{0,0,1}};
+    
+    printf(""%d"",identity(2,a));
+    return 0;
+}","#include <stdio.h>
+
+int identity(int n,int m,int a[][m]) {
+    int i,j;
+    
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            if((i==j)&&(a[i][j]!=1)){
+                return 0;
+            }
+                
+            else if((i!=j)&&(a[i][j]!=0)){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main()
+{   
+    int a[3][3]={{1,0,0},{0,1,0},{0,0,1}};
+    
+    printf(""%d"",identity(2,3,a));
+    return 0;
+}","#include <stdio.h>
+
+int identity(int n, int m, int a[][m]) {
+    int i,j;
+    
+    for(i=0;i<n;i++) {
+        for(j=0;j<m;j++) {
+            if((i==j)&&(a[i][j]!=1)){
+                return 0;
+            }
+                
+            else if((i!=j)&&(a[i][j]!=0)){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main()
+{   
+    int a[3][3]={{1,0,0},{0,1,0},{0,0,1}};
+    
+    printf(""%d"",identity(3,3,a));
+    return 0;
+}",True,PASS
+20692.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    char array[20];
+	scanf(""%c"",&array[20]);
+	for(i=0;i<=20;i=i+1){
+	if(""a""<array[i]<""z""||""A""<array[i]<""Z""){printf(""yes"");}else(printf(""no"");)}
+// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    char array[20];
+	scanf(""%c"",&array[20]);
+	for(i=0;i<=20;i=i+1){
+	if(""a""<array[i]<""z""||""A""<array[i]<""Z""){printf(""yes"");}else{printf(""no"");}}
+// Fill this area with your code.
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    char array[20];
+	scanf(""%s"",array); //scanf(""%c"",&array[20]);
+	for(i=0;i<20;i++){
+	if(array[i]>='a'&&array[i]<='z'||array[i]>='A'&&array[i]<='Z'){printf(""yes"");}else{printf(""no"");}} //if(""a""<array[i]<""z""||""A""<array[i]<""Z""){printf(""yes"");}else(printf(""no"");)}
+// Fill this area with your code.
+	return 0;
+}",True,PASS
+19973.0,"#include <stdio.h>
+
+int main() {
+    int n1,n2;
+    scanf (""%d %d\n"",&n1,&n2);
+    int a[n1+1],b[n2+1];
+    int i,j;
+     for (i=0;i<=n1;i++)
+      {
+          scanf(""%d "",&a[i]);
+      }
+     for (j=0;j<=n2;j++)
+      {
+          scanf(""%d "",&b[j]);
+      }
+     printf (""%d\n"",n1+n2);
+     int ab[n1+n2+1];
+     int x,y,z,p;
+        p=0;
+      for (z=0;z<=n1+n2;z++)
+        {
+            for (x=0;x<=z;x++)
+            {
+                y=z-x;
+        ab[z]=a[x]*b[y];
+        p=p+ab[z];
+                
+            
+        printf (""%d "",p);
+            
+        }
+    
+	
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int n1,n2;
+    scanf (""%d %d\n"",&n1,&n2);
+    int a[n1+1],b[n2+1];
+    int i,j;
+     for (i=0;i<=n1;i++)
+      {
+          scanf(""%d "",&a[i]);
+      }
+     for (j=0;j<=n2;j++)
+      {
+          scanf(""%d "",&b[j]);
+      }
+     printf (""%d\n"",n1+n2);
+     int ab[n1+n2+1];
+     int x,y,z,p;
+        p=0;
+      for (z=0;z<=n1+n2;z++)
+        {
+            for (x=0;x<=z;x++)
+            {
+                y=z-x;
+        ab[z]=a[x]*b[y];
+        p=p+ab[z];
+                
+            
+        printf (""%d "",p);
+            
+        }}
+    
+	
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+    int n1,n2;
+    scanf (""%d %d\n"",&n1,&n2);
+    int a[n1+1],b[n2+1];
+    int i,j;
+     for (i=0;i<=n1;i++)
+      {
+          scanf(""%d "",&a[i]);
+      }
+     for (j=0;j<=n2;j++)
+      {
+          scanf(""%d "",&b[j]);
+      }
+     printf (""%d\n"",n1+n2);
+     int ab[n1+n2+1];
+     int x,y,z,p;
+        p=0;
+      for (z=0;z<=n1+n2;z++)
+        {
+            for (x=0;x<=z;x++)
+            {
+                y=z-x;
+        ab[z]=a[x]*b[y];
+        p=p+ab[z];
+                
+            
+        }
+        printf (""%d "",p);
+            
+        }
+    
+	
+	return 0;
+}",True,PASS
+23188.0,"#include <stdio.h>
+
+int max(int d[],int n){
+    int m,v,i;
+    if(n==1){
+        return 1;
+    }
+    v=d[0];
+    m=0;
+    for(i=1;i<n;i++){
+        if(d[i]>v){
+            v=d[i];
+            m=i;
+        }
+    }
+    return m;
+}
+
+int main(){
+    int n,m,i,j,a[1000][1000],l,count,b[1000],c[1000],p,q,u,t=0,k,z,d[1000],ans;
+    scanf(""%d%d"",&n,&m);
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            scanf(""%d"",&a[i][j]);
+        }
+    }
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            if(a[i][j]!=0){
+                l=0;
+                count=0;
+                b[t]=i;
+                c[t]=j;
+                p=i;
+                q=j;
+                while((p+1)<n&&(q+1)<m&&a[p+1][q+1]!=0){
+                    count++;
+                    p++;
+                    q++;
+                }
+                for(k=i;k<=i+count;k++){
+                    for(z=j;z<=j+count;z++){
+                        l++;
+                        if(k-z>i-j&&a[k][z]!=0){
+                            break
+                        }
+                        if(k-z==i-j&&a[k][z]!=0){
+                            l++;
+                            continue;
+                        }
+                        if(k-z<i-j&&a[k][z]!=0){
+                            break;
+                        }
+                    }
+                    if(count!=l){
+                        break;
+                    }
+                }
+                d[t]=l;
+                t++;
+            }
+        }
+    }
+    if(t==0){
+        printf(""0 -1 -1"");
+        return 0;
+    }
+    ans=max(d,t);
+    printf(""%d %d %d"",d[ans],b[ans]+1,c[ans]+1);
+    return 0;
+}","#include <stdio.h>
+
+int max(int d[],int n){
+    int m,v,i;
+    if(n==1){
+        return 1;
+    }
+    v=d[0];
+    m=0;
+    for(i=1;i<n;i++){
+        if(d[i]>v){
+            v=d[i];
+            m=i;
+        }
+    }
+    return m;
+}
+
+int main(){
+    int n,m,i,j,a[1000][1000],l,count,b[1000],c[1000],p,q,u,t=0,k,z,d[1000],ans;
+    scanf(""%d%d"",&n,&m);
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            scanf(""%d"",&a[i][j]);
+        }
+    }
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            if(a[i][j]!=0){
+                l=0;
+                count=0;
+                b[t]=i;
+                c[t]=j;
+                p=i;
+                q=j;
+                while((p+1)<n&&(q+1)<m&&a[p+1][q+1]!=0){
+                    count++;
+                    p++;
+                    q++;
+                }
+                for(k=i;k<=i+count;k++){
+                    for(z=j;z<=j+count;z++){
+                        l++;
+                        if(k-z>i-j&&a[k][z]!=0){
+                            break;
+                        }
+                        if(k-z==i-j&&a[k][z]!=0){
+                            l++;
+                            continue;
+                        }
+                        if(k-z<i-j&&a[k][z]!=0){
+                            break;
+                        }
+                    }
+                    if(count!=l){
+                        break;
+                    }
+                }
+                d[t]=l;
+                t++;
+            }
+        }
+    }
+    if(t==0){
+        printf(""0 -1 -1"");
+        return 0;
+    }
+    ans=max(d,t);
+    printf(""%d %d %d"",d[ans],b[ans]+1,c[ans]+1);
+    return 0;
+}","#include <stdio.h>
+
+int max(int d[],int n){
+    int m,v,i;
+    if(n==1){
+        return 1;
+    }
+    v=d[0];
+    m=0;
+    for(i=1;i<n;i++){
+        if(d[i]>v){
+            v=d[i];
+            m=i;
+        }
+    }
+    return m;
+}
+
+int main(){
+    int n,m,i,j,a[1000][1000],l,count,b[1000],c[1000],p,q,u,t=0,k,z,d[1000],ans;
+    scanf(""%d%d"",&n,&m);
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            scanf(""%d"",&a[i][j]);
+        }
+    }
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            if(a[i][j]!=0){
+                l=0;
+                count=0;
+                b[t]=i;
+                c[t]=j;
+                p=i;
+                q=j;
+                while((p+1)<n&&(q+1)<m&&a[p+1][q+1]!=0){
+                    count++;
+                    p++;
+                    q++;
+                }
+                for(k=i;k<=i+count;k++){
+                    for(z=j;z<=j+count;z++){
+                        l++;
+                        if(k-z>i-j&&a[k][z]!=0){
+                            break;
+                        }
+                        if(k-z==i-j&&a[k][z]!=0){
+                            l++;
+                            continue;
+                        }
+                        if(k-z<i-j&&a[k][z]!=0){
+                            break;
+                        }
+                    }
+                    if(count!=l){
+                        break;
+                    }
+                }
+                d[t]=l;
+                t++;
+            }
+        }
+    }
+    if(t==0){
+        printf(""0 -1 -1"");
+        return 0;
+    }
+    ans=max(d,t);
+    printf(""%d %d %d"",d[ans],b[ans]+1,c[ans]+1);
+    return 0;
+}",True,PASS
+20070.0,"#include<stdio.h>
+int main() 
+{
+int r =12;
+float pi =3.14159265;
+float v =1.3333333*pi*r*r*r;
+printf(""%f"",v);
+int a=v;
+printf
+return 0;
+}","#include<stdio.h>
+int main() 
+{
+int r =12;
+float pi =3.14159265;
+float v =1.3333333*pi*r*r*r;
+printf(""%f "",v);
+int a=v;
+printf(""%d"",a);
+return 0;
+}","#include<stdio.h>
+int main() 
+{
+int r =12;
+float pi =3.14159265;
+float v =1.3333333*pi*r*r*r;
+printf(""%f"",v);
+int a=v;
+printf(""%d"", a);
+return 0;
+}",True,PASS
+21264.0,"#include<stdio.h>
+int main(){
+	float pi=3.14159265;
+	int r=127;
+	float v1=(4/3)*pi*r*r*r; 
+	float v2=1.3333333*pi*r*r*r;
+	printf(""%f"",v1 ""%f""v2);
+	
+	return 0;
+}","#include<stdio.h>
+int main(){
+	float pi=3.14159265;
+	int r=127;
+	float v1=(4/3)*pi*r*r*r; 
+	float v2=1.3333333*pi*r*r*r;
+	printf(""%f"" ""%f"",v1,v2);
+	
+	return 0;
+}","#include<stdio.h>
+int main(){
+	float pi=3.14159265;
+	int r=127;
+	float v1=(4/3)*pi*r*r*r; 
+	float v2=1.3333333*pi*r*r*r;
+	printf(""%f %f"",v1, v2);
+	
+	return 0;
+}",True,PASS
+21389.0,"#include<stdio.h>
+
+
+int main(){
+    int a=0,t=0,i,j,n=4;
+    char x[20],ch;
+    float c,r,d;
+//    scanf(""%f"",&c);
+   // scanf(""%s"",x);
+    //printf(""%s "",x);
+   // for(i=0;i<n;i++)
+    //scanf(""%d"",&x[i]);
+    //for(i=0;i<n;i++)
+    //printf(""%d"",x[i]);
+   // printf(""%f %s "",c,x);
+    //printf(""%f"",d);
+    scanf(""%f"",&r);
+    ch=scanf(""%c"",&x[0]);
+  while(ch!=','&&ch!='\0'){
+  a=int 'ch'-48;
+    printf(""%d"",a);
+       a=t*10+a;
+      t=a;
+  ch=scanf(""%c"",x[i]);
+  i++;
+  }
+   //for(j=0;j<i;j++)
+    //printf(""%c"",x[i]);
+  printf(""%d"",a);
+  // scanf(""%c"",ch);
+   //a='ch';
+   //printf(""%d"",a*10);
+   // printf(""%d"",a);
+    //scanf(""%c"",&ch);
+    //printf(""%d"",ch);
+    return 0;
+}","#include<stdio.h>
+
+
+int main(){
+    int a=0,t=0,i,j,n=4;
+    char x[20],ch;
+    float c,r,d;
+//    scanf(""%f"",&c);
+   // scanf(""%s"",x);
+    //printf(""%s "",x);
+   // for(i=0;i<n;i++)
+    //scanf(""%d"",&x[i]);
+    //for(i=0;i<n;i++)
+    //printf(""%d"",x[i]);
+   // printf(""%f %s "",c,x);
+    //printf(""%f"",d);
+    scanf(""%f"",&r);
+    ch=scanf(""%c"",&x[0]);
+  while(ch!=','&&ch!='\0'){
+  a='ch'-48;
+    printf(""%d"",a);
+       a=t*10+a;
+      t=a;
+  ch=scanf(""%c"",x[i]);
+  i++;
+  }
+   //for(j=0;j<i;j++)
+    //printf(""%c"",x[i]);
+  printf(""%d"",a);
+  // scanf(""%c"",ch);
+   //a='ch';
+   //printf(""%d"",a*10);
+   // printf(""%d"",a);
+    //scanf(""%c"",&ch);
+    //printf(""%d"",ch);
+    return 0;
+}","#include<stdio.h>
+
+int main(){
+    int a=0,t=0,i=0,j,n=4;
+    char x[20],ch;
+    float c,r,d;
+//    scanf(""%f"",&c);
+    //scanf(""%s"",x);
+    //printf(""%s "",x);
+   // for(i=0;i<n;i++)
+    //scanf(""%d"",&x[i]);
+    //for(i=0;i<n;i++)
+    //printf(""%d"",x[i]);
+   // printf(""%f %s "",c,x);
+    //printf(""%f"",d);
+    scanf(""%f"",&r);
+    scanf(""%c"", &ch);
+  while(ch!=',' && ch!='\0'){
+    a=a*10+ (int)(ch - '0');
+    scanf(""%c"",&ch);
+    i++;
+  }
+   //for(j=0;j<i;j++)
+    //printf(""%c"",x[i]);
+  printf(""%d"", a);
+  // scanf(""%c"",ch);
+   //a='ch';
+   //printf(""%d"",a*10);
+   // printf(""%d"",a);
+    //scanf(""%c"",&ch);
+    //printf(""%d"",ch);
+    return 0;
+}",True,PASS
+18705.0,"#include <stdio.h>
+#include <stdlib.h>
+int count =0;
+int binomial(int n,int k) {
+    count++;
+    if(n<k)
+    {
+        return 0;
+    }
+    else if(k==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return binomial(n-1,k)+binomial(n-1,k-1);
+    }
+}
+
+int main() {
+	int n,m,k,i;
+	scanf(""%d"",&m);
+	for(i=0;i<m;i++)
+	{
+	    scanf(""%d%d"",n,k);
+	    printf(""%d %d"",count,binomial(n,k));
+	    count=0;
+	    printf(""%d"",\n);
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int count =0;
+int binomial(int n,int k) {
+    count++;
+    if(n<k)
+    {
+        return 0;
+    }
+    else if(k==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return binomial(n-1,k)+binomial(n-1,k-1);
+    }
+}
+
+int main() {
+	int n,m,k,i;
+	scanf(""%d"",&m);
+	for(i=0;i<m;i++)
+	{
+	    scanf(""%d%d"",n,k);
+	    printf(""%d %d"",count,binomial(n,k));
+	    count=0;
+	    printf(""\n"");
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int count =0;
+int binomial(int n,int k) {
+    count++;
+    if(n<k)
+    {
+        return 0;
+    }
+    else if(k==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return binomial(n-1,k)+binomial(n-1,k-1);
+    }
+}
+
+int main() {
+	int n,m,k,i;
+	scanf(""%d"",&m);
+	for(i=0;i<m;i++)
+	{
+	    scanf(""%d %d"",&n,&k);
+	    printf(""%d %d"",count,binomial(n,k));
+	    count=0;
+	    printf(""\n"");
+	}
+	return 0;
+}",True,PASS
+23268.0,"#include<stdio.h>
+#include<stdlib.h>
+
+
+//checking if mat[i][j] is a peak in ith row in matrix of size mxn
+int peakrow(int a[11][11],int i,int j,int n) 
+{
+
+  	if(a[i][j]>a[i][j+1]&&j==0)
+	return 1;
+else if(a[i][j]>a[i][j-1]&&(j==(n-1)))
+	return 1;
+	else if((a[i][j]>a[i][j+1])&&a[i][j]>a[i][j-1])
+	return 1;
+	else 
+	return 0;
+}
+
+
+int peakcolumn(int a[11][11]  , int i, int j,int m) //checking if mat[i][j] is a peak in jth column in matay of size mxn
+{
+	
+if(a[i][j]>a[i+1][j]&&i==0)
+	return 1;
+   else	if(a[i][j]>a[i-1][j]&&(i==(m-1)))
+	return 1;
+   else if((a[i][j]>a[i+1][j])&&a[i][j]>a[i-1][j])
+	return 1;
+	else 
+	return 0;
+}
+
+int peak(int a[11][11],int i,int j,int m,int n) 
+{     int k;
+	k=peakrow(a,i,j,n)+peakcolumn(a,i,j,m);
+printf(""%d"",k);
+	return k;
+}
+
+void scan_matrix(int a[11][11] , int m , int n)	//Scanning the 2D matrix 
+{int i,j;
+	for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+{	scanf(""%d"",&a[i][j]);
+    pintf(""%d"",a[i][j]); }  //  scanf(""\n"");
+    
+}
+int main()
+{int m,n,i,j,k=0;
+  scanf(""%d\n"",&m);
+  scanf(""%d\n"",&n);
+  int a[m][n];
+  scan_matrix(a,m,n);
+  for(i=0;i<m;i++)
+  for(j=0;j<n;j++)
+{k=k+peak(a,i,j,m,n);
+//if(k==2)
+//break;
+}
+if(k>0)
+printf(""Yes%d "",k);
+else
+printf(""No%d"",k);
+return 0;
+}
+
+","#include<stdio.h>
+#include<stdlib.h>
+
+
+//checking if mat[i][j] is a peak in ith row in matrix of size mxn
+int peakrow(int a[11][11],int i,int j,int n) 
+{
+
+  	if(a[i][j]>a[i][j+1]&&j==0)
+	return 1;
+else if(a[i][j]>a[i][j-1]&&(j==(n-1)))
+	return 1;
+	else if((a[i][j]>a[i][j+1])&&a[i][j]>a[i][j-1])
+	return 1;
+	else 
+	return 0;
+}
+
+
+int peakcolumn(int a[11][11]  , int i, int j,int m) //checking if mat[i][j] is a peak in jth column in matay of size mxn
+{
+	
+if(a[i][j]>a[i+1][j]&&i==0)
+	return 1;
+   else	if(a[i][j]>a[i-1][j]&&(i==(m-1)))
+	return 1;
+   else if((a[i][j]>a[i+1][j])&&a[i][j]>a[i-1][j])
+	return 1;
+	else 
+	return 0;
+}
+
+int peak(int a[11][11],int i,int j,int m,int n) 
+{     int k;
+	k=peakrow(a,i,j,n)+peakcolumn(a,i,j,m);
+printf(""%d"",k);
+	return k;
+}
+
+void scan_matrix(int a[11][11] , int m , int n)	//Scanning the 2D matrix 
+{int i,j;
+	for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+{	scanf(""%d"",&a[i][j]);
+    printf(""%d"",a[i][j]); }  //  scanf(""\n"");
+    
+}
+int main()
+{int m,n,i,j,k=0;
+  scanf(""%d\n"",&m);
+  scanf(""%d\n"",&n);
+  int a[m][n];
+  scan_matrix(a,m,n);
+  for(i=0;i<m;i++)
+  for(j=0;j<n;j++)
+{k=k+peak(a,i,j,m,n);
+//if(k==2)
+//break;
+}
+if(k>0)
+printf(""Yes%d "",k);
+else
+printf(""No%d"",k);
+return 0;
+}
+
+","#include<stdio.h>
+#include<stdlib.h>
+
+
+//checking if mat[i][j] is a peak in ith row in matrix of size mxn
+int peakrow(int a[11][11],int i,int j,int n) 
+{
+
+  	if(a[i][j]>a[i][j+1]&&j==0)
+	return 1;
+else if(a[i][j]>a[i][j-1]&&(j==(n-1)))
+	return 1;
+	else if((a[i][j]>a[i][j+1])&&a[i][j]>a[i][j-1])
+	return 1;
+	else 
+	return 0;
+}
+
+
+int peakcolumn(int a[11][11]  , int i, int j,int m) //checking if mat[i][j] is a peak in jth column in matay of size mxn
+{
+	
+if(a[i][j]>a[i+1][j]&&i==0)
+	return 1;
+   else	if(a[i][j]>a[i-1][j]&&(i==(m-1)))
+	return 1;
+   else if((a[i][j]>a[i+1][j])&&a[i][j]>a[i-1][j])
+	return 1;
+	else 
+	return 0;
+}
+
+int peak(int a[11][11],int i,int j,int m,int n) 
+{     int k;
+	k=peakrow(a,i,j,n)+peakcolumn(a,i,j,m);
+printf(""%d"",k);
+	return k;
+}
+
+void scan_matrix(int a[11][11] , int m , int n)	//Scanning the 2D matrix 
+{int i,j;
+	for(i=0;i<m;i++)
+	for(j=0;j<n;j++)
+{	scanf(""%d"",&a[i][j]);
+    printf(""%d"",a[i][j]); }  //  scanf(""\n"");
+    
+}
+int main()
+{int m,n,i,j,k=0;
+  scanf(""%d\n"",&m);
+  scanf(""%d\n"",&n);
+  int a[m][n];
+  scan_matrix(a,m,n);
+  for(i=0;i<m;i++)
+  for(j=0;j<n;j++)
+{k=k+peak(a,i,j,m,n);
+//if(k==2)
+//break;
+}
+if(k>0)
+printf(""Yes%d "",k);
+else
+printf(""No%d"",k);
+return 0;
+}",True,PASS
+21498.0,"#include<stdio.h>
+#include<math.h>
+
+int main(){
+    float a,b,p ;
+    scanf (""%f %f"",&a,&b);
+    p = abs(a)+abs(b)+sqrt(a*a+b*b);
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f"".,a,b,p);
+
+	return 0;
+}","#include<stdio.h>
+#include<math.h>
+
+int main(){
+    float a,b,p ;
+    scanf (""%f %f"",&a,&b);
+    p = abs(a)+abs(b)+sqrt(a*a+b*b);
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f."",a,b,p);
+
+	return 0;
+}","#include<stdio.h>
+#include<math.h>
+
+int main(){
+    float a,b,p ;
+    scanf (""%f %f"",&a,&b);
+    p = abs(a)+abs(b)+sqrt(a*a+b*b);
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f."",a,b,p);
+
+	return 0;
+}",True,PASS
+23028.0,"#include <stdio.h>
+
+int main() {
+
+  char a[100];
+  int i;
+  for(i=0;i<100;i++)
+  {
+      scanf(""%c"",&a[i]);
+      
+  }
+  for(i=0;i<100;i++)
+ { if(a[i]==' '&&a[i-1]!=' ' )
+   printf(""%c"",a[i-1]);
+ }
+  for(i=99;i>=0;i--)
+  {if(a[i]!='\0')
+ 
+   
+  }
+   printf(""%c"",a[i]);
+  
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+
+  char a[100];
+  int i;
+  for(i=0;i<100;i++)
+  {
+      scanf(""%c"",&a[i]);
+      
+  }
+  for(i=0;i<100;i++)
+ { if(a[i]==' '&&a[i-1]!=' ' )
+   printf(""%c"",a[i-1]);
+ }
+  for(i=99;i>=0;i--)
+  {if(a[i]!='\0')
+   break;
+   
+  }
+   printf(""%c"",a[i]);
+  
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+
+  char a[100];
+  int i;
+  for(i=0;i<100;i++)
+  {
+      scanf(""%c"",&a[i]);
+  }
+  for(i=0;i<100;i++)
+ { if(a[i]==' '&&a[i-1]!=' ' )
+   printf(""%c"",a[i-1]);
+ }
+  for(i=99;i>=0;i--)
+  {
+    if(a[i]!='\0')
+      printf(""%c"",a[i]);
+  }
+
+	return 0;
+}",True,PASS
+19936.0,"#include <stdio.h>
+
+void ansym(int arr[10][10],int m,int n,int a,int b)
+{
+    int i,j,t=2,p,q;
+    for(i=0;i<m-1;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            for(p=i;p<i+t;p++)
+            {
+                for(q=j;q<j+t;q++)
+                {
+                    a=p;
+                    b=q;
+                    if(arr[p][q]==(-arr[q][p]))
+                    continue;
+                    else
+                    break;
+                }    
+            
+            t++;    
+            }
+        }    
+    }
+    return 0;
+}
+
+int main()
+{
+    int i,j;
+    int m,n;
+    scanf(""%d %d"",&m,&n);/*m=no. of rows n=no. of column*/
+    int arr[10][10];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&arr[i][j]);
+        }
+    }
+    int a,b;
+    ansym(arr,m,n,a,b);
+    printf(""%d %d"",a,b);
+    
+    return 0;
+}","#include <stdio.h>
+
+void ansym(int arr[10][10],int m,int n,int a,int b)
+{
+    int i,j,t=2,p,q;
+    for(i=0;i<m-1;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            for(p=i;p<i+t;p++)
+            {
+                for(q=j;q<j+t;q++)
+                {
+                    a=p;
+                    b=q;
+                    if(arr[p][q]==(-arr[q][p]))
+                    continue;
+                    else
+                    break;
+                }    
+            
+            t++;    
+            }
+        }    
+    }
+   
+}
+
+int main()
+{
+    int i,j;
+    int m,n;
+    scanf(""%d %d"",&m,&n);/*m=no. of rows n=no. of column*/
+    int arr[10][10];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&arr[i][j]);
+        }
+    }
+    int a,b;
+    ansym(arr,m,n,a,b);
+    printf(""%d %d"",a,b);
+    
+    return 0;
+}","#include <stdio.h>
+
+void ansym(int arr[10][10],int m,int n,int a,int b)
+{
+    int i,j,t=2,p,q;
+    for(i=0;i<m-1;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            for(p=i;p<i+t;p++)
+            {
+                for(q=j;q<j+t;q++)
+                {
+                    a=p;
+                    b=q;
+                    if(arr[p][q]==(-arr[q][p]))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }   
+            
+                }    
+            
+            t++;    
+            }
+        }    
+    }
+}
+
+int main()
+{
+    int i,j;
+    int m,n;
+    scanf(""%d %d"",&m,&n);/*m=no. of rows n=no. of column*/
+    int arr[10][10];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf(""%d"",&arr[i][j]);
+        }
+    }
+    int a,b;
+    ansym(arr,m,n,a,b);
+    printf(""%d %d"",a,b);
+    
+    return 0;
+}",True,PASS
+20845.0,"#include<stdio.h>
+int main(){
+
+	printf(""\\n introduces a \""new line""."");
+	return 0;
+}","#include<stdio.h>
+int main(){
+
+	printf(""\\n introduces a \""new line\""."");
+	return 0;
+}","#include<stdio.h>
+int main(){
+
+	printf(""\\n introduces a new line.\n"");
+	return 0;
+}",True,PASS
+21351.0,"#include<stdio.h>
+
+int main()
+{
+   int a,b,c,t;
+   scanf(""%d%d%d"",&a,&b,&c);
+   if(a!=b!=c)
+   {
+       printf(""Right Triangle"");
+   }
+   else (a==c!=b)
+   printf(""Acute Triangle"");
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+   int a,b,c,t;
+   scanf(""%d%d%d"",&a,&b,&c);
+   if(a!=b!=c)
+   {
+       printf(""Right Triangle"");
+   }
+   else (a==c!=b);
+   printf(""Acute Triangle"");
+    return 0;
+}","#include <stdio.h>
+
+int main()
+{
+   int a,b,c,t;
+   scanf(""%d%d%d"",&a,&b,&c);
+   if(a!=b && b!=c && c!=a)
+   {
+       printf(""Right Triangle"");
+   }
+   else if(a==c && c!=b)
+   {
+       printf(""Acute Triangle"");
+   }
+    return 0;
+}",True,PASS
+20767.0,"#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int main(){
+    float a;
+    float b;
+    float perimeter;
+    scanf(""%f"",&a); //get from user
+    scanf(""%f"",&b); // from user
+    a= abs(a);
+    b= abs(b);
+    d= abs(d);
+
+    float d = sqrtf((a)*(a)+(b)*(b));
+    perimeter = a+b+d ;
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f."",a,b,perimeter); //show the answer
+    return 0;
+}","#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int main(){
+    float a;
+    float b;
+    float perimeter;
+    scanf(""%f"",&a); //get from user
+    scanf(""%f"",&b); // from user
+    a= abs(a);
+    b= abs(b);
+
+
+    float d = sqrtf((a)*(a)+(b)*(b));
+    perimeter = a+b+d ;
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f."",a,b,perimeter); //show the answer
+    return 0;
+}","#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int main(){
+    float a;
+    float b;
+    float perimeter;
+    scanf(""%f"",&a); //get from user
+    scanf(""%f"",&b); // from user
+    a= abs(a);
+    b= abs(b);
+
+    float d = sqrtf((a)*(a)+(b)*(b));
+    perimeter = a+b+d ;
+    printf(""The perimeter of O, (%.4f,0) and (0,%.4f) is %.4f."",a,b,perimeter); //show the answer
+    return 0;
+}",True,PASS
+20009.0,"#include <stdio.h>
+#include <stdlib.h>
+
+// Write any other auxillary functions here 
+
+char *replace_substring(char *s,char *t,char *w,int n1,int n2,int n3)
+{
+    char *s1_r=(char*)malloc((n1+n1+n1+1)*sizeof(char));
+    int i,j,flag=0,temp,k;
+    for(i=0;i<n1;i++)
+    {
+        if(s[i]==t[0])
+        {
+           for(j=0;j<n2;j++)
+           {
+               if(t[j]==s[i+j])
+               {
+                   flag=1;
+                   if(j==(n2-1))
+                   {
+                     if(n2>n3)
+                     {
+                         for(k=i+n3;k<n1;k++)
+                         s[k]=s[k+n2-n3];
+                          for(k=i;k<i+n3;k++)
+                         {
+                             s[k]=w[k-i];
+                         }
+                         for(k=n1-(n2-n3);k<n1;k++)
+                            s[k]='\0';
+                        n1=n1-(n2-n3);
+                     }
+                     if(n2<n3)
+                    {
+                    for(k=n1-1+n3-n2;k>=i+n3;k--)
+                    {
+                        s[k]=s[k-(n3-n2)];
+                    }
+                    for(k=i;k<i+n3;k++)
+                    {
+                        s[k]=w[k-i];
+                    }
+                    n1=n1+n3-n2
+                    printf(""%s \n"",s);
+                    }                       
+                   }
+               }
+               else 
+               {
+                   flag=0;
+                   break;
+               }
+               
+           }
+        }
+    }
+    printf(""%d"",flag);
+for(i=0;i<n1;i++)
+{
+   s1_r[i]=s[i]; 
+}
+/*if(flag==1)
+{
+    for(i=temp;i<temp+n3;i++)
+    {
+        s1_r[i]=w[i-temp];
+    }
+
+}*/
+return s1_r;
+}
+
+int main()
+{
+int n1,n2,n3;
+scanf(""%d "",&n1);
+char s1[n1];
+scanf(""%s \n"",s1);
+scanf(""%d "",&n2);
+char s2[n2];
+scanf(""%s \n"",s2);
+scanf(""%d "",&n3);
+char s3[n3];
+scanf(""%s"",s3);
+char *s1_r;
+s1_r=replace_substring(s1,s2,s3,n1,n2,n3);
+printf(""%s"",s1_r);
+
+	return 0;
+
+}","#include <stdio.h>
+#include <stdlib.h>
+
+// Write any other auxillary functions here 
+
+char *replace_substring(char *s,char *t,char *w,int n1,int n2,int n3)
+{
+    char *s1_r=(char*)malloc((n1+n1+n1+1)*sizeof(char));
+    int i,j,flag=0,temp,k;
+    for(i=0;i<n1;i++)
+    {
+        if(s[i]==t[0])
+        {
+           for(j=0;j<n2;j++)
+           {
+               if(t[j]==s[i+j])
+               {
+                   flag=1;
+                   if(j==(n2-1))
+                   {
+                     if(n2>n3)
+                     {
+                         for(k=i+n3;k<n1;k++)
+                         s[k]=s[k+n2-n3];
+                          for(k=i;k<i+n3;k++)
+                         {
+                             s[k]=w[k-i];
+                         }
+                         for(k=n1-(n2-n3);k<n1;k++)
+                            s[k]='\0';
+                        n1=n1-(n2-n3);
+                     }
+                     if(n2<n3)
+                    {
+                    for(k=n1-1+n3-n2;k>=i+n3;k--)
+                    {
+                        s[k]=s[k-(n3-n2)];
+                    }
+                    for(k=i;k<i+n3;k++)
+                    {
+                        s[k]=w[k-i];
+                    }
+                    n1=n1+n3-n2;
+                    printf(""%s \n"",s);
+                    }                       
+                   }
+               }
+               else 
+               {
+                   flag=0;
+                   break;
+               }
+               
+           }
+        }
+    }
+    printf(""%d"",flag);
+for(i=0;i<n1;i++)
+{
+   s1_r[i]=s[i]; 
+}
+/*if(flag==1)
+{
+    for(i=temp;i<temp+n3;i++)
+    {
+        s1_r[i]=w[i-temp];
+    }
+
+}*/
+return s1_r;
+}
+
+int main()
+{
+int n1,n2,n3;
+scanf(""%d "",&n1);
+char s1[n1];
+scanf(""%s \n"",s1);
+scanf(""%d "",&n2);
+char s2[n2];
+scanf(""%s \n"",s2);
+scanf(""%d "",&n3);
+char s3[n3];
+scanf(""%s"",s3);
+char *s1_r;
+s1_r=replace_substring(s1,s2,s3,n1,n2,n3);
+printf(""%s"",s1_r);
+
+	return 0;
+
+}","#include <stdio.h>
+#include <stdlib.h>
+
+// Write any other auxillary functions here 
+
+char *replace_substring(char *s,char *t,char *w,int n1,int n2,int n3)
+{
+    char *s1_r=(char*)malloc((n1+n1+n1+1)*sizeof(char));
+    int i,j,flag=0,temp,k;
+    for(i=0;i<n1;i++)
+    {
+        if(s[i]==t[0])
+        {
+           for(j=0;j<n2;j++)
+           {
+               if(t[j]==s[i+j])
+               {
+                   flag=1;
+                   if(j==(n2-1))
+                   {
+                     if(n2>n3)
+                     {
+                         for(k=i+n3;k<n1;k++)
+                         s[k]=s[k+n2-n3];
+                         for(k=i;k<i+n3;k++)
+                         {
+                             s[k]=w[k-i];
+                         }
+                         for(k=n1-(n2-n3);k<n1;k++)
+                            s[k]='\0';
+                        n1=n1-(n2-n3);
+                     }
+                     if(n2<n3)
+                     {
+                     for(k=n1-1+n3-n2;k>=i+n3;k--)
+                     {
+                         s[k]=s[k-(n3-n2)];
+                     }
+                     for(k=i;k<i+n3;k++)
+                     {
+                         s[k]=w[k-i];
+                     }
+                     n1=n1+n3-n2;
+                     printf(""%s \n"",s);
+                     }                       
+                   }
+               }
+               else 
+               {
+                   flag=0;
+                   break;
+               }
+               
+           }
+        }
+    }
+    printf(""%d"",flag);
+for(i=0;i<n1;i++)
+{
+   s1_r[i]=s[i]; 
+}
+/*if(flag==1)
+{
+    for(i=temp;i<temp+n3;i++)
+    {
+        s1_r[i]=w[i-temp];
+    }
+
+}*/
+return s1_r;
+}
+
+int main()
+{
+int n1,n2,n3;
+scanf(""%d "",&n1);
+char s1[n1];
+scanf(""%s \n"",s1);
+scanf(""%d "",&n2);
+char s2[n2];
+scanf(""%s \n"",s2);
+scanf(""%d "",&n3);
+char s3[n3];
+scanf(""%s"",s3);
+char *s1_r;
+s1_r=replace_substring(s1,s2,s3,n1,n2,n3);
+printf(""%s"",s1_r);
+
+	return 0;
+
+}",True,PASS
+22424.0,"#include <stdio.h>
+
+int main() {
+	// Fill this area with your code.
+	int i,n,count=0;
+	scanf(""%d"",&n);
+	char str[1000];
+	for(i=0;i++;){
+	scanf(""%c"",&str[i]);
+	str='\0';
+	}
+	for(i=0;i<n;i++){
+	if(str[i]=='\n'){
+	count++;}
+}
+
+    printf(""%c"",str[i]);
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+	// Fill this area with your code.
+	int i,n,count=0;
+	scanf(""%d"",&n);
+	char str[1000];
+	for(i=0;i++;){
+	scanf(""%c"",&str[i]);
+	str=='\0';
+	}
+	for(i=0;i<n;i++){
+	if(str[i]=='\n'){
+	count++;}
+}
+
+    printf(""%c"",str[i]);
+
+	return 0;
+}","#include <stdio.h>
+
+int main() {
+	// Fill this area with your code.
+	int i,n,count=0;
+	scanf(""%d"",&n);
+	char str[1000];
+	for(i=0;i<n;i++){
+	scanf(""%c"",&str[i]);
+	str[n]='\0';
+	}
+	for(i=0;i<n;i++){
+	if(str[i]=='\n'){
+	count++;}
+}
+
+    printf(""%c"",str[i]);
+
+	return 0;
+}",True,PASS
+19356.0,"#include<stdio.h>
+int main(){
+    
+  printf(""Let\s \""C""\!"");
+  return 0;
+}","#include<stdio.h>
+int main(){
+    
+  printf(""Let\s \""C\""!"");
+  return 0;
+}","#include<stdio.h>
+int main(){
+    
+  printf(""Let's \""C\""!"");
+  return 0;
+}",True,PASS
+21947.0,"#include<stdio.h>
+int tetra(int num)
+{
+    int i,j,sum;
+    sum=0;
+    for(i=1;i<=num;i++)
+     {
+         for(j=1,j<=i;j++)
+         {
+             sum=sum+j;
+         }
+     }
+    return sum; 
+}
+
+int main()
+{
+	int n,t;
+	scanf(""%d"",&n);
+	t=tetra(n);
+	printf(""%d"",t);
+	return 0;
+}","#include<stdio.h>
+int tetra(int num)
+{
+    int i,j,sum;
+    sum=0;
+    for(i=1;i<=num;i++)
+     {
+         for(j=1;j<=i;j++)
+         {
+             sum=sum+j;
+         }
+     }
+    return sum; 
+}
+
+int main()
+{
+	int n,t;
+	scanf(""%d"",&n);
+	t=tetra(n);
+	printf(""%d"",t);
+	return 0;
+}","#include<stdio.h>
+int tetra(int num)
+{
+    int i,j,sum;
+    sum=0;
+    for(i=1;i<=num;i++)
+     {
+         for(j=1;j<=i;j++)
+         {
+             sum=sum+j;
+         }
+     }
+    return sum; 
+}
+
+int main()
+{
+	int n,t;
+	scanf(""%d"",&n);
+	t=tetra(n);
+	printf(""%d"",t);
+	return 0;
+}",True,PASS
+20362.0,"#include <stdio.h>
+
+int magic(char ch[],int a)
+{
+    if((ch[a]>=97)&&(ch[a]<=122)&&(ch[a+1]>='A')&&(ch[a+1]<='Z')&&           (ch[a+2]>='0')&&(ch[a+2]<='9'))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;   
+    }
+}   
+
+int main() {
+	char str[32];int count=0,int k=0;
+	scanf(""%s"",str);int i=0,p=1;
+	while(str[i++]!='\0')
+	{
+	    count++;
+	}
+	for(i=1;i<=(count-1)/3;i=i+3)
+	{
+	   k=magic(str,i-1);
+	   p=p*k; 
+	}
+	if(p==1)
+	{
+	  printf(""Valid String"");
+	}
+	else
+	{
+	  printf(""Invalid String"");   
+	}
+	return 0;
+}","#include <stdio.h>
+
+int magic(char ch[],int a)
+{
+    if((ch[a]>=97)&&(ch[a]<=122)&&(ch[a+1]>='A')&&(ch[a+1]<='Z')&&           (ch[a+2]>='0')&&(ch[a+2]<='9'))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;   
+    }
+}   
+
+int main() {
+	char str[32];int count=0,k=0;
+	scanf(""%s"",str);int i=0,p=1;
+	while(str[i++]!='\0')
+	{
+	    count++;
+	}
+	for(i=1;i<=(count-1)/3;i=i+3)
+	{
+	   k=magic(str,i-1);
+	   p=p*k; 
+	}
+	if(p==1)
+	{
+	  printf(""Valid String"");
+	}
+	else
+	{
+	  printf(""Invalid String"");   
+	}
+	return 0;
+}","#include <stdio.h>
+
+int magic(char ch[], int a)
+{
+    if ((ch[a] >= 97) && (ch[a] <= 122) && (ch[a + 1] >= 'A') && (ch[a + 1] <= 'Z') && (ch[a + 2] >= '0') && (ch[a + 2] <= '9'))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    char str[32];
+    int count = 0, k = 0;
+    scanf(""%s"", str);
+    int i = 0, p = 1;
+
+    while (str[i++] != '\0')
+    {
+        count++;
+    }
+
+    for (i = 1; i <= (count - 1) / 3; i = i + 3)
+    {
+        k = magic(str, i - 1);
+        p = p * k;
+    }
+
+    if (p == 1)
+    {
+        printf(""Valid String"");
+    }
+    else
+    {
+        printf(""Invalid String"");
+    }
+
+    return 0;
+}",True,PASS
+19676.0,"#include <stdio.h>
+     
+
+int main() {
+    int i,n,a[n],m,k,l,p;
+    int b[m];
+    scanf(""%d\n"",&n);
+    
+    for(i=0;i<n;i++){           //for a[]
+        scanf(""%d"",&a[i]);
+    }
+    scanf(""\n%d\n"",m);
+    
+    for(l=0;l<m;l++){       //for b[]
+        scanf(""%d"",&b[l]);
+    }
+    
+    
+	k=m+n;
+	int t[k];
+	
+	for(p=0;p<n;p++){
+	   scanf(""%d"",&t[p]);       //for p<n      for t[]
+	}
+    for(p=n;p<n+m;p++){     //for p<n+m
+        scanf(""%d"",&t[p]);
+    }
+    
+    printf(""%d"",t[6])
+	return 0;
+}","#include <stdio.h>
+     
+
+int main() {
+    int i,n,a[n],m,k,l,p;
+    int b[m];
+    scanf(""%d\n"",&n);
+    
+    for(i=0;i<n;i++){           //for a[]
+        scanf(""%d"",&a[i]);
+    }
+    scanf(""\n%d\n"",m);
+    
+    for(l=0;l<m;l++){       //for b[]
+        scanf(""%d"",&b[l]);
+    }
+    
+    
+	k=m+n;
+	int t[k];
+	
+	for(p=0;p<n;p++){
+	   scanf(""%d"",&t[p]);       //for p<n      for t[]
+	}
+    for(p=n;p<n+m;p++){     //for p<n+m
+        scanf(""%d"",&t[p]);
+    }
+    
+    printf(""%d"",t[6]);
+	return 0;
+}","#include <stdio.h>
+     
+
+int main() {
+    int i,n,a[n],m,k,l,p;
+    int b[m];
+    scanf(""%d\n"",&n);
+    
+    for(i=0;i<n;i++){           //for a[]
+        scanf(""%d"",&a[i]);
+    }
+    scanf(""\n%d\n"",&m);
+    
+    for(l=0;l<m;l++){       //for b[]
+        scanf(""%d"",&b[l]);
+    }
+    
+    
+	k=m+n;
+	int t[k];
+	
+	for(p=0;p<n;p++){
+	   scanf(""%d"",&t[p]);       //for p<n      for t[]
+	}
+    for(p=n;p<n+m;p++){     //for p<n+m
+        scanf(""%d"",&t[p]);
+    }
+    
+    printf(""%d"",t[6]);
+	return 0;
+}",True,PASS
+22370.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	   printf<""Hello World!"">;
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	   printf(""Hello World!"");
+	return 0;
+}
+","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	   printf(""Hello World!"");
+	return 0;
+}",True,PASS
+21346.0,"#include <stdio.h>
+int n;
+void checkidentity(int a[][n],int m)
+{
+    int b[m][n];int i,j,p,q,t,w,count,s=0;int c[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            t=min(m-i,n-j);
+            for(w=1;w<=t;w++)
+            {count=0;
+                for(p=i;p<i+w;p++)
+                {
+                    for(q=j;q<j+w;q++)
+                    {
+                        b[p-i][q-j]=a[p][q];printf(""%d"",b[p-i][q-j];)
+                    }
+                }
+                for(p=0;p<w;p++)
+                {
+                    for(q=0;q<w;q++)
+                    {
+                        if(b[i][j]==-b[j][i])count++;
+                    }
+                }printf(""%d"",count);
+                if(count==w*w)c[i][j]=w;
+            }
+        }
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(c[i][j]>s)s=c[i][j];
+        }
+    }
+    for(i-0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        if(c[i][j]==s)printf(""%d %d %d"",s,i+1,j+1);
+    }
+}
+int min(int n1,int n2)
+{
+    if(n1>=n2)return(n2);
+    else return (n1);
+}
+
+int main()
+{
+    int m,n,i,j;
+    scanf(""%d %d"",&m,&n);
+    int a[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+           scanf(""%d"",&a[i][j]);
+    }
+    checkidentity(a,m);
+    return 0;
+}","#include <stdio.h>
+int n;
+void checkidentity(int a[][n],int m)
+{
+    int b[m][n];int i,j,p,q,t,w,count,s=0;int c[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            t=min(m-i,n-j);
+            for(w=1;w<=t;w++)
+            {count=0;
+                for(p=i;p<i+w;p++)
+                {
+                    for(q=j;q<j+w;q++)
+                    {
+                        b[p-i][q-j]=a[p][q];printf(""%d"",b[p-i][q-j]);
+                    }
+                }
+                for(p=0;p<w;p++)
+                {
+                    for(q=0;q<w;q++)
+                    {
+                        if(b[i][j]==-b[j][i])count++;
+                    }
+                }printf(""%d"",count);
+                if(count==w*w)c[i][j]=w;
+            }
+        }
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(c[i][j]>s)s=c[i][j];
+        }
+    }
+    for(i-0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        if(c[i][j]==s)printf(""%d %d %d"",s,i+1,j+1);
+    }
+}
+int min(int n1,int n2)
+{
+    if(n1>=n2)return(n2);
+    else return (n1);
+}
+
+int main()
+{
+    int m,n,i,j;
+    scanf(""%d %d"",&m,&n);
+    int a[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+           scanf(""%d"",&a[i][j]);
+    }
+    checkidentity(a,m);
+    return 0;
+}","#include <stdio.h>
+int n;
+void checkidentity(int a[][n],int m)
+{
+    int b[m][n];int i,j,p,q,t,w,count,s=0;int c[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            t=min(m-i,n-j);
+            for(w=1;w<=t;w++)
+            {count=0;
+                for(p=i;p<i+w;p++)
+                {
+                    for(q=j;q<j+w;q++)
+                    {
+                        b[p-i][q-j]=a[p][q];printf(""%d "",b[p-i][q-j]);
+                    }
+                }
+                for(p=0;p<w;p++)
+                {
+                    for(q=0;q<w;q++)
+                    {
+                        if(b[i][j]==-b[j][i])count++;
+                    }
+                }printf(""%d"",count);
+                if(count==w*w)c[i][j]=w;
+            }
+        }
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(c[i][j]>s)s=c[i][j];
+        }
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        if(c[i][j]==s)printf(""%d %d %d"",s,i+1,j+1);
+    }
+}
+int min(int n1,int n2)
+{
+    if(n1>=n2)return(n2);
+    else return (n1);
+}
+
+int main()
+{
+    int m,n,i,j;
+    scanf(""%d %d"",&m,&n);
+    int a[m][n];
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+           scanf(""%d"",&a[i][j]);
+    }
+    checkidentity(a,m);
+    return 0;
+}",True,PASS
+22793.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	int **c,n;
+	scanf(""%d"",&n);
+	*c=malloc(sizeof(int)*n);
+	c=malloc(sizeof(int)*n);
+	int x,y;
+	for(x=0;x<n;x++){
+	    for(y=0;y<n;y++){
+	        scanf(""%d"",&(*(*(a+y)+x)));
+	    }
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	int **c,n;
+	scanf(""%d"",&n);
+	*c=malloc(sizeof(int)*n);
+	c=malloc(sizeof(int)*n);
+	int x,y;
+	for(x=0;x<n;x++){
+	    for(y=0;y<n;y++){
+	        scanf(""%d"",&(*(*(c+y)+x)));
+	    }
+	}
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	// Fill this area with your code.
+	int **c,n;
+	scanf(""%d"",&n);
+	c=malloc(sizeof(int *)*n);
+	int x,y;
+	for(x=0;x<n;x++){
+	    *(c+x)=malloc(sizeof(int)*n);
+	    for(y=0;y<n;y++){
+	        scanf(""%d"",&(*(*(c+x)+y)));
+	    }
+	}
+	return 0;
+}",True,PASS
+22779.0,"#include<stdio.h>
+
+int main()
+{
+    int n,a,b,c,sum=0;
+    scanf(""%d"",&n);
+    for(a=1;a<=n;a++){
+        for(b=1;b<=n;b++){
+            for(c=1;c<=n;c++){
+           if((c<a+b)&&((a<c+b)&&(b<a+c)){
+           
+               sum=sum+1;}
+             else
+            continue;}
+         
+        
+    }}
+    printf(""Number of possible triangles is %d"",sum);
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    int n,a,b,c,sum=0;
+    scanf(""%d"",&n);
+    for(a=1;a<=n;a++){
+        for(b=1;b<=n;b++){
+            for(c=1;c<=n;c++){
+           if((c<a+b)&&(a<c+b)&&(b<a+c)){
+           
+               sum=sum+1;}
+             else
+            continue;}
+         
+        
+    }}
+    printf(""Number of possible triangles is %d"",sum);
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+    int n,a,b,c,sum=0;
+    scanf(""%d"",&n);
+    for(a=1;a<=n;a++){
+        for(b=1;b<=n;b++){
+            for(c=1;c<=n;c++){
+           if((c<a+b)&&(a<c+b)&&(b<a+c)){
+           
+               sum=sum+1;}
+             else
+            continue;}
+         
+        
+    }}
+    printf(""Number of possible triangles is %d"",sum);
+    return 0;
+}",True,PASS
+19504.0,"#include <stdio.h>
+int max(int a,int b) {
+    if (a>=b)
+    return a;
+    else 
+    return b;
+}
+int search(int a[],int n,int i,int key){
+    if (i==n){
+        return 0;
+    }
+    if (a[i]==key) {
+        printf(""%d "",i+1);}
+    return search(a,n,i+1,key);
+}
+int main() {
+    int n,m;
+    scanf(""%d%d"",&n,&m);
+int a[n][m];
+int i,j;
+
+for (i=0;i<n;i++){
+    for (j=0;j<m;j++){
+        scanf(""%d"",&a[i][j]);
+    }
+}
+int sum[n];
+for (i=0;i<n;i++){
+    sum[i]=0;
+    for (j=0;j<m;j++){
+        sum[i]=sum[i]+a[i][j];
+    }
+}
+
+
+int x[n-1];
+x[0]=max(sum[0],sum[1]);
+for (i=1;i<n-1;i++){
+    x[i]=max(x[i-1],sum[i+1]);
+}
+
+int l;
+l=x[n-2];
+search(sum,n,l);
+
+	return 0;
+}","#include <stdio.h>
+int max(int a,int b) {
+    if (a>=b)
+    return a;
+    else 
+    return b;
+}
+int search(int a[],int n,int i,int key){
+    if (i==n){
+        return 0;
+    }
+    if (a[i]==key) {
+        printf(""%d "",i+1);}
+    return search(a,n,i+1,key);
+}
+int main() {
+    int n,m;
+    scanf(""%d%d"",&n,&m);
+int a[n][m];
+int i,j;
+
+for (i=0;i<n;i++){
+    for (j=0;j<m;j++){
+        scanf(""%d"",&a[i][j]);
+    }
+}
+int sum[n];
+for (i=0;i<n;i++){
+    sum[i]=0;
+    for (j=0;j<m;j++){
+        sum[i]=sum[i]+a[i][j];
+    }
+}
+
+
+int x[n-1];
+x[0]=max(sum[0],sum[1]);
+for (i=1;i<n-1;i++){
+    x[i]=max(x[i-1],sum[i+1]);
+}
+
+int l;
+l=x[n-2];
+search(sum,n,0,l);
+
+	return 0;
+}","#include <stdio.h>
+int max(int a, int b) 
+{
+    if (a >= b)
+        return a;
+    else 
+        return b;
+}
+int search(int a[], int n, int i, int key)
+{
+    if (i == n) 
+    {
+        return 0;
+    }
+    if (a[i] == key) 
+    {
+        printf(""%d "", i + 1);
+    }
+    return search(a, n, i + 1, key);
+}
+int main() 
+{
+    int n, m;
+    scanf(""%d%d"", &n, &m);
+    int a[n][m];
+    int i, j;
+
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < m; j++) 
+        {
+            scanf(""%d"", &a[i][j]);
+        }
+    }
+    int sum[n];
+    for (i = 0; i < n; i++) 
+    {
+        sum[i] = 0;
+        for (j = 0; j < m; j++) 
+        {
+            sum[i] = sum[i] + a[i][j];
+        }
+    }
+
+    int x[n - 1];
+    x[0] = max(sum[0], sum[1]);
+    for (i = 1; i < n - 1; i++) 
+    {
+        x[i] = max(x[i - 1], sum[i + 1]);
+    }
+
+    int l;
+    l = x[n - 2];
+    search(sum, n, 0, l);
+
+    return 0;
+}",True,PASS
+20326.0,"#include<stdio.h>
+
+int main()
+{
+  int x;
+  scanf(""%d"",&x);
+  if (x%4==0){if (x%100==0)
+  {
+  printf(""Leap Year"");
+}
+else {
+    printf(""Not Leap Year"");
+}
+    // Fill this area with your code.
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+  int x;
+  scanf(""%d"",&x);
+  if (x%4==0){if (x%100==0)
+  
+  printf(""Leap Year"");
+}
+else {
+    printf(""Not Leap Year"");
+}
+    // Fill this area with your code.
+    return 0;
+}","#include<stdio.h>
+
+int main()
+{
+  int x;
+  scanf(""%d"",&x);
+  if (x%4==0){
+    if (x%100==0)
+    {
+      printf(""Leap Year"");
+    }
+    else {
+      printf(""Not Leap Year"");
+    }
+  }
+  return 0;
+}",True,PASS
+19874.0,"#include <stdio.h>
+#include <stdlib.h>
+
+void add(char s1[],int l1,char s2[],int l2){
+    int i=l1-1,j=l2-1;
+    int n; char carry='0';
+    char* s;
+    if(l1>l2) n=l1+1;
+    else n=l2+1;
+    s=(char*)malloc((n+1)*sizeof(char));
+    s[n]='\0'; n--;
+    while(i>=0 && j>=0){
+        if(s1[i]=='0' && s2[j]=='0' && carry=='0'){
+            s[n]='0';
+        }
+        else if((s1[i]=='1'&&s2[j]=='1'&&carry=='0')||(s1[i]=='0'&&s2[j]=='1'&&carry=='1')||          (s1[i]=='1'&&s2[j]=='0'&&carry=='1'))
+        {
+            s[n]='0';
+            carry='1';
+        }
+        else if(s1[i]=='1'&&s2[j]=='1'&&carry=='1'){
+            s[n]='1';
+            carry='1';
+        }
+        
+        i--;
+        j--;
+        n--;
+    }
+    if(carry=='1'){
+        s[n]='1';
+        printf(""%s"",s);
+    }
+    else{
+        s[n] = '0';
+        printf(""%s"",s+1);
+        
+    return;
+}
+
+int main() {
+	char s1[500];
+	char s2[500];
+	int i=0,j=0;
+	scanf(""%s\n"",s1);
+	while(s1[i]!='\0') i++;
+	scanf(""%s"",s2);
+	while(s2[j]!='\0') j++;
+	add(s1,i,s2,j);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void add(char s1[],int l1,char s2[],int l2){
+    int i=l1-1,j=l2-1;
+    int n; char carry='0';
+    char* s;
+    if(l1>l2) n=l1+1;
+    else n=l2+1;
+    s=(char*)malloc((n+1)*sizeof(char));
+    s[n]='\0'; n--;
+    while(i>=0 && j>=0){
+        if(s1[i]=='0' && s2[j]=='0' && carry=='0'){
+            s[n]='0';
+        }
+        else if((s1[i]=='1'&&s2[j]=='1'&&carry=='0')||(s1[i]=='0'&&s2[j]=='1'&&carry=='1')||          (s1[i]=='1'&&s2[j]=='0'&&carry=='1'))
+        {
+            s[n]='0';
+            carry='1';
+        }
+        else if(s1[i]=='1'&&s2[j]=='1'&&carry=='1'){
+            s[n]='1';
+            carry='1';
+        }
+        
+        i--;
+        j--;
+        n--;
+    }
+    if(carry=='1'){
+        s[n]='1';
+        printf(""%s"",s);
+    }
+    else{
+        s[n] = '0';
+        printf(""%s"",s+1);
+    }
+    return;
+}
+
+int main() {
+	char s1[500];
+	char s2[500];
+	int i=0,j=0;
+	scanf(""%s\n"",s1);
+	while(s1[i]!='\0') i++;
+	scanf(""%s"",s2);
+	while(s2[j]!='\0') j++;
+	add(s1,i,s2,j);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+
+void add(char s1[],int l1,char s2[],int l2){
+    int i=l1-1,j=l2-1;
+    int n; char carry='0';
+    char* s;
+    if(l1>l2) n=l1+1;
+    else n=l2+1;
+    s=(char*)malloc((n+1)*sizeof(char));
+    s[n]='\0'; n--;
+    while(i>=0 && j>=0){
+        if(s1[i]=='0' && s2[j]=='0' && carry=='0'){
+            s[n]='0';
+        }
+        else if((s1[i]=='1'&&s2[j]=='1'&&carry=='0')||(s1[i]=='0'&&s2[j]=='1'&&carry=='1')||(s1[i]=='1'&&s2[j]=='0'&&carry=='1'))
+        {
+            s[n]='0';
+            carry='1';
+        }
+        else if(s1[i]=='1'&&s2[j]=='1'&&carry=='1'){
+            s[n]='1';
+            carry='1';
+        }
+        
+        i--;
+        j--;
+        n--;
+    }
+    if(carry=='1'){
+        s[n]='1';
+        printf(""%s"",s);
+    }
+    else{
+        s[n] = '0';
+        printf(""%s"",s+1);
+    }
+    return;
+}
+
+int main() {
+	char s1[500];
+	char s2[500];
+	int i=0,j=0;
+	scanf(""%s\n"",s1);
+	while(s1[i]!='\0') i++;
+	scanf(""%s"",s2);
+	while(s2[j]!='\0') j++;
+	add(s1,i,s2,j);
+	return 0;
+}",True,PASS
+22878.0,"#include<stdio.h>
+
+int main(){
+	int a,i,j;
+	scanf (""%d"",&a);
+	for(i=1;i<=a;i=i+1){
+	  for(j=1;j<a;j=j+1)
+	  printf(""%d"",j);
+	
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+	int a,i,j;
+	scanf (""%d"",&a);
+	for(i=1;i<=a;i=i+1){
+	  for(j=1;j<a;j=j+1)
+	  printf(""%d"",j);
+	}
+	return 0;
+}","#include<stdio.h>
+
+int main(){
+	int a,i,j;
+	scanf (""%d"",&a);
+	for(i=1;i<=a;i=i+1){
+	  for(j=1;j<a;j=j+1){
+	  printf(""%d"",j);
+	  }
+	}
+	
+	return 0;
+}",True,PASS
+20366.0,"#include <stdio.h>
+
+int main() {
+	char a[30];
+	scanf(""%s"",a);
+
+    
+	    for(int i=0;i<30;i++){
+	        if(a[3*i]>='0'||a[3*i]<='9'){
+	            if(a[(3*i)+1]>='A'||a[(3*i)+1]<='Z'){
+	                if(a[(3*i)+2]==(a[(3*i)+1]-26))
+	            
+	             printf(""Valid String"");
+	            }
+	        }
+	       	    
+	    }
+}
+	return 0;
+}
+    
+","#include <stdio.h>
+
+int main() {
+	char a[30];
+	scanf(""%s"",a);
+
+    
+	    for(int i=0;i<30;i++){
+	        if(a[3*i]>='0'||a[3*i]<='9'){
+	            if(a[(3*i)+1]>='A'||a[(3*i)+1]<='Z'){
+	                if(a[(3*i)+2]==(a[(3*i)+1]-26))
+	            
+	             printf(""Valid String"");
+	            }
+	        }
+	       	    
+	    }
+
+	return 0;
+}
+    
+","#include <stdio.h>
+
+int main() {
+	char a[30];
+	scanf(""%s"",a);
+
+    
+	    for(int i=0;i<30;i++){
+	        if(a[3*i]>='0' && a[3*i]<='9'){
+	            if(a[(3*i)+1]>='A' && a[(3*i)+1]<='Z'){
+	                if(a[(3*i)+2]==(a[(3*i)+1]-26)){
+	            
+	             printf(""Valid String"");
+	            }
+	        }
+	       	    
+	    }
+	}
+	return 0;
+}",True,PASS
+20269.0,"#include<stdio.h>
+int main(){
+    printf(""Let's""C""!"");
+    
+    return 0;
+}","#include<stdio.h>
+int main(){
+    printf(""Let's \""C\""!"");
+    
+    return 0;
+}","#include<stdio.h>
+int main(){
+    printf(""Let's \""C\""!"");
+    
+    return 0;
+}",True,PASS
+21212.0,"#include<stdio.h>
+int main ()
+{ 
+printf(""/\n introduces a /""new line/"""");
+	return 0;
+}","#include<stdio.h>
+int main ()
+{ 
+printf(""\\n introduces a \""new line\"""");
+	return 0;
+}","#include<stdio.h>
+int main()
+{
+    printf(""\\\n introduces a \""new line\""\n"");
+    return 0;
+}",True,PASS
+20583.0,"#include <stdio.h>
+#include <stdlib.h>
+int max(int b[],int n)
+{
+    int i,t,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+            if(b[i]>b[j])
+            t=b[i];
+            else
+            t=b[j];
+        }
+    }
+    return t;
+}
+
+int main() {
+	
+	int *a,n,i,j,k,*b,*c;
+	scanf(""%d"",&n);
+	a=(int*)malloc(n*sizeof(int));
+	b=(int*)malloc(n*sizeof(int));
+	c=(int*)malloc(n*sizeof(int));
+	for(i=0;i<n;i++)
+	b[i]=0;
+	for(i=0;i<n;i++)
+	{
+	    scanf(""%d"",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	for(j=i;j<n;j++)
+	{
+	    if(a[i]==a[j])
+	    {
+	       b[i]=b[i]+1;
+	       c[i]=i;
+	    }
+	}
+	printf(""%d"",max(b,n));
+	fro(i=0;i<n;i++)
+	printf(""%d"",b[i]);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int max(int b[],int n)
+{
+    int i,t,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+            if(b[i]>b[j])
+            t=b[i];
+            else
+            t=b[j];
+        }
+    }
+    return t;
+}
+
+int main() {
+	
+	int *a,n,i,j,k,*b,*c;
+	scanf(""%d"",&n);
+	a=(int*)malloc(n*sizeof(int));
+	b=(int*)malloc(n*sizeof(int));
+	c=(int*)malloc(n*sizeof(int));
+	for(i=0;i<n;i++)
+	b[i]=0;
+	for(i=0;i<n;i++)
+	{
+	    scanf(""%d"",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	for(j=i;j<n;j++)
+	{
+	    if(a[i]==a[j])
+	    {
+	       b[i]=b[i]+1;
+	       c[i]=i;
+	    }
+	}
+	printf(""%d"",max(b,n));
+	for(i=0;i<n;i++)
+	printf(""%d"",b[i]);
+	return 0;
+}","#include <stdio.h>
+#include <stdlib.h>
+int max(int b[],int n)
+{
+    int i,t,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+            if(b[i]>b[j])
+            t=b[i];
+            else
+            t=b[j];
+        }
+    }
+    return t;
+}
+
+int main() {
+	
+	int *a,n,i,j,k,*b,*c;
+	scanf(""%d"",&n);
+	a=(int*)malloc(n*sizeof(int));
+	b=(int*)malloc(n*sizeof(int));
+	c=(int*)malloc(n*sizeof(int));
+	for(i=0;i<n;i++)
+	b[i]=0;
+	for(i=0;i<n;i++)
+	{
+	    scanf(""%d"",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	for(j=i;j<n;j++)
+	{
+	    if(a[i]==a[j])
+	    {
+	       b[i]=b[i]+1;
+	       c[i]=i;
+	    }
+	}
+	printf(""%d"",max(b,n));
+	for(i=0;i<n;i++)
+	printf(""%d"",b[i]);
+	return 0;
+}",True,PASS
+19419.0,"#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    double a,b;
+    scanf(""%lf %lf %d"",&a,&b,&n);
+    double p=(b-a)/n;
+    int i;
+    const double epsilon = 0.000001
+    double sum=0;
+    for(i=0;i<n;i++)
+    {
+        if((a+p*i)<=(-1+epsilon))
+        sum+=p;
+        else if ((a+p*i)>(-1+epsilon)&&(a+p*i)<(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i);
+        else if ((a+p*i)>=(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i)*(a+p*i);
+    }
+    printf(""%.4lf"",sum);
+    
+	return 0;
+}	","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    double a,b;
+    scanf(""%lf %lf %d"",&a,&b,&n);
+    double p=(b-a)/n;
+    int i;
+    const double epsilon = 0.000001;
+    double sum=0;
+    for(i=0;i<n;i++)
+    {
+        if((a+p*i)<=(-1+epsilon))
+        sum+=p;
+        else if ((a+p*i)>(-1+epsilon)&&(a+p*i)<(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i);
+        else if ((a+p*i)>=(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i)*(a+p*i);
+    }
+    printf(""%.4lf"",sum);
+    
+	return 0;
+}	","#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    double a,b;
+    scanf(""%lf %lf %d"",&a,&b,&n);
+    double p=(b-a)/n;
+    int i;
+    const double epsilon = 0.000001;
+    double sum=0;
+    for(i=0;i<n;i++)
+    {
+        if((a+p*i)<=(-1+epsilon))
+        sum+=p;
+        else if ((a+p*i)>(-1+epsilon)&&(a+p*i)<(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i);
+        else if ((a+p*i)>=(1+epsilon))
+        sum+=p*(a+p*i)*(a+p*i)*(a+p*i);
+    }
+    printf(""%.4lf"",sum);
+    
+	return 0;
+}",True,PASS
+567.4877059459686,,,,,
