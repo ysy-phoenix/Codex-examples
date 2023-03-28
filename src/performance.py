@@ -2,7 +2,7 @@ import pandas as pd
 import signal
 import time
 
-from simple_syntax_repair import *
+from grpc.simple_syntax_repair import *
 
 # GLOBAL PARAMETERS BEGIN
 total_time_elapsed = 0

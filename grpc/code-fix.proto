@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package codefix;
+
+message User {
+	string practice_description = 1;
+	string target_language = 2;
+	string compiler_info = 3;
+	string user_code = 4;
+}
+
+message Reply {
+	string right_code = 1;
+}
+
+service UserInfo {
+	rpc Info (User) returns (Reply) {}
+}
