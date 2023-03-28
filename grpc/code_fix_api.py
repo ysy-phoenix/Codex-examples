@@ -41,10 +41,14 @@ def generate_completion(input_prompt, num_tokens=MAX_TOKENS, temperature=0.5):
             "stop": ["###"]
     }
     response = requests.post(url, headers=headers, data=json.dumps(data))
+    print(response.status_code)
     return response.json()
 
 
 def find_solution(practice_description, target_language, compiler_info, user_code):
     input_prompt = generate_prompt(practice_description, target_language, compiler_info, user_code)
     response = generate_completion(input_prompt, num_tokens=MAX_TOKENS)
-    return response['choices'][0]['text']
+    try:
+        return response['choices'][0]['text']
+    except:
+        return "Bug fix failed!"
