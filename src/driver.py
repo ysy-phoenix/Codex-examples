@@ -33,7 +33,7 @@ def simple_file_test():
 if __name__ == "__main__":
     # simple_text_test()
     simple_file_test()
-    #input_path, output_path = "../data/cdata/singleL_Test.csv", "../data/cdata/singleL_Test_result.csv"
-    #run_integration_test(input_path, output_path)
+    # input_path, output_path = "../data/cdata/singleL_Test.csv", "../data/cdata/singleL_Test_result.csv"
+    # run_integration_test(input_path, output_path)
     # fewShotGlance(input_path, output_path)
     # program 52 is fixed successfully with error information provided! 2023.03.27 20:15:00

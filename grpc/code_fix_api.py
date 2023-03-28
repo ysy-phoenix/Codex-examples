@@ -1,13 +1,15 @@
 import requests
 import json
+import os
 
 # GLOBAL PARAMETERS BEGIN
 MAX_TOKENS = 1000
 url = "https://eviloder.win/v1/completions"  # my personal domain
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer " + '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'
+    "Authorization": "Bearer " + os.environ['OPENAI_API_KEY']
 }
+
 
 # GLOBAL PARAMETERS END
 
@@ -15,7 +17,7 @@ def generate_prompt(practice_description, target_language, compiler_info, user_c
     prompt = '# Fix errors in the below file written in, and point out the error line in comments. Your comment should on a new line before the error line.\n'
     prompt += '# The program is to solve the following problem.\n'
     prompt += '\n[[To be solved Problem]]\n' \
-            '### To be solved Problem ###\n'
+              '### To be solved Problem ###\n'
     prompt += practice_description + '\n'
 
     prompt += '# The file is written in ' + target_language + '.\n'
@@ -31,14 +33,14 @@ def generate_prompt(practice_description, target_language, compiler_info, user_c
 
 def generate_completion(input_prompt, num_tokens=MAX_TOKENS, temperature=0.5):
     data = {
-            "model": "text-davinci-003",
-            "prompt": input_prompt,
-            "temperature": temperature,
-            "max_tokens": num_tokens,
-            "top_p": 1.0,
-            "frequency_penalty": 0.0,
-            "presence_penalty": 0.0,
-            "stop": ["###"]
+        "model": "text-davinci-003",
+        "prompt": input_prompt,
+        "temperature": temperature,
+        "max_tokens": num_tokens,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "stop": ["###"]
     }
     response = requests.post(url, headers=headers, data=json.dumps(data))
     print(response.status_code)
