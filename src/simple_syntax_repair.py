@@ -1,10 +1,13 @@
 import os
 import openai
+import requests
+import json
 
 from syntax_oracle import *
 
 # GLOBAL PARAMETERS BEGIN
-DEBUG = False
+DEBUG = True
+ISURL = True
 MAX_TOKENS = 1000
 FILE_PATH = "../data/pydata/"
 FILE_TYPE_TO_LANGUAGE = {
@@ -27,6 +30,12 @@ FILE_TYPE_TO_ORACLE = {
     "c": CSyntaxOracle,
     "cpp": CppSyntaxOracle,
 }
+# url = "https://api.openai.com/v1/completions"
+url = "https://eviloder.win/v1/completions"  # my personal domain
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer " + os.environ['OPENAI_API_KEY']
+}
 
 
 # GLOBAL PARAMETERS END
@@ -34,9 +43,7 @@ FILE_TYPE_TO_ORACLE = {
 
 def log_info(msg, color):
     """Log info with different color."""
-    print(COLOR_TO_ESCAPE[color], end='')
-    print(msg, end='')
-    print("\033[0m")
+    print(COLOR_TO_ESCAPE[color], msg, "\033[0m")
 
 
 def initialize_openai_api():
@@ -52,6 +59,8 @@ def generate_prompt(source, filepath=None, filetype=None, isText=False, errorInf
     Generate prompt for Codex.
     Now only with buggy program, error info is optional.
     """
+    if errorInfo is None:
+        errorInfo = []
     prompt = '\n===================================================\n' \
              '# Fix errors in the below file written in '
 
@@ -82,17 +91,38 @@ def generate_prompt(source, filepath=None, filetype=None, isText=False, errorInf
 def generate_completion(input_prompt, num_tokens=MAX_TOKENS, temperature=0.8):
     """Generate completion for Codex."""
     log_info("Waiting for Codex response ...\n", "green") if DEBUG else None
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=input_prompt,
-        temperature=temperature,
-        max_tokens=num_tokens,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=["###"]
-    )
-    return response
+    if ISURL:
+        data = {
+            "model": "text-davinci-003",
+            "prompt": input_prompt,
+            "temperature": temperature,
+            "max_tokens": num_tokens,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "stop": ["###"]
+        }
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+        if response.status_code == 200:
+            data = response.json()
+            return data
+        else:
+            log_info(f"Error: {response.status_code}", "green")
+            return None
+    else:
+        response = openai.Completion.create(
+            model="text-davinci-003",
+            # model="code-cushman-001", # failed
+            # model="code-davinci-002", # failed
+            prompt=input_prompt,
+            temperature=temperature,
+            max_tokens=num_tokens,
+            top_p=1.0,
+            frequency_penalty=0.0,
+            presence_penalty=0.0,
+            stop=["###"]
+        )
+        return response
 
 
 def write_to_file(file, filepath, program):

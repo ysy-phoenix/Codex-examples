@@ -18,7 +18,7 @@ def run_integration_test(input_path, output_path):
         """Define signal handling functions to handle keyboard interrupts."""
         global total_time_elapsed
         log_info("Keyboard interrupted, results being saved", "red")
-        log_info("Current accuracy: {round(result['isFixed'].mean(), 3)}", "blue")
+        log_info(f"Current accuracy: {round(result['isFixed'].mean(), 3)}", "blue")
         total_time_elapsed += time.time() - start_time
         index = result.index[-1] + 1
         result.loc[index, 'id'] = total_time_elapsed
