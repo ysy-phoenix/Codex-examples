@@ -5,7 +5,7 @@ import grpc
 import code_fix_pb2
 import code_fix_pb2_grpc
 
-import code_fix_api
+from src.base import code_fix_api
 
 
 class UserInfo(code_fix_pb2_grpc.UserInfoServicer):

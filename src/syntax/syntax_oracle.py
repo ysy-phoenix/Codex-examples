@@ -46,3 +46,10 @@ class PySyntaxOracle(SyntaxOracle):
     def __init__(self, file, filepath):
         super().__init__(file, filepath)
         self.args = ["python", self.src]
+
+
+LANGUAGE_TO_ORACLE = {
+    "python": PySyntaxOracle,
+    "c": CSyntaxOracle,
+    "cpp": CppSyntaxOracle,
+}

@@ -2,7 +2,7 @@ import pandas as pd
 import signal
 import time
 
-from simple_syntax_repair import *
+from src.syntax.simple_syntax_repair import *
 
 # GLOBAL PARAMETERS BEGIN
 total_time_elapsed = 0
@@ -11,7 +11,7 @@ total_time_elapsed = 0
 # GLOBAL PARAMETERS END
 
 
-def run_integration_test(input_path, output_path):
+def run_integration_test(input_path, output_path, target_language):
     """Integration testing, if interrupted in the middle, can continue next time."""
 
     def handle_keyboard_interrupt(signal, frame):
@@ -54,9 +54,8 @@ def run_integration_test(input_path, output_path):
         sourceText = row['sourceText']
 
         try:
-            prompt = generate_prompt(sourceText, filetype='c', isText=True)
-            fixedText, isFixed = iterate_to_find_solution(prompt, sourceText, filepath=filepath, filetype='c',
-                                                          isText=True)
+            # prompt = generate_syntax_prompt(sourceText, target_language='c', isText=True)
+            fixedText, isFixed = iterate_to_find_solution("", target_language, "", sourceText, filepath)
             status = 'PASS' if isFixed else 'FAIL'
             log_info(f"Line {i}: {status}", "green" if isFixed else "red")
         except Exception as e:
@@ -87,8 +86,5 @@ def fewShotGlance(input_path, output_path):
             prutor, clangParse = df.loc[i, ['sourceErrorPrutor', 'sourceErrorClangParse']]
             log_info(prutor, "red")
             log_info(clangParse, "red")
-            prompt = generate_prompt(sourceText, filetype='c', isText=True, errorInfo=[prutor, clangParse])
-            log_info(prompt, "yellow")
-            program, isFixed = iterate_to_find_solution(prompt, sourceText, filepath="../data/cdata/", filetype='c',
-                                                        isText=True)
+            program, isFixed = iterate_to_find_solution("", "c", "", sourceText, "../data/cdata/", [prutor, clangParse])
             log_info(program, "green") if isFixed else log_info(program, "red")
